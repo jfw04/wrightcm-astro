@@ -1,0 +1,409 @@
+{
+  "_README": "SINGLE SOURCE OF TRUTH for the WCM site. Edit this file, then run `python build.py` to regenerate site-data.js, projects.html, every projects/<slug>.html page, the inner pages, and whitepapers/<slug>.html landing pages. Maps 1:1 to Astro content collections or an Airtable base.",
+  "stats": [
+    {
+      "prefix": "$",
+      "value": 820,
+      "suffix": "M+",
+      "label": "Construction Managed"
+    },
+    {
+      "prefix": "<",
+      "value": 1,
+      "suffix": "%",
+      "label": "Change Orders (historic avg)"
+    },
+    {
+      "prefix": "~",
+      "value": 3,
+      "suffix": " mo",
+      "label": "Ahead of Schedule (avg)"
+    },
+    {
+      "prefix": "",
+      "value": 0,
+      "suffix": "",
+      "label": "Projects Delivered Behind Schedule",
+      "zero": true
+    }
+  ],
+  "services": [
+    {
+      "tag": "Industrial Speed-to-Commission(TM)",
+      "title": "Food Processing & USDA Conversions",
+      "body": "Ground-up industrial facilities and conversions of existing stock into USDA-grade production-built around washdown, sanitation, refrigeration, utilities, and inspection-driven construction."
+    },
+    {
+      "tag": "Senior Living Wood-Speed(TM)",
+      "title": "Senior Living & Assisted Living",
+      "body": "Ground-up senior and assisted living on wood-frame schedules, with HUD process familiarity and a closeout cadence that keeps speed from costing you quality."
+    },
+    {
+      "tag": "Owner's Rep / CM-at-Risk / GMP",
+      "title": "Commercial Construction Management",
+      "body": "For owners and developers tired of self-managing capital projects. Preconstruction, budget and schedule oversight, contractor coordination, and risk management-one accountable partner."
+    }
+  ],
+  "process": [
+    {
+      "step": "01",
+      "title": "Feasibility & Budget Lock",
+      "body": "Zoning check, concept design, ROM budget, milestone schedule, and a risk register-before you overcommit to a lease, design, or equipment."
+    },
+    {
+      "step": "02",
+      "title": "Design Management",
+      "body": "We keep architects and engineers aligned to your cost and speed targets, so the design matches your capital reality-not the other way around."
+    },
+    {
+      "step": "03",
+      "title": "Trade & Schedule Buyout",
+      "body": "Bid leveling, scope-gap closure, and a procurement command center. We buy out the schedule as hard as we buy out cost."
+    },
+    {
+      "step": "04",
+      "title": "Active-Plant Build Execution",
+      "body": "Construction planned around live production-phasing, partitions, off-hours work, dust and contamination control, and weekly cost-to-complete."
+    },
+    {
+      "step": "05",
+      "title": "Owner Communication",
+      "body": "A weekly executive snapshot of cost, schedule, procurement, and decisions. You always know where the project stands."
+    },
+    {
+      "step": "06",
+      "title": "Closeout & Accountability",
+      "body": "Punch velocity, commissioning coordination, warranties, O&M, and a clean closeout package that protects startup and inspection."
+    }
+  ],
+  "clients": [
+    {
+      "src": "assets/img/clients/seaboard-triumph.jpg",
+      "alt": "Seaboard Triumph Foods"
+    },
+    {
+      "src": "assets/img/clients/triumph-foods.svg",
+      "alt": "Triumph Foods"
+    },
+    {
+      "src": "assets/img/clients/mistica-foods.jpg",
+      "alt": "Mistica Foods"
+    },
+    {
+      "src": "assets/img/clients/gardant.png",
+      "alt": "Gardant Management Solutions"
+    },
+    {
+      "src": "assets/img/clients/vermilion.svg",
+      "alt": "Vermilion Development"
+    },
+    {
+      "src": "assets/img/clients/delta-development.png",
+      "alt": "Delta Development"
+    },
+    {
+      "src": "assets/img/clients/alfa-laval.svg",
+      "alt": "Alfa Laval"
+    },
+    {
+      "src": "assets/img/clients/master-solutions.jpg",
+      "alt": "Master Solutions"
+    }
+  ],
+  "insights": [
+    {
+      "cat": "Risk Planning",
+      "title": "The Food Facility Expansion Risk Audit",
+      "body": "Utility, AHJ, inspection, phasing, and budget risks-exposed before they delay production or blow up the project."
+    },
+    {
+      "cat": "Project Controls",
+      "title": "Owner's Guide to Budget Certainty",
+      "body": "How early preconstruction and risk discovery keep the number you approved close to the number you actually pay."
+    },
+    {
+      "cat": "Conversions",
+      "title": "USDA Conversion Checklist",
+      "body": "Before you convert an industrial building, know whether it can actually support food processing-and what it will cost."
+    }
+  ],
+  "resources": [
+    {
+      "slug": "food-facility-expansion-risk-audit",
+      "category": "Risk Planning",
+      "title": "The Food Facility Expansion Risk Audit",
+      "format": "Guide / PDF",
+      "gated": true,
+      "featured": true,
+      "desc": "A field-tested framework for exposing the utility, AHJ, inspection, phasing, and budget risks that delay or blow up a food facility expansion-before they become expensive field problems. [Sample copy - replace later.]"
+    },
+    {
+      "slug": "owners-guide-budget-certainty",
+      "category": "Project Controls",
+      "title": "Owner's Guide to Budget Certainty",
+      "format": "Guide / PDF",
+      "gated": true,
+      "featured": false,
+      "desc": "How early preconstruction and risk discovery keep the number you approved close to the number you actually pay. [Sample copy - replace later.]"
+    },
+    {
+      "slug": "usda-conversion-checklist",
+      "category": "Conversions",
+      "title": "USDA Conversion Checklist",
+      "format": "Checklist / PDF",
+      "gated": false,
+      "featured": false,
+      "desc": "Before you convert an industrial building, know whether it can actually support food processing-and what it will really cost. [Sample copy - replace later.]"
+    },
+    {
+      "slug": "active-plant-construction-playbook",
+      "category": "Operations",
+      "title": "Active-Plant Construction Playbook",
+      "format": "Guide / PDF",
+      "gated": true,
+      "featured": false,
+      "desc": "Phasing, partitions, sanitation windows, and off-hour work-how to add capacity without shutting down the line. [Sample copy - replace later.]"
+    },
+    {
+      "slug": "utility-ahj-readiness-brief",
+      "category": "Permitting",
+      "title": "Utility & AHJ Readiness Brief",
+      "format": "Brief / PDF",
+      "gated": false,
+      "featured": false,
+      "desc": "Why utility lead times and permitting uncertainty quietly wreck schedules-and how to force those risks to the surface early. [Sample copy - replace later.]"
+    },
+    {
+      "slug": "senior-living-preconstruction-checklist",
+      "category": "Senior Living",
+      "title": "Senior Living Preconstruction Checklist",
+      "format": "Checklist / PDF",
+      "gated": false,
+      "featured": false,
+      "desc": "A HUD-aware preconstruction checklist for wood-frame senior living, from feasibility through long-lead procurement. [Sample copy - replace later.]"
+    }
+  ],
+  "testimonials": {
+    "enabled": false,
+    "heading": "What owners say",
+    "subhead": "Real results from owners, developers, and operators we've delivered for.",
+    "items": [
+      {
+        "published": true,
+        "quote": "[Sample testimonial - replace with a real client quote about schedule, budget, or communication.]",
+        "name": "Client Name",
+        "title": "VP of Operations",
+        "company": "Food Processing Co.",
+        "project": "USDA Plant Expansion",
+        "logo": ""
+      },
+      {
+        "published": true,
+        "quote": "[Sample testimonial - replace with a real client quote.]",
+        "name": "Client Name",
+        "title": "Owner / President",
+        "company": "Senior Living Developer",
+        "project": "119-Unit Assisted Living",
+        "logo": ""
+      },
+      {
+        "published": false,
+        "quote": "[Draft testimonial - set published:true to reveal once approved.]",
+        "name": "Client Name",
+        "title": "CFO",
+        "company": "Industrial Owner",
+        "project": "Facility Conversion",
+        "logo": ""
+      }
+    ]
+  },
+  "projects": [
+    {
+      "slug": "seaboard-triumph-foods",
+      "featured": true,
+      "name": "Seaboard Triumph Foods",
+      "type": "Food Processing / USDA",
+      "sector": "Food Processing",
+      "location": "Sioux City, IA",
+      "client": "Seaboard Triumph Foods",
+      "value": "$300M+",
+      "size": "700,000 SF",
+      "completion": "2017",
+      "schedule": "Delivered on schedule",
+      "cover": "assets/img/projects/seaboard.jpg",
+      "highlights": [
+        [
+          "Size",
+          "700,000 SF"
+        ],
+        [
+          "Type",
+          "Greenfield USDA Plant"
+        ]
+      ],
+      "summary": "A greenfield 700,000 SF pork processing plant-one of the largest USDA-grade facilities of its kind-built to full sanitary, refrigeration, and inspection standards while hitting an aggressive commissioning date.",
+      "challenges": "Massive utility and refrigeration loads, USDA sanitary construction throughout, long-lead equipment coordination across dozens of vendors, and a fixed commissioning window tied to production commitments.",
+      "role": "Design management, trade and schedule buyout, equipment coordination, and field execution with weekly cost-to-complete and quality checkpoints through commissioning.",
+      "outcome": "Plant delivered on schedule and commissioned to USDA standards, with utilities, refrigeration, and process equipment coordinated to support full-rate production from startup.",
+      "gallery": [
+        "assets/img/projects/seaboard.jpg",
+        "assets/img/hero-processing.jpg"
+      ]
+    },
+    {
+      "slug": "silver-birch-kokomo",
+      "featured": true,
+      "name": "Silver Birch of Kokomo",
+      "type": "Senior Living",
+      "sector": "Senior Living",
+      "location": "Kokomo, IN",
+      "client": "Silver Birch / Gardant",
+      "value": "Confidential",
+      "size": "119 Units",
+      "completion": "2019",
+      "schedule": "Delivered on schedule",
+      "cover": "assets/img/projects/silverbirch-kokomo.jpg",
+      "highlights": [
+        [
+          "Units",
+          "119 Assisted Living"
+        ],
+        [
+          "Delivery",
+          "On Schedule"
+        ]
+      ],
+      "summary": "A 119-unit assisted living community delivered on a wood-frame schedule with the finish consistency and clean closeout that senior living operators expect.",
+      "challenges": "Wood-frame speed without sacrificing quality, HUD process documentation cadence, and a finish-heavy interior on a fixed opening date.",
+      "role": "Owner-led design-build delivery from concept through closeout, including procurement of long-lead items and a punch and closeout cadence built around the opening date.",
+      "outcome": "Opened on schedule as a fully operational assisted living community, with a clean closeout package, warranties, and training logs handed over to the operator.",
+      "gallery": [
+        "assets/img/projects/silverbirch-kokomo.jpg"
+      ]
+    },
+    {
+      "slug": "maple-leaf-foods",
+      "featured": true,
+      "name": "Maple Leaf Foods",
+      "type": "Food Processing",
+      "sector": "Food Processing",
+      "location": "Brandon, MB",
+      "client": "Maple Leaf Foods",
+      "value": "$1,200 / SF",
+      "size": "Plant Addition",
+      "completion": "-",
+      "schedule": "Built around live production",
+      "cover": "assets/img/projects/maple-leaf.jpg",
+      "highlights": [
+        [
+          "Scope",
+          "Live-Plant Addition"
+        ],
+        [
+          "Value",
+          "$1,200 / SF"
+        ]
+      ],
+      "summary": "An addition to an operational pork processing plant priced at roughly $1,200 per square foot-built around live production without interrupting the line.",
+      "challenges": "Construction around an active, running plant; protecting food safety and sanitation during the work; and phasing access so production never stopped.",
+      "role": "Construction management and coordination around live operations-phasing, temporary partitions, off-hour work, and tight equipment and utility tie-ins.",
+      "outcome": "Capacity added with production continuity protected throughout, and food safety controls maintained during construction.",
+      "gallery": [
+        "assets/img/projects/maple-leaf.jpg"
+      ]
+    },
+    {
+      "slug": "silver-birch-terre-haute",
+      "featured": false,
+      "name": "Silver Birch of Terre Haute",
+      "type": "Senior Living",
+      "sector": "Senior Living",
+      "location": "Terre Haute, IN",
+      "client": "Silver Birch / Gardant",
+      "value": "Confidential",
+      "size": "119 Units",
+      "completion": "2018",
+      "schedule": "Delivered on schedule",
+      "cover": "assets/img/projects/silverbirch-terrehaute.jpg",
+      "highlights": [
+        [
+          "Units",
+          "119 Assisted Living"
+        ],
+        [
+          "Type",
+          "Wood-Frame Senior Living"
+        ]
+      ],
+      "summary": "A 119-unit assisted living community built on a wood-frame schedule, delivered through a winter build with quality and closeout discipline intact.",
+      "challenges": "Cold-weather construction sequencing, wood-frame speed targets, and HUD documentation cadence.",
+      "role": "Owner-led design-build delivery, procurement, and closeout coordination.",
+      "outcome": "Delivered on schedule and opened as a fully operational assisted living community.",
+      "gallery": [
+        "assets/img/projects/silverbirch-terrehaute.jpg"
+      ]
+    },
+    {
+      "slug": "west-shore-window-and-door",
+      "featured": false,
+      "name": "West Shore Window and Door",
+      "type": "Commercial / Industrial",
+      "sector": "Commercial",
+      "location": "-",
+      "client": "West Shore Window and Door",
+      "value": "Confidential",
+      "size": "-",
+      "completion": "-",
+      "schedule": "-",
+      "cover": "assets/img/projects/placeholder.jpg",
+      "highlights": [
+        [
+          "Sector",
+          "Commercial Build-Out"
+        ],
+        [
+          "Status",
+          "Completed"
+        ]
+      ],
+      "summary": "Commercial facility build-out for West Shore Window and Door. [Add final scope, value, and schedule once approved.]",
+      "challenges": "[Add project challenges.]",
+      "role": "Construction management and field coordination.",
+      "outcome": "[Add outcome / results.]",
+      "gallery": [
+        "assets/img/projects/placeholder.jpg"
+      ]
+    },
+    {
+      "slug": "heartland-fleet-facility",
+      "featured": false,
+      "name": "Heartland Facility",
+      "type": "Industrial",
+      "sector": "Industrial",
+      "location": "-",
+      "client": "Heartland",
+      "value": "$415K",
+      "size": "-",
+      "completion": "-",
+      "schedule": "-",
+      "cover": "assets/img/projects/placeholder.jpg",
+      "highlights": [
+        [
+          "Value",
+          "$415K"
+        ],
+        [
+          "Type",
+          "Pre-Engineered Metal"
+        ]
+      ],
+      "summary": "A pre-engineered metal industrial facility. [Add final scope and schedule once approved.]",
+      "challenges": "[Add project challenges.]",
+      "role": "Construction management and field coordination.",
+      "outcome": "[Add outcome / results.]",
+      "gallery": [
+        "assets/img/projects/placeholder.jpg"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+---
+import Base from '../../layouts/Base.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import data from '../../data/content.json';
+const projects = data.projects;
+const sectors = [...new Set(projects.map((p) => p.sector))];
+const title = "Projects | Wright Construction Management";
+const description = "Food processing, USDA, senior living, and commercial construction projects delivered by Wright Construction Management across the Midwest.";
+---
+<Base title={title} description={description}>
+  <section class="page-banner"><div class="wrap">
+    <div class="breadcrumb"><a href="/">Home</a> / Projects</div>
+    <h1>Projects</h1>
+    <p>Complex builds, tight constraints, and active-plant work&mdash;delivered on budget and on schedule. Filter by sector below.</p>
+  </div></section>
+  <section><div class="wrap">
+    <div class="filterbar" id="filterbar">
+      <button class="active" data-f="all">All Projects</button>
+      {sectors.map((s) => (<button data-f={s}>{s}</button>))}
+    </div>
+    <div class="proj-grid" id="projGrid">{projects.map((p) => (<ProjectCard p={p} />))}</div>
+  </div></section>
+  <script is:inline>
+    var bar = document.getElementById('filterbar');
+    bar.addEventListener('click', function (e) {
+      if (e.target.tagName !== 'BUTTON') return;
+      bar.querySelectorAll('button').forEach(function (b) { b.classList.remove('active'); });
+      e.target.classList.add('active');
+      var f = e.target.getAttribute('data-f');
+      document.querySelectorAll('#projGrid .proj').forEach(function (c) {
+        c.style.display = (f === 'all' || c.getAttribute('data-sector') === f) ? '' : 'none';
+      });
+    });
+  </script>
+</Base>

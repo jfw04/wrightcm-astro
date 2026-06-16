@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+import FinalCta from '../components/FinalCta.astro';
+import ResourceCard from '../components/ResourceCard.astro';
+import data from '../data/content.json';
+const resources = data.resources;
+const feat = resources.find((r) => r.featured) || resources[0];
+const rest = resources.filter((r) => r !== feat);
+const title = "White Papers & Resources | Wright Construction Management";
+const description = "Practical construction risk-planning, budget, and USDA conversion guides for owners and developers from Wright Construction Management.";
+---
+<Base title={title} description={description}>
+  <section class="page-banner"><div class="wrap">
+    <div class="breadcrumb"><a href="/">Home</a> / White Papers</div>
+    <h1>White Papers &amp; Resources</h1>
+    <p>Practical guides that help owners de-risk a project before breaking ground. Each one can stand alone as a downloadable PDF or a dedicated landing page with a lead-capture form.</p>
+  </div></section>
+  <section><div class="wrap">
+    <div class="res-featured">
+      <div class="copy"><span class="cat">Featured &middot; {feat.category}</span><h2>{feat.title}</h2><p>{feat.desc}</p>
+        <a href={`/whitepapers/${feat.slug}`} class="btn btn-primary">Get the Guide</a></div>
+      <div class="art"><div><div class="big">WCM</div><div class="lbl">{feat.format}</div></div></div>
+    </div>
+    <span class="eyebrow" style="display:block;margin-top:56px">More resources</span>
+    <h2 class="section-title">The library</h2>
+    <div class="res-grid">{rest.map((r) => (<ResourceCard r={r} />))}</div>
+    <p class="form-note" style="margin-top:30px;text-align:left;max-width:70ch">These are sample placeholders. Each resource is structured to support a dedicated landing page at <code style="background:#0d2237;color:#cfe0f0;padding:2px 7px;border-radius:5px">/whitepapers/&lt;slug&gt;</code> with an optional gated download form. Add or edit them in <strong>src/data/content.json</strong> &rarr; <em>resources</em>.</p>
+  </div></section>
+  <FinalCta heading="Want a specific topic covered?" sub="Tell us what would actually help on your project. We'll point you to the right resource—or build one." label="Get in Touch" />
+</Base>

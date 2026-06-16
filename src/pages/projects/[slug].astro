@@ -1,0 +1,37 @@
+---
+import Base from '../../layouts/Base.astro';
+import FinalCta from '../../components/FinalCta.astro';
+import data from '../../data/content.json';
+export function getStaticPaths() {
+  return data.projects.map((p) => ({ params: { slug: p.slug }, props: { p } }));
+}
+const { p } = Astro.props;
+const rows = [
+  ['Sector', 'sector'], ['Location', 'location'], ['Client / Owner', 'client'],
+  ['Project Type', 'type'], ['Construction Value', 'value'], ['Size', 'size'],
+  ['Completed', 'completion'], ['Schedule', 'schedule'],
+];
+const title = `${p.name} | Wright Construction Management`;
+---
+<Base title={title} description={p.summary.slice(0, 155)}>
+  <section class="pd-hero"><img class="bg" src={`/${p.cover}`} alt="" />
+    <div class="wrap inner">
+      <div class="breadcrumb"><a href="/">Home</a> / <a href="/projects">Projects</a> / {p.name}</div>
+      <div class="type">{p.type}</div><h1>{p.name}</h1><div class="loc">{p.location}</div>
+    </div>
+  </section>
+  <section><div class="wrap"><div class="pd-layout">
+    <div class="pd-body">
+      <h2>Overview</h2><p>{p.summary}</p>
+      <h2>Challenges</h2><p>{p.challenges}</p>
+      <h2>Wright CM's Role</h2><p>{p.role}</p>
+      <h2>Outcome</h2><p>{p.outcome}</p>
+      <div class="gallery">{(p.gallery || []).map((g) => (<img src={`/${g}`} alt={p.name} loading="lazy" />))}</div>
+    </div>
+    <aside class="pd-facts"><h3>Project Facts</h3>
+      {rows.map(([label, key]) => (<div class="row"><span>{label}</span><strong>{p[key] || '—'}</strong></div>))}
+      <a href="/contact" class="btn btn-primary">Start a Project Like This</a>
+    </aside>
+  </div></div></section>
+  <FinalCta heading="Have a project with constraints like these?" sub="Book a 15-minute Fixed-Fee Feasibility call and we'll surface the biggest cost, schedule, and operational risks early." />
+</Base>

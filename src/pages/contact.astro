@@ -1,0 +1,58 @@
+---
+import Base from '../layouts/Base.astro';
+const title = "Contact | Wright Construction Management";
+const description = "Start a project inquiry or book a 15-minute Fixed-Fee Feasibility call with Wright Construction Management. Serving Chicagoland, Indiana, and Wisconsin.";
+const phoneSvg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>`;
+const mailSvg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 7-10 5L2 7"/></svg>`;
+const pinSvg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`;
+const liSvg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z"/></svg>`;
+---
+<Base title={title} description={description}>
+  <section class="page-banner"><div class="wrap">
+    <div class="breadcrumb"><a href="/">Home</a> / Contact</div>
+    <h1>Let's talk about your project.</h1>
+    <p>Tell us what you're planning. We'll identify the biggest cost, schedule, and operational risks&mdash;before scope, cost, or schedule get away from you. Most conversations start with a 15-minute Fixed-Fee Feasibility call.</p>
+  </div></section>
+  <section><div class="wrap"><div class="contact-layout">
+    <div class="form-card">
+      <h2>Start a project inquiry</h2>
+      <p class="sub">The more detail you can share, the more useful our first call will be.</p>
+      <form id="inquiry" onsubmit="return wcmSubmit(event)">
+        <div class="form-grid">
+          <div class="field"><label>Name</label><input name="name" required placeholder="Your name" /></div>
+          <div class="field"><label>Company</label><input name="company" placeholder="Company / organization" /></div>
+          <div class="field"><label>Email</label><input type="email" name="email" required placeholder="you@company.com" /></div>
+          <div class="field"><label>Phone</label><input name="phone" placeholder="(000) 000-0000" /></div>
+          <div class="field"><label>Project Location</label><input name="location" placeholder="City, State" /></div>
+          <div class="field"><label>Project Type</label><select name="type"><option value="">Select one&hellip;</option><option>Food Processing / USDA</option><option>Senior Living / Assisted Living</option><option>Industrial</option><option>Commercial</option><option>Other</option></select></div>
+          <div class="field"><label>Estimated Project Value</label><select name="value"><option value="">Select a range&hellip;</option><option>Under $1M</option><option>$1M &ndash; $5M</option><option>$5M &ndash; $20M</option><option>$20M+</option><option>Not sure yet</option></select></div>
+          <div class="field"><label>Desired Start Date <span class="opt">(optional)</span></label><input type="date" name="start" /></div>
+          <div class="field full"><label>Message</label><textarea name="message" placeholder="What are you planning? What's driving the timeline? Any constraints we should know about?"></textarea></div>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Project Inquiry</button>
+        <p class="form-note">Prefer email? Write us at <a href="mailto:jwright@wrightcm.co" style="color:var(--navy-2);font-weight:600">jwright@wrightcm.co</a>. &nbsp;<span style="opacity:.7">(Demo form &mdash; connect to Netlify Forms, Formspree, or HubSpot at launch.)</span></p>
+      </form>
+    </div>
+    <div class="contact-aside">
+      <div class="block" style="padding:0;overflow:hidden">
+        <div style="padding:22px 26px 4px"><span class="pill" style="margin-bottom:0">Book a 15-minute call</span></div>
+        <div class="calendly-inline-widget" data-url="https://calendly.com/jwright-wrightcm/30min?hide_gdpr_banner=1&amp;primary_color=e1241f" style="min-width:300px;height:680px;"></div>
+        <script is:inline src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      </div>
+      <div class="block">
+        <h3>Direct contact</h3>
+        <div class="line"><span set:html={phoneSvg}></span><a href="tel:7174227148">(717) 422-7148</a></div>
+        <div class="line"><span set:html={mailSvg}></span><a href="mailto:jwright@wrightcm.co">jwright@wrightcm.co</a></div>
+        <div class="line"><span set:html={pinSvg}></span><span>Chicagoland &middot; Indiana &middot; Wisconsin</span></div>
+        <div class="line"><span set:html={liSvg}></span><a href="#">LinkedIn &rarr;</a></div>
+      </div>
+    </div>
+  </div></div></section>
+  <script is:inline>
+    function wcmSubmit(e) {
+      e.preventDefault();
+      e.target.innerHTML = '<div style="text-align:center;padding:30px 10px"><h3 style="color:var(--navy);font-size:1.3rem">Thanks &mdash; we will be in touch.</h3><p style="color:var(--muted);margin-top:10px">This is a demo form. At launch it will deliver straight to jwright@wrightcm.co and log the inquiry.</p></div>';
+      return false;
+    }
+  </script>
+</Base>

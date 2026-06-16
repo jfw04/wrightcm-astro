@@ -1,0 +1,166 @@
+---
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import data from '../data/content.json';
+const featured = data.projects.filter((p) => p.featured);
+const testi = data.testimonials || { enabled: false, items: [] };
+const testiItems = (testi.items || []).filter((t) => t.published);
+const showTesti = testi.enabled && testiItems.length > 0;
+const title = "Wright Construction Management | Owner-Led Design-Build CM for Food Processing & Senior Living";
+const description = "Wright Construction Management helps food processors and senior living developers expand, convert, and build—on budget, ahead of schedule, without shutting down production. Owner-led design-build CM across Chicagoland, Indiana, and Wisconsin.";
+---
+<Base title={title} description={description}>
+
+  <section class="hero">
+    <div class="hero-bg"><img src="/assets/img/hero-processing.jpg" alt="Food processing facility built by Wright Construction Management" /></div>
+    <div class="wrap hero-inner">
+      <span class="eyebrow" style="color:#ff8c87">Chicagoland · Indiana · Wisconsin</span>
+      <h1>Expand Your Food Processing Facility Without Shutting Down Production.</h1>
+      <p class="sub">Owner-led design-build construction management for food processors and senior living developers. We expose the utility, permitting, inspection, and budget risks early—so your project stays on schedule, on budget, and on track.</p>
+      <div class="hero-cta">
+        <a href="/contact" class="btn btn-primary">Schedule a Call</a>
+        <a href="/projects" class="btn btn-outline-white">View Projects</a>
+      </div>
+      <div class="hero-meta">
+        <div><span>Schedule</span><strong>~3 months ahead, on average</strong></div>
+        <div><span>Cost</span><strong>On budget · &lt;1% change orders</strong></div>
+        <div><span>Delivery</span><strong>Owner-led — no junior PM handoff</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="wrap core">
+      <div>
+        <span class="eyebrow">Why projects really fail</span>
+        <blockquote>Food facility expansions don't fail because someone forgot how to build walls. They fail because the hidden risks weren't forced into the open early enough.</blockquote>
+      </div>
+      <div class="body">
+        <p>Utility service isn't ready. The AHJ takes longer than expected. Designers overrun the budget. Inspectors find late-stage issues. Production can't be interrupted. Food safety controls aren't protected. Equipment needs weren't coordinated. Existing conditions were underestimated.</p>
+        <p><strong>Wright Construction Management is the single accountable partner</strong> who exposes the risks that delay, inflate, or disrupt your project—before they become expensive field problems. We understand washdown environments, sanitation, refrigeration, utility loads, process flow, and inspection-driven construction, because generic contractors miss the operational realities of food plants.</p>
+        <p>One owner-led team. Design through closeout. Fewer handoffs, fewer surprises, fewer change orders.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="wrap">
+      <div class="grid">
+        {data.stats.map((s) => (
+          <div class={`stat ${s.zero ? 'zero' : ''}`}>
+            <div class="num" data-prefix={s.prefix || ''} data-target={s.value} data-suffix={s.suffix || ''}>{(s.prefix||'') + '0' + (s.suffix||'')}</div>
+            <div class="label">{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section-soft">
+    <div class="wrap">
+      <span class="eyebrow">What we do</span>
+      <h2 class="section-title">Built around two things we know cold—plus the CM rigor every owner needs.</h2>
+      <div class="svc-grid">
+        {data.services.map((s) => (
+          <div class="svc-card"><span class="svc-tag">{s.tag.replace('(TM)','™')}</span><h3>{s.title}</h3><p>{s.body}</p><a href="/services" class="more">Explore this service →</a></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap">
+      <span class="eyebrow">Our process</span>
+      <h2 class="section-title">A risk-first process that protects schedule, cost, and uptime.</h2>
+      <p class="lead" style="margin-top:14px">We force the expensive problems into the open early—then drive speed and cost discipline all the way to closeout.</p>
+      <div class="proc-grid">
+        {data.process.map((p) => (
+          <div class="proc"><div class="step">{p.step}</div><h3>{p.title}</h3><p>{p.body}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-soft" style="padding:60px 0">
+    <div class="wrap" style="text-align:center">
+      <span class="eyebrow">Trusted by owners, developers &amp; operators</span>
+      <div class="logos-row">
+        {data.clients.map((c) => (<img src={`/${c.src}`} alt={c.alt} loading="lazy" />))}
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:14px">
+        <div><span class="eyebrow">Featured projects</span><h2 class="section-title">Complex builds. Tight constraints. Delivered.</h2></div>
+        <a href="/projects" class="btn btn-ghost">View All Projects</a>
+      </div>
+      <div class="proj-grid">{featured.map((p) => (<ProjectCard p={p} />))}</div>
+    </div>
+  </section>
+
+  {showTesti && (
+    <section id="testimonials">
+      <div class="wrap">
+        <span class="eyebrow">Testimonials</span>
+        <h2 class="section-title">{testi.heading || 'What owners say'}</h2>
+        <p class="lead" style="margin-top:14px">{testi.subhead || ''}</p>
+        <div class="testi-grid">
+          {testiItems.map((t) => (
+            <figure class="testi">
+              <blockquote>{t.quote}</blockquote>
+              <figcaption><strong>{t.name}</strong><div class="role">{[t.title, t.company].filter(Boolean).join(', ')}</div>{t.project && <span class="proj">{t.project}</span>}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section id="insights" class="section-soft">
+    <div class="wrap">
+      <span class="eyebrow">Insights &amp; resources</span>
+      <h2 class="section-title">Guides that help owners de-risk a project before breaking ground.</h2>
+      <div class="ins-grid">
+        {data.insights.map((i) => (
+          <div class="ins"><span class="cat">{i.cat}</span><h3>{i.title}<span class="badge-soon">Coming soon</span></h3><p>{i.body}</p><a href="/whitepapers" class="dl">Download guide →</a></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="final" id="contact">
+    <div class="wrap">
+      <span class="eyebrow" style="color:#ff8c87">Let's talk</span>
+      <h2>Planning a project and want fewer surprises?</h2>
+      <p>Let's talk before scope, cost, or schedule get away from you. Book a 15-minute Fixed-Fee Feasibility call and we'll identify the biggest cost, schedule, and operational risks before you commit.</p>
+      <a href="/contact" class="btn btn-primary">Schedule a Call</a>
+    </div>
+  </section>
+
+  <script is:inline>
+    function wcmCount() {
+      document.querySelectorAll('.stats .num').forEach(function (el) {
+        var target = parseFloat(el.getAttribute('data-target') || '0');
+        var prefix = el.getAttribute('data-prefix') || '', suffix = el.getAttribute('data-suffix') || '';
+        var dur = 1500, start = performance.now();
+        function tick(now) {
+          var t = Math.min((now - start) / dur, 1);
+          var eased = 1 - Math.pow(1 - t, 3);
+          el.textContent = prefix + Math.round(target * eased) + suffix;
+          if (t < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }
+    var s = document.querySelector('.stats');
+    if ('IntersectionObserver' in window && s) {
+      var io = new IntersectionObserver(function (es, obs) {
+        es.forEach(function (e) { if (e.isIntersecting) { wcmCount(); obs.disconnect(); } });
+      }, { threshold: 0.4 });
+      io.observe(s);
+    } else { wcmCount(); }
+  </script>
+
+</Base>

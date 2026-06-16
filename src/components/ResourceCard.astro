@@ -1,0 +1,10 @@
+---
+const { r } = Astro.props;
+---
+<div class="res">
+  <div class="top"><span class="cat">{r.category} &middot; {r.format}</span><h3>{r.title}</h3><p>{r.desc}</p></div>
+  <div class="foot">
+    <a class="dl" href={`/whitepapers/${r.slug}`}>Read / Download &rarr;</a>
+    {r.gated ? <span class="gated">Gated &middot; lead form</span> : <span class="gated" style="color:var(--navy-2)">Free download</span>}
+  </div>
+</div>

@@ -1,0 +1,12 @@
+---
+const { p } = Astro.props;
+---
+<a class="proj" href={`/projects/${p.slug}`} data-sector={p.sector}>
+  <div class="ph"><img src={`/${p.cover}`} alt={p.name} loading="lazy" /></div>
+  <div class="body">
+    <span class="type">{p.type}</span>
+    <h3>{p.name}</h3>
+    <div class="loc">{p.location}</div>
+    <div class="facts">{p.highlights.map((f) => (<div><span>{f[0]}</span><strong>{f[1]}</strong></div>))}</div>
+  </div>
+</a>

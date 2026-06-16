@@ -1,0 +1,66 @@
+---
+import Base from '../layouts/Base.astro';
+import FinalCta from '../components/FinalCta.astro';
+const title = "About Jeremy Wright | Wright Construction Management";
+const description = "Wright Construction Management is led by Jeremy Wright, who has managed over $820M in construction. Penn State civil/structural engineer and owner-led design-build leader.";
+---
+<Base title={title} description={description}>
+  <section class="page-banner"><div class="wrap">
+    <div class="breadcrumb"><a href="/">Home</a> / About</div>
+    <h1>Owner-led, by design.</h1>
+    <p>Wright Construction Management exists so owners get a senior, accountable leader on their project&mdash;not a junior PM handoff. The person who wins your trust is the person who runs your job.</p>
+  </div></section>
+  <section><div class="wrap"><div class="about-hero">
+    <div class="portrait"><img src="/assets/img/jeremy-placeholder.jpg" alt="Jeremy Wright, President of Wright Construction Management" />
+      <div class="cap"><strong>Jeremy Wright</strong><span>President &amp; Founder</span></div></div>
+    <div class="bio"><span class="eyebrow">Founder &amp; Principal</span><h1>Jeremy Wright</h1>
+      <p>Jeremy founded Wright Construction Management to bring design and construction expertise under one accountable roof. He brings a decade of design-build and project-management experience and has directly managed <strong>over $820 million in construction</strong> across numerous product types, client structures, and contract styles.</p>
+      <p>His value shows up early: a civil and structural engineering background lets him spot value-engineering opportunities and constructability issues before they reach the field. Moving into construction, he applies meticulous attention to detail to eliminate scope gaps and communication breakdowns&mdash;<strong>keeping projects on schedule and on track financially.</strong></p>
+      <div class="cred-row">
+        <div><span>Managed</span><strong>$820M+</strong></div>
+        <div><span>Experience</span><strong>10+ years design-build</strong></div>
+        <div><span>Education</span><strong>Penn State, Civil (Structural)</strong></div>
+        <div><span>Delivery</span><strong>Owner-led, every job</strong></div>
+      </div>
+    </div>
+  </div></div></section>
+  <section class="section-soft"><div class="wrap"><div class="two-col">
+    <div><span class="eyebrow">Why Wright CM exists</span><h2 class="section-title">Most projects fail in the messy middle. We own it.</h2>
+      <p class="lead" style="margin-top:16px">Expansions and conversions rarely fail because someone forgot how to build. They fail because hidden risks&mdash;utilities, permitting, inspections, existing conditions&mdash;weren't forced into the open early enough. We built this firm to be the single partner who exposes those risks before they become expensive field problems.</p></div>
+    <div><span class="eyebrow">What clients can expect</span><div style="margin-top:14px">
+      <div class="qa" style="margin-bottom:16px"><h4 style="color:var(--red);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px">Direct access</h4><p style="color:var(--muted)">You work with the owner as your primary point person&mdash;no junior PM handoff.</p></div>
+      <div class="qa" style="margin-bottom:16px"><h4 style="color:var(--red);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px">Budget before overcommitment</h4><p style="color:var(--muted)">Early budgets, feasibility reviews, and phasing plans before major commitments.</p></div>
+      <div class="qa"><h4 style="color:var(--red);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px">Schedule certainty</h4><p style="color:var(--muted)">We buy out the schedule as hard as we buy out cost, with weekly control.</p></div>
+    </div></div>
+  </div></div></section>
+  <section><div class="wrap"><div class="two-col" style="align-items:start">
+    <div><span class="eyebrow">Background</span><h2 class="section-title">Experience</h2>
+      <div class="timeline">
+        <div class="item"><strong>Wright Construction Management</strong><span>President &amp; Founder</span></div>
+        <div class="item"><strong>Wright Property Management</strong><span>President</span></div>
+        <div class="item"><strong>ARCO/Murray</strong><span>Project Manager</span></div>
+        <div class="item"><strong>Epstein (Architecture, Engineering &amp; Construction)</strong><span>Project Manager</span></div>
+        <div class="item"><strong>Cumberland Design &amp; Building Company</strong><span>Project Manager</span></div>
+        <div class="item"><strong>Ritchie Engineering, P.C.</strong><span>Project Engineer</span></div>
+      </div>
+      <div style="margin-top:24px"><span class="eyebrow">Education</span>
+        <p style="color:var(--muted);margin-top:8px"><strong style="color:var(--navy)">Penn State University</strong> &mdash; B.S., Civil Engineering (Structural)</p></div>
+    </div>
+    <div><span class="eyebrow">Core competencies</span>
+      <div class="tag-list">
+        <span>Value Engineering</span><span>Project Management</span><span>Scheduling</span><span>Negotiation</span>
+        <span>Due Diligence</span><span>Estimating</span><span>Design Management</span><span>Code Compliance</span>
+        <span>Cost Control</span><span>Structural Engineering</span>
+      </div>
+      <span class="eyebrow" style="display:block;margin-top:34px">Sample project experience</span>
+      <div class="timeline" style="margin-top:14px">
+        <div class="item"><strong>Seaboard Triumph Foods &mdash; Sioux City, IA</strong><span>700,000 SF pork processing plant</span></div>
+        <div class="item"><strong>Prestage Foods &mdash; Eagle Grove, IA</strong><span>700,000 SF pork processing plant</span></div>
+        <div class="item"><strong>Maple Leaf Foods &mdash; Brandon, MB</strong><span>Live-plant addition at ~$1,200/SF</span></div>
+        <div class="item"><strong>Lake Shore Manor &mdash; East Chicago, IN</strong><span>206-unit HUD-financed senior care</span></div>
+        <div class="item"><strong>Silver Birch &mdash; Kokomo, Terre Haute &amp; more, IN</strong><span>119-unit assisted living communities</span></div>
+      </div>
+    </div>
+  </div></div></section>
+  <FinalCta heading="Want this level of ownership on your project?" sub="Talk directly with Jeremy. Book a 15-minute call and we'll surface the biggest risks before scope, cost, or schedule get away from you." label="Schedule a Call with Jeremy" />
+</Base>

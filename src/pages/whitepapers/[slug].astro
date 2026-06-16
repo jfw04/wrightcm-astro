@@ -1,0 +1,33 @@
+---
+import Base from '../../layouts/Base.astro';
+import FinalCta from '../../components/FinalCta.astro';
+import data from '../../data/content.json';
+export function getStaticPaths() {
+  return data.resources.map((r) => ({ params: { slug: r.slug }, props: { r } }));
+}
+const { r } = Astro.props;
+const title = `${r.title} | Wright Construction Management`;
+---
+<Base title={title} description={r.desc.slice(0, 150)}>
+  <section class="pd-hero" style="min-height:auto">
+    <div class="wrap inner">
+      <div class="breadcrumb"><a href="/">Home</a> / <a href="/whitepapers">White Papers</a> / {r.title}</div>
+      <div class="type">{r.category} &middot; {r.format}</div><h1>{r.title}</h1>
+    </div>
+  </section>
+  <section><div class="wrap"><div class="pd-layout">
+    <div class="pd-body">
+      <p style="font-size:1.1rem">{r.desc}</p>
+      <h2>What's inside</h2>
+      <p>[Outline coming soon. Replace with the key sections, takeaways, and who the guide is for. This is the dedicated landing page for the resource—wire a gated form or a direct PDF download here.]</p>
+      <h2>Who it's for</h2>
+      <p>[Describe the ideal reader—owners, developers, operators, CFOs—and the decision this guide helps them make.]</p>
+    </div>
+    <aside class="pd-facts">
+      <h3>Get the guide</h3>
+      <p style="color:var(--muted);font-size:.92rem;margin-bottom:14px">{r.gated ? 'Enter your details to download. (Connect a lead form at launch.)' : 'Free download — no form required.'}</p>
+      <a href="mailto:jwright@wrightcm.co?subject=Resource%20Request" class="btn btn-primary">{r.gated ? 'Request Access' : 'Download PDF'}</a>
+    </aside>
+  </div></div></section>
+  <FinalCta heading="Want to talk it through instead?" sub="Book a 15-minute Fixed-Fee Feasibility call and we'll apply this directly to your project." />
+</Base>
