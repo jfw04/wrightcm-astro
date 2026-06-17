@@ -15,7 +15,7 @@
     },
     {
       "prefix": "~",
-      "value": 3,
+      "value": 2,
       "suffix": " mo",
       "label": "Ahead of Schedule (avg)"
     },
@@ -77,38 +77,36 @@
     }
   ],
   "clients": [
-    {
-      "src": "assets/img/clients/seaboard-triumph.jpg",
-      "alt": "Seaboard Triumph Foods"
-    },
-    {
-      "src": "assets/img/clients/triumph-foods.svg",
-      "alt": "Triumph Foods"
-    },
-    {
-      "src": "assets/img/clients/mistica-foods.jpg",
-      "alt": "Mistica Foods"
-    },
-    {
-      "src": "assets/img/clients/gardant.png",
-      "alt": "Gardant Management Solutions"
-    },
-    {
-      "src": "assets/img/clients/vermilion.svg",
-      "alt": "Vermilion Development"
-    },
-    {
-      "src": "assets/img/clients/delta-development.png",
-      "alt": "Delta Development"
-    },
-    {
-      "src": "assets/img/clients/alfa-laval.svg",
-      "alt": "Alfa Laval"
-    },
-    {
-      "src": "assets/img/clients/master-solutions.jpg",
-      "alt": "Master Solutions"
-    }
+    { "src": "assets/img/clients/seaboard-triumph.png", "alt": "Seaboard Triumph Foods" },
+    { "src": "assets/img/clients/triumph-foods.png", "alt": "Triumph Foods" },
+    { "src": "assets/img/clients/prestage-foods.png", "alt": "Prestage Foods" },
+    { "src": "assets/img/clients/amigos-meat.png", "alt": "Amigos Meat" },
+    { "src": "assets/img/clients/martin-produce.png", "alt": "Martin Produce" },
+    { "src": "assets/img/clients/ventura-foods.png", "alt": "Ventura Foods" },
+    { "src": "assets/img/clients/mistica-foods.png", "alt": "Mistica Foods" },
+    { "src": "assets/img/clients/silver-birch.png", "alt": "Silver Birch" },
+    { "src": "assets/img/clients/gardant.png", "alt": "Gardant Management Solutions" },
+    { "src": "assets/img/clients/vermilion.png", "alt": "Vermilion Development" },
+    { "src": "assets/img/clients/delta-development.png", "alt": "Delta Development" },
+    { "src": "assets/img/clients/foote-capital.png", "alt": "Foote Capital" },
+    { "src": "assets/img/clients/greenway.png", "alt": "Greenway" },
+    { "src": "assets/img/clients/dtm.png", "alt": "DTM" },
+    { "src": "assets/img/clients/eaton.png", "alt": "Eaton" },
+    { "src": "assets/img/clients/interlake-mecalux.png", "alt": "Interlake Mecalux" },
+    { "src": "assets/img/clients/lb-smith.png", "alt": "LB Smith" },
+    { "src": "assets/img/clients/plant-site-logistics.png", "alt": "Plant Site Logistics" },
+    { "src": "assets/img/clients/west-shore.png", "alt": "West Shore Window and Door" },
+    { "src": "assets/img/clients/hoffman.png", "alt": "Hoffman" },
+    { "src": "assets/img/clients/daily-express.png", "alt": "Daily Express" },
+    { "src": "assets/img/clients/master-solutions.png", "alt": "Master Solutions" },
+    { "src": "assets/img/clients/select-collision.png", "alt": "Select Collision Group" },
+    { "src": "assets/img/clients/turner-kia.png", "alt": "Turner Kia" },
+    { "src": "assets/img/clients/campus-door.png", "alt": "Campus Door" },
+    { "src": "assets/img/clients/calc.png", "alt": "Carlisle Arts Learning Center" },
+    { "src": "assets/img/clients/ymca.png", "alt": "YMCA" },
+    { "src": "assets/img/clients/martson-law.png", "alt": "Martson Law" },
+    { "src": "assets/img/clients/celect.png", "alt": "Celect Installations" },
+    { "src": "assets/img/clients/alfa-laval.png", "alt": "Alfa Laval" }
   ],
   "insights": [
     {

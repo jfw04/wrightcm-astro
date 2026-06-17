@@ -81,11 +81,13 @@ const description = "Wright Construction Management helps food processors and se
     </div>
   </section>
 
-  <section class="section-soft" style="padding:60px 0">
+  <section class="section-soft" style="padding:56px 0;overflow:hidden">
     <div class="wrap" style="text-align:center">
       <span class="eyebrow">Trusted by owners, developers &amp; operators</span>
-      <div class="logos-row">
-        {data.clients.map((c) => (<img src={`/${c.src}`} alt={c.alt} loading="lazy" />))}
+    </div>
+    <div class="marquee">
+      <div class="marquee-track">
+        {[...data.clients, ...data.clients].map((c) => (<img src={`/${c.src}`} alt={c.alt} loading="lazy" />))}
       </div>
     </div>
   </section>

@@ -29,7 +29,9 @@ section{padding:84px 0}
 
 header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
-.brand img{height:44px;width:auto}
+.brand img{height:56px;width:auto}
+.tagline-bar{border-top:1px solid var(--line);background:#fff;text-align:center;padding:7px 0}
+.tagline-bar span{font-size:.72rem;font-weight:700;letter-spacing:.42em;text-transform:uppercase;color:var(--navy);padding-left:.42em}
 .nav-links{display:flex;align-items:center;gap:30px;list-style:none}
 .nav-links a{font-weight:600;font-size:.95rem;color:var(--ink);position:relative;padding:4px 0}
 .nav-links a:hover{color:var(--navy-2)}
@@ -86,6 +88,14 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);ba
 .logos-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:46px;margin-top:38px}
 .logos-row img{height:46px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.62;transition:.25s;max-width:150px}
 .logos-row img:hover{filter:grayscale(0);opacity:1}
+/* scrolling logo marquee */
+.marquee{margin-top:34px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.marquee-track{display:flex;align-items:center;gap:64px;width:max-content;animation:wcm-marquee 70s linear infinite}
+.marquee-track img{height:40px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.6;transition:.25s;flex-shrink:0}
+.marquee-track img:hover{filter:grayscale(0);opacity:1}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes wcm-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none;flex-wrap:wrap;justify-content:center}}
 
 .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px}
 .proj{border-radius:var(--radius);overflow:hidden;background:#fff;border:1px solid var(--line);transition:.2s;display:flex;flex-direction:column}
