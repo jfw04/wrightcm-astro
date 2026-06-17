@@ -43,8 +43,9 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);ba
 .dropdown a span{display:block;font-weight:400;font-size:.8rem;color:var(--muted)}
 .nav-cta{display:flex;align-items:center;gap:14px}
 .nav-social{display:flex;gap:12px}
-.nav-social a{color:var(--navy);opacity:.7}
+.nav-social a{color:var(--navy);opacity:.7;display:inline-flex}
 .nav-social a:hover{opacity:1;color:var(--red)}
+.nav-social a svg{width:26px;height:26px}
 .burger{display:none;background:none;border:none;cursor:pointer;color:var(--navy)}
 
 .hero{position:relative;color:#fff;overflow:hidden;background:var(--navy)}
