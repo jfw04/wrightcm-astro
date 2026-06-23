@@ -1,0 +1,43 @@
+---
+import Base from '../layouts/Base.astro';
+import FinalCta from '../components/FinalCta.astro';
+import data from '../data/content.json';
+const news = data.news || { enabled: false, items: [] };
+const items = (news.items || []).filter((n) => n.published);
+const enabled = news.enabled && items.length > 0;
+const title = "News & Updates | Wright Construction Management";
+const description = "Project milestones, company news, and updates from Wright Construction Management.";
+function fmt(d) {
+  try { return new Date(d + 'T00:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }); }
+  catch (e) { return d; }
+}
+---
+<Base title={title} description={description}>
+  <section class="page-banner"><div class="wrap">
+    <div class="breadcrumb"><a href="/">Home</a> / News</div>
+    <h1>{news.heading || 'News & Updates'}</h1>
+    <p>{news.subhead || ''}</p>
+  </div></section>
+
+  <section><div class="wrap">
+    {enabled ? (
+      <div class="ins-grid">
+        {items.map((n) => (
+          <div class="ins">
+            <span class="cat">{n.category || 'Update'}{n.date ? ` · ${fmt(n.date)}` : ''}</span>
+            <h3>{n.title}</h3>
+            <p>{n.summary}</p>
+          </div>
+        ))}
+      </div>
+    ) : (
+      <div class="empty-state">
+        <h3>No news yet&mdash;check back soon.</h3>
+        <p>We're heads-down on projects. Company news and project milestones will appear here. In the meantime, reach out anytime.</p>
+        <a href="/contact" class="btn btn-primary">Get in Touch</a>
+      </div>
+    )}
+  </div></section>
+
+  <FinalCta heading="Planning a project?" sub="Let's talk before scope, cost, or schedule get away from you." />
+</Base>

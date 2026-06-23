@@ -15,7 +15,7 @@ const description = "Wright Construction Management helps food processors and se
     <div class="hero-bg"><img src="/assets/img/hero-processing.jpg" alt="Food processing facility built by Wright Construction Management" /></div>
     <div class="wrap hero-inner">
       <span class="eyebrow" style="color:#ff8c87">Chicagoland · Indiana · Wisconsin</span>
-      <h1>Expand Your Food Processing Facility Without Shutting Down Production.</h1>
+      <h1>Build Better, Build Faster, No Surprises.</h1>
       <p class="sub">Owner-led design-build construction management for food processors and senior living developers. We expose the utility, permitting, inspection, and budget risks early—so your project stays on schedule, on budget, and on track.</p>
       <div class="hero-cta">
         <a href="/contact" class="btn btn-primary">Schedule a Call</a>
@@ -37,7 +37,7 @@ const description = "Wright Construction Management helps food processors and se
       </div>
       <div class="body">
         <p>Utility service isn't ready. The AHJ takes longer than expected. Designers overrun the budget. Inspectors find late-stage issues. Production can't be interrupted. Food safety controls aren't protected. Equipment needs weren't coordinated. Existing conditions were underestimated.</p>
-        <p><strong>Wright Construction Management is the single accountable partner</strong> who exposes the risks that delay, inflate, or disrupt your project—before they become expensive field problems. We understand washdown environments, sanitation, refrigeration, utility loads, process flow, and inspection-driven construction, because generic contractors miss the operational realities of food plants.</p>
+        <p><strong>Wright Construction Management is your single accountable partner</strong> who exposes the risks that delay, inflate, or disrupt your project—before they become expensive field problems. We understand washdown environments, sanitation, refrigeration, utility loads, process flow, and inspection-driven construction, because generic contractors miss the operational realities of food plants.</p>
         <p>One owner-led team. Design through closeout. Fewer handoffs, fewer surprises, fewer change orders.</p>
       </div>
     </div>
@@ -59,10 +59,10 @@ const description = "Wright Construction Management helps food processors and se
   <section id="services" class="section-soft">
     <div class="wrap">
       <span class="eyebrow">What we do</span>
-      <h2 class="section-title">Built around two things we know cold—plus the CM rigor every owner needs.</h2>
+      <h2 class="section-title">We help owners plan, manage, and deliver complex construction projects at quicker speeds and with fewer surprises.</h2>
       <div class="svc-grid">
         {data.services.map((s) => (
-          <div class="svc-card"><span class="svc-tag">{s.tag.replace('(TM)','™')}</span><h3>{s.title}</h3><p>{s.body}</p><a href="/services" class="more">Explore this service →</a></div>
+          <div class="svc-card"><span class="svc-tag">{s.tag.replace('(TM)','™')}</span><h3>{s.title}</h3><p>{s.body}</p><a href={`/services/${s.slug}`} class="more">Explore this service →</a></div>
         ))}
       </div>
     </div>
@@ -136,7 +136,7 @@ const description = "Wright Construction Management helps food processors and se
     <div class="wrap">
       <span class="eyebrow" style="color:#ff8c87">Let's talk</span>
       <h2>Planning a project and want fewer surprises?</h2>
-      <p>Let's talk before scope, cost, or schedule get away from you. Book a 15-minute Fixed-Fee Feasibility call and we'll identify the biggest cost, schedule, and operational risks before you commit.</p>
+      <p>Let's talk before scope, cost, or schedule get away from you. Book a 15-minute feasibility call and we'll identify the biggest cost, schedule, and operational risks before you commit.</p>
       <a href="/contact" class="btn btn-primary">Schedule a Call</a>
     </div>
   </section>
