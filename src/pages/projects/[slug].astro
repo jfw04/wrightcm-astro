@@ -29,7 +29,7 @@ const title = `${p.name} | Wright Construction Management`;
       <div class="gallery">{(p.gallery || []).map((g) => (<img src={`/${g}`} alt={p.name} loading="lazy" />))}</div>
     </div>
     <aside class="pd-facts"><h3>Project Facts</h3>
-      {rows.map(([label, key]) => (<div class="row"><span>{label}</span><strong>{p[key] || '—'}</strong></div>))}
+      {rows.map(([label, key]) => (<div class="row"><span>{label}</span><strong>{p[key] || ', '}</strong></div>))}
       <a href="/contact" class="btn btn-primary">Start a Project Like This</a>
     </aside>
   </div></div></section>

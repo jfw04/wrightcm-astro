@@ -8,17 +8,17 @@
   ],
   "services": [
     { "slug": "food-processing-usda", "tag": "Industrial Speed-to-Commission(TM)", "title": "Food Processing & USDA Conversions",
-      "body": "Ground-up industrial facilities and conversions of existing stock into USDA-grade production-built around washdown, sanitation, refrigeration, utilities, and inspection-driven construction." },
+      "body": "Ground-up industrial facilities and conversions of existing stock into USDA-grade production, built around washdown, sanitation, refrigeration, utilities, and inspection-driven construction." },
     { "slug": "senior-living", "tag": "Senior Living Wood-Speed(TM)", "title": "Senior Living & Assisted Living",
       "body": "Ground-up senior and assisted living on wood-frame schedules, with HUD process familiarity and a closeout cadence that keeps speed from costing you quality." },
     { "slug": "commercial-construction-management", "tag": "Owner's Rep / CM-at-Risk / GMP", "title": "Commercial Construction Management",
-      "body": "For owners and developers tired of self-managing capital projects. Preconstruction, budget and schedule oversight, contractor coordination, and risk management-one accountable partner." }
+      "body": "For owners and developers tired of self-managing capital projects. Preconstruction, budget and schedule oversight, contractor coordination, and risk management, one accountable partner." }
   ],
   "process": [
-    { "step": "01", "title": "Feasibility & Budget Lock", "body": "Zoning check, concept design, ROM budget, milestone schedule, and a risk register-before you overcommit to a property purchase, design, or equipment." },
-    { "step": "02", "title": "Design Management", "body": "We keep architects and engineers aligned to your cost and speed targets, so the design matches your capital reality-not the other way around." },
+    { "step": "01", "title": "Feasibility & Budget Lock", "body": "Zoning check, concept design, ROM budget, milestone schedule, and a risk register, before you overcommit to a property purchase, design, or equipment." },
+    { "step": "02", "title": "Design Management", "body": "We keep architects and engineers aligned to your cost and speed targets, so the design matches your capital reality, not the other way around." },
     { "step": "03", "title": "Trade & Schedule Buyout", "body": "Bid leveling, scope-gap closure, and a procurement command center. We buy out the schedule as hard as we buy out cost." },
-    { "step": "04", "title": "Active-Plant Build Execution", "body": "Construction planned around live production-phasing, partitions, off-hours work, dust and contamination control, and weekly cost-to-complete." },
+    { "step": "04", "title": "Active-Plant Build Execution", "body": "Construction planned around live production, phasing, partitions, off-hours work, dust and contamination control, and weekly cost-to-complete." },
     { "step": "05", "title": "Owner Communication", "body": "Our in-house owner dashboard allows our clients to see in real time exactly where their project stands on schedule, cost, and design. No more waiting for vague weekly updates." },
     { "step": "06", "title": "Closeout & Accountability", "body": "Punch velocity, commissioning coordination, warranties, O&M, and a clean closeout package that protects startup and inspection." }
   ],
@@ -53,21 +53,21 @@
     { "src": "assets/img/clients/alfa-laval.png", "alt": "Alfa Laval" }
   ],
   "insights": [
-    { "cat": "Risk Planning", "title": "The Food Facility Expansion Risk Audit", "body": "Utility, AHJ, inspection, phasing, and budget risks-exposed before they delay production or blow up the project." },
+    { "cat": "Risk Planning", "title": "The Food Facility Expansion Risk Audit", "body": "Utility, AHJ, inspection, phasing, and budget risks, exposed before they delay production or blow up the project." },
     { "cat": "Project Controls", "title": "Owner's Guide to Budget Certainty", "body": "How early preconstruction and risk discovery keep the number you approved close to the number you actually pay." },
-    { "cat": "Conversions", "title": "USDA Conversion Checklist", "body": "Before you convert an industrial building, know whether it can actually support food processing-and what it will cost." }
+    { "cat": "Conversions", "title": "USDA Conversion Checklist", "body": "Before you convert an industrial building, know whether it can actually support food processing, and what it will cost." }
   ],
   "resources": [
     { "slug": "food-facility-expansion-risk-audit", "category": "Risk Planning", "title": "The Food Facility Expansion Risk Audit", "format": "Guide / PDF", "gated": true, "featured": true,
-      "desc": "A field-tested framework for exposing the utility, AHJ, inspection, phasing, and budget risks that delay or blow up a food facility expansion-before they become expensive field problems. [Sample copy - replace later.]" },
+      "desc": "A field-tested framework for exposing the utility, AHJ, inspection, phasing, and budget risks that delay or blow up a food facility expansion, before they become expensive field problems. [Sample copy - replace later.]" },
     { "slug": "owners-guide-budget-certainty", "category": "Project Controls", "title": "Owner's Guide to Budget Certainty", "format": "Guide / PDF", "gated": true, "featured": false,
       "desc": "How early preconstruction and risk discovery keep the number you approved close to the number you actually pay. [Sample copy - replace later.]" },
     { "slug": "usda-conversion-checklist", "category": "Conversions", "title": "USDA Conversion Checklist", "format": "Checklist / PDF", "gated": false, "featured": false,
-      "desc": "Before you convert an industrial building, know whether it can actually support food processing-and what it will really cost. [Sample copy - replace later.]" },
+      "desc": "Before you convert an industrial building, know whether it can actually support food processing, and what it will really cost. [Sample copy - replace later.]" },
     { "slug": "active-plant-construction-playbook", "category": "Operations", "title": "Active-Plant Construction Playbook", "format": "Guide / PDF", "gated": true, "featured": false,
-      "desc": "Phasing, partitions, sanitation windows, and off-hour work-how to add capacity without shutting down the line. [Sample copy - replace later.]" },
+      "desc": "Phasing, partitions, sanitation windows, and off-hour work, how to add capacity without shutting down the line. [Sample copy - replace later.]" },
     { "slug": "utility-ahj-readiness-brief", "category": "Permitting", "title": "Utility & AHJ Readiness Brief", "format": "Brief / PDF", "gated": false, "featured": false,
-      "desc": "Why utility lead times and permitting uncertainty quietly wreck schedules-and how to force those risks to the surface early. [Sample copy - replace later.]" },
+      "desc": "Why utility lead times and permitting uncertainty quietly wreck schedules, and how to force those risks to the surface early. [Sample copy - replace later.]" },
     { "slug": "senior-living-preconstruction-checklist", "category": "Senior Living", "title": "Senior Living Preconstruction Checklist", "format": "Checklist / PDF", "gated": false, "featured": false,
       "desc": "A HUD-aware preconstruction checklist for wood-frame senior living, from feasibility through long-lead procurement. [Sample copy - replace later.]" }
   ],
@@ -98,7 +98,7 @@
       "client": "Seaboard Triumph Foods", "value": "$300M+", "size": "700,000 SF", "completion": "2017",
       "schedule": "Delivered on schedule", "cover": "assets/img/projects/seaboard.jpg",
       "highlights": [ ["Size", "700,000 SF"], ["Type", "Greenfield USDA Plant"] ],
-      "summary": "A greenfield 700,000 SF pork processing plant-one of the largest USDA-grade facilities of its kind-built to full sanitary, refrigeration, and inspection standards while hitting an aggressive commissioning date.",
+      "summary": "A greenfield 700,000 SF pork processing plant-one of the largest USDA-grade facilities of its kind, built to full sanitary, refrigeration, and inspection standards while hitting an aggressive commissioning date.",
       "challenges": "Massive utility and refrigeration loads, USDA sanitary construction throughout, long-lead equipment coordination across dozens of vendors, and a fixed commissioning window tied to production commitments.",
       "role": "Design management, trade and schedule buyout, equipment coordination, and field execution with weekly cost-to-complete and quality checkpoints through commissioning.",
       "outcome": "Plant delivered on schedule and commissioned to USDA standards, with utilities, refrigeration, and process equipment coordinated to support full-rate production from startup.",
@@ -122,9 +122,9 @@
       "client": "Maple Leaf Foods", "value": "$1,200 / SF", "size": "Plant Addition", "completion": "-",
       "schedule": "Built around live production", "cover": "assets/img/projects/maple-leaf.jpg",
       "highlights": [ ["Scope", "Live-Plant Addition"], ["Value", "$1,200 / SF"] ],
-      "summary": "An addition to an operational pork processing plant priced at roughly $1,200 per square foot-built around live production without interrupting the line.",
+      "summary": "An addition to an operational pork processing plant priced at roughly $1,200 per square foot, built around live production without interrupting the line.",
       "challenges": "Construction around an active, running plant; protecting food safety and sanitation during the work; and phasing access so production never stopped.",
-      "role": "Construction management and coordination around live operations-phasing, temporary partitions, off-hour work, and tight equipment and utility tie-ins.",
+      "role": "Construction management and coordination around live operations, phasing, temporary partitions, off-hour work, and tight equipment and utility tie-ins.",
       "outcome": "Capacity added with production continuity protected throughout, and food safety controls maintained during construction.",
       "gallery": [ "assets/img/projects/maple-leaf.jpg" ]
     },
