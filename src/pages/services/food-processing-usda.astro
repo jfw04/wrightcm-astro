@@ -1,45 +1,685 @@
 ---
 import Base from '../../layouts/Base.astro';
-import FinalCta from '../../components/FinalCta.astro';
 const title = "Food Processing & USDA Conversions | Wright Construction Management";
-const description = "Owner-led design-build construction management for food processors, ground-up USDA facilities and conversions of existing industrial stock, built around sanitation, refrigeration, utilities, and inspection-driven construction.";
+const description = "Design-build construction management for Chicagoland food processors and industrial owners, $1M to $35M. We commit to your production-ready date and put 10% of our fee behind it.";
+const bodyHtml = `<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <p class="eyebrow" style="color:#ff8b82">Industrial &amp; Food Processing &middot; Chicagoland &middot; N. Indiana &middot; S. Wisconsin</p>
+    <h1>We don't sell you a building. We sell you a <em>production start date</em>.</h1>
+    <p class="sub">Owner-led design-build construction management for food processors and industrial owners expanding, converting, or building from the ground up, $1M to $35M. We commit to your production-ready date and put <strong style="color:#fff">10% of our fee</strong> behind it.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#start">Get Your Free Facility Risk Audit</a>
+      <a class="btn btn-outline-white" href="#compare">Compare Your Options</a>
+    </div>
+    <div class="hero-meta">
+      <div><span>Construction managed</span><strong>$820M+</strong></div>
+      <div><span>Change orders (avg)</span><strong>&lt;1%</strong></div>
+      <div><span>Ahead of schedule (avg)</span><strong>~2 months</strong></div>
+      <div class="zero"><span>Delivered behind schedule</span><strong>0</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POSITIONING STATEMENT ============ -->
+<section class="stmt">
+  <div class="wrap">
+    <div class="rule"></div>
+    <h2>Expand Your Food Processing Facility Without Shutting Down Production.</h2>
+    <p>Owner-led design-build construction management for food processors: ground-up USDA facilities and conversions of existing industrial stock, built around the operational realities of food plants.</p>
+  </div>
+</section>
+
+<!-- ============ COMPARISON MATRICES ============ -->
+<section class="section-soft" id="compare">
+  <div class="wrap">
+    <p class="eyebrow">Before you pick a builder</p>
+    <h2 class="section-title">Pick the Right Team and Right Delivery Method.</h2>
+    <p class="lead">Who runs the project, and how it gets delivered. Both are settled long before anyone breaks ground, and both do more to set your date and your budget than the drawings ever will.</p>
+
+  <div class="mx" id="mx-model">
+    <div class="mx-head">
+      <div>
+        <span class="mx-eyebrow">CHOOSING HOW TO DELIVER IT</span>
+        <h3 class="mx-title">Three ways to run the project</h3>
+      </div>
+      <span class="mx-tag">Food Processing &amp; USDA</span>
+    </div>
+    <div class="mx-scroll">
+      <table class="mx-tbl cols-3">
+        <thead><tr><th class="mx-corner"></th>
+        <th class="col-us">
+          <span class="cn-full">Wright Construction Management</span><span class="cn-short">WCM</span>
+          <span class="cn-blurb">Owner-led design-build CM. Jeremy runs your job start to finish, and puts fee behind your production date.</span>
+        </th>
+        <th class="">
+          <span class="cn-full">In-House Team</span><span class="cn-short">In-House</span>
+          <span class="cn-blurb">Knows the plant, but built to run it, not to buy out trades and absorb a capital project on top of the day job.</span>
+        </th>
+        <th class="">
+          <span class="cn-full">Large General Contractor</span><span class="cn-short">Large GC</span>
+          <span class="cn-blurb">Real bench strength at national-firm pricing. On a mid-size job you get whichever PM is free, two levels below the principal.</span>
+        </th>
+        </tr></thead>
+        <tbody>
+        <tr><th scope="row"><span class="cn-full">No Overhead</span><span class="cn-short">No Overhead</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td><td class=""><span class="mk mk-y">&#10003;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Flexibility</span><span class="cn-short">Flexibility</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">High Retention</span><span class="cn-short">High Retention</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td><td class=""><span class="mk mk-m">&ndash;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Owner Led</span><span class="cn-short">Owner Led</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Food Processing &amp; USDA-Specific Experience</span><span class="cn-short">Food Processing / USDA Experience</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-m">&ndash;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Quality</span><span class="cn-short">Quality</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-m">&ndash;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Speed</span><span class="cn-short">Speed</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">PM Focus</span><span class="cn-short">PM Focus</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td><td class=""><span class="mk mk-m">&ndash;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Builds Around Live Production</span><span class="cn-short">Builds Around Live Production</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Same Team From Concept Through Closeout</span><span class="cn-short">Same Team, Concept To Closeout</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Single Point of Accountability</span><span class="cn-short">Single Point of Accountability</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Food-Experienced Trade Partner Network</span><span class="cn-short">Food-Experienced Trade Network</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Local Trade &amp; AHJ Contacts</span><span class="cn-short">Local Trade &amp; AHJ Contacts</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td><td class=""><span class="mk mk-m">&ndash;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Cost Transparency</span><span class="cn-short">Cost Transparency</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Cost Effectiveness</span><span class="cn-short">Cost Effectiveness</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        <tr class="hi"><th scope="row"><span class="cn-full">Fee at Risk For Your Production Date</span><span class="cn-short">Fee At Risk For Your Production Date</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+      <div class="mx-legend"><span class="mk mk-m">&ndash;</span><span>Possibly, dependent on company and assigned staff</span></div>
+      <p class="mx-foot">Reflects typical delivery on $1M–$35M food processing and industrial projects. A large general contractor carries real bench strength and low relative overhead at scale, but at a higher cost of delivery, with the principal you met rarely on your job. An in-house team brings plant knowledge and build quality, without capital-project bandwidth.</p>
+  </div>
+
+  <div class="mx" id="mx-method">
+    <div class="mx-head">
+      <div>
+        <span class="mx-eyebrow">CHOOSING A DELIVERY METHOD</span>
+        <h3 class="mx-title">Two ways to deliver the project</h3>
+      </div>
+      <span class="mx-tag">Food Processing &amp; USDA</span>
+    </div>
+    <div class="mx-scroll">
+      <table class="mx-tbl cols-2">
+        <thead><tr><th class="mx-corner"></th>
+        <th class="col-us">
+          <span class="cn-full">Design-Build</span><span class="cn-short">Design-Build</span>
+          <span class="cn-blurb">One contract, one team. Design and construction run together under a single point of accountability.</span>
+        </th>
+        <th class="">
+          <span class="cn-full">Design-Bid-Build</span><span class="cn-short">Design-Bid-Build</span>
+          <span class="cn-blurb">Design fully, then bid it, then build it. Three sequential phases and two separate contracts held by the owner.</span>
+        </th>
+        </tr></thead>
+        <tbody>
+        <tr><th scope="row"><span class="cn-full">Single Point of Accountability</span><span class="cn-short">Single Point of Accountability</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">One Contract for Design &amp; Construction</span><span class="cn-short">One Contract, Design + Build</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Design &amp; Construction Overlap</span><span class="cn-short">Design + Construction Overlap</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Constructability Input During Design</span><span class="cn-short">Constructability Input In Design</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Early Budget Certainty</span><span class="cn-short">Early Budget Certainty</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Price Locked Before Drawings Are Final</span><span class="cn-short">Price Locked Before Final Drawings</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Fully Defined Scope Before Pricing</span><span class="cn-short">Fully Defined Scope Before Pricing</span></th><td class="us"><span class="mk mk-n">&#10005;</span></td><td class=""><span class="mk mk-y">&#10003;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Open Competitive Hard Bid</span><span class="cn-short">Open Competitive Hard Bid</span></th><td class="us"><span class="mk mk-n">&#10005;</span></td><td class=""><span class="mk mk-y">&#10003;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Owner Holds the Designer Directly</span><span class="cn-short">Owner Holds Designer Directly</span></th><td class="us"><span class="mk mk-n">&#10005;</span></td><td class=""><span class="mk mk-y">&#10003;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Design Errors Carried by the Builder</span><span class="cn-short">Design Errors Carried By Builder</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Fewer Owner-Borne Change Orders</span><span class="cn-short">Fewer Owner-Borne Change Orders</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Long-Lead Equipment Bought During Design</span><span class="cn-short">Long-Lead Equipment In Design</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Value Engineered Before Drawings Are Final</span><span class="cn-short">VE Before Drawings Are Final</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Teaming Culture</span><span class="cn-short">Teaming Culture</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Entire Team’s Contract Incentives In Alignment</span><span class="cn-short">Team Incentives In Alignment</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        <tr><th scope="row"><span class="cn-full">Less Time Wasted on Administrative Tasks</span><span class="cn-short">Less Time Wasted On Admin Tasks</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        <tr class="hi"><th scope="row"><span class="cn-full">Lower Owner Burden</span><span class="cn-short">Lower Owner Burden</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        <tr class="hi"><th scope="row"><span class="cn-full">Fastest Path to Production</span><span class="cn-short">Fastest Path To Production</span></th><td class="us"><span class="mk mk-y">&#10003;</span></td><td class=""><span class="mk mk-n">&#10005;</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+      <p class="mx-foot">Reflects typical delivery on $1M–$35M food processing and industrial projects. Design-bid-build has real strengths: a complete drawing set before anyone prices the work, an open hard bid on identical scope, and a designer who answers only to the owner. It trades schedule for that certainty. Design finishes before construction starts, and scope gaps surface as change orders once the low bid is signed.</p>
+  </div>
+
+  </div>
+</section>
+
+<!-- ============ COST OF DELAY ============ -->
+<section id="cost">
+  <div class="wrap">
+    <p class="eyebrow">The number nobody budgets</p>
+    <h2 class="section-title">Two months late costs you $600,000.<br>So does two months early.</h2>
+    <p class="lead">Most owners budget the building. Almost nobody budgets the delay. Put your own numbers in and see what a month is actually worth.</p>
+
+    <div class="calc">
+      <div class="calc-inputs">
+        <div class="field">
+          <label for="rev">Incremental monthly revenue from the capital project
+            <span class="hint">What the new capacity produces per month at full rate</span></label>
+          <input type="number" id="rev" value="1500000" step="50000">
+        </div>
+        <div class="field">
+          <label for="marg">EBITDA margin on that revenue (%)
+            <span class="hint">Food processing typically 8 to 14 percent; further processing and RTE run higher</span></label>
+          <input type="number" id="marg" value="12" step="0.5">
+        </div>
+        <div class="field">
+          <label for="cap">Capital drawn
+            <span class="hint">Project cost financed</span></label>
+          <input type="number" id="cap" value="8000000" step="250000">
+        </div>
+        <div class="field">
+          <label for="rate">Interest rate (%)</label>
+          <input type="number" id="rate" value="8" step="0.25">
+        </div>
+        <div class="field">
+          <label for="sf">Facility square footage
+            <span class="hint">For idle carrying cost: taxes, insurance, utilities, lease</span></label>
+          <input type="number" id="sf" value="60000" step="5000">
+        </div>
+        <div class="field">
+          <label for="fte">People hired ahead of startup
+            <span class="hint">On payroll before the line runs</span></label>
+          <input type="number" id="fte" value="20" step="1">
+        </div>
+      </div>
+
+      <div class="calc-out">
+        <h3>What one month of delay costs you</h3>
+        <div class="calc-row"><span>Lost contribution margin</span><b id="o1">$180,000</b></div>
+        <div class="calc-row"><span>Interest carry on drawn capital</span><b id="o2">$53,333</b></div>
+        <div class="calc-row"><span>Idle facility</span><b id="o3">$22,000</b></div>
+        <div class="calc-row"><span>Labor hired ahead of startup</span><b id="o4">$44,919</b></div>
+        <div class="calc-total">
+          <span>Direct cost per month</span>
+          <b id="total">$300,253</b>
+        </div>
+        <p class="calc-swing">Two months late is <b id="late">$600,505</b>.<br>Two months early is the same number, in your pocket.<br><br>That is a <b id="swing">$1,201,011</b> swing, decided before anyone breaks ground.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GUARANTEE ============ -->
+<section class="section-soft" id="guarantee">
+  <div class="wrap">
+    <p class="eyebrow">Our Promise</p>
+    <h2 class="section-title">Four commitments.</h2>
+    <p class="lead">Not a brochure promise. Contract language, with a defined exclusion list we will walk you through on the first call.</p>
+
+    <div class="grid-2">
+      <div class="g-card star">
+        <span class="badge">Schedule</span>
+        <h3>Production-Ready Date Guarantee</h3>
+        <div class="big">10% of our fee</div>
+        <p>At Budget Lock, once design is defined and the trades are bought, we jointly set your Production-Ready Date. Miss it for reasons within our control and you receive a credit of 10% of the CM fee.</p>
+      </div>
+      <div class="g-card">
+        <span class="badge">Cost</span>
+        <h3>No Fee on Change Orders</h3>
+        <div class="big" style="color:var(--navy)">Zero fee</div>
+        <p>We will not collect any fee on change orders arising from our scope gaps, coordination misses, or buyout errors. If we missed it, we do not get paid to fix it. Our historic change order average is under 1% of contract value.</p>
+      </div>
+      <div class="g-card">
+        <span class="badge">Uptime</span>
+        <h3>Production Continuity Commitment</h3>
+        <div class="big" style="color:var(--navy)">$2,500 / hour</div>
+        <p>Zero unplanned shutdowns of your production caused by our work. If we cause one, we credit $2,500 per hour and our team works the recovery at no fee.</p>
+      </div>
+      <div class="g-card">
+        <span class="badge">The front door</span>
+        <h3>Feasibility Decision Guarantee</h3>
+        <div class="big" style="color:var(--navy)">15 days or free</div>
+        <p>Your feasibility study is delivered in 15 business days from receipt of documents and site access, or it is free. Proceed within 12 months and the full fee credits back to you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MECHANISM ============ -->
+<section id="how">
+  <div class="wrap">
+    <p class="eyebrow">Why we can promise it</p>
+    <h2 class="section-title">We buy out the schedule as hard as we buy out the cost.</h2>
+    <p class="lead">Four mechanisms, and every one of them attacks time. That is why the guarantee is the natural output of how we work rather than a promise bolted onto it.</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="num">Mechanism 01</div>
+        <h3>Risk-Forward Feasibility</h3>
+        <p>Fifteen business days. Utility capacity, the AHJ path, inspection sequencing, sanitary design, and existing-condition risk forced into the open before capital is committed, as a register with owners, dates, and dollar ranges attached. Most schedule loss is created here, long before anyone breaks ground.</p>
+      </div>
+      <div class="card">
+        <div class="num">Mechanism 02</div>
+        <h3>Schedule Buyout</h3>
+        <p>Every long-lead item, permit, utility approval, and inspection gets a named owner, a must-order-by date, and a float budget, treated exactly like a bid package. Schedule is procured, not hoped for.</p>
+      </div>
+      <div class="card">
+        <div class="num">Mechanism 03</div>
+        <h3>Production-First Sequencing</h3>
+        <p>Construction phased around your sanitation windows, shipping commitments, and line uptime, not crew convenience. Partitions, negative-air containment, dust control, off-hour tie-ins, and access routing are scoped and priced, not improvised in the field.</p>
+      </div>
+      <div class="card">
+        <div class="num">Mechanism 04</div>
+        <h3>Owner-Led Control Cadence</h3>
+        <p>You work with the owner of the company, not a junior PM two levels down. Weekly cost-to-complete, weekly constraint removal, and a live dashboard showing exactly where cost, schedule, and open decisions stand. A 1,500-person firm structurally cannot do this on a mid-size job.</p>
+      </div>
+    </div>
+
+    <table class="tbl">
+      <thead><tr><th>Phase</th><th>The outcome it produces</th></tr></thead>
+      <tbody>
+        <tr><td>Feasibility</td><td>A go or no-go you can take to your board or your lender</td></tr>
+        <tr><td>Design Management</td><td>A design you can actually afford to build</td></tr>
+        <tr><td>Trade &amp; Schedule Buyout</td><td>Finalizing schedule and budget</td></tr>
+        <tr><td>Budget Lock</td><td>A number and a date you can commit to a customer</td></tr>
+        <tr><td>Active-Plant Execution</td><td>You keep making product while we build</td></tr>
+        <tr><td>Turnover &amp; Startup</td><td>You pass inspection the first time and start on the date</td></tr>
+        <tr><td>Year One</td><td>One number, one accountable person, for the first 12 months</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ PROOF ============ -->
+<section class="section-navy">
+  <div class="wrap">
+    <p class="eyebrow" style="color:#ff8b82">Proof</p>
+    <h2 class="section-title">Plants we've built.</h2>
+    <div class="proof-grid">
+      <div class="proof">
+        <div class="tag">Food Processing / USDA &middot; Sioux City, IA</div>
+        <h3>Seaboard Triumph Foods</h3>
+        <p>A greenfield 700,000 SF pork processing plant, one of the largest USDA-grade facilities of its kind, built to full sanitary, refrigeration, and inspection standards and delivered on schedule against a fixed commissioning window tied to production commitments.</p>
+      </div>
+      <div class="proof">
+        <div class="tag">Live-Plant Addition &middot; Brandon, MB</div>
+        <h3>Maple Leaf Foods</h3>
+        <p>An addition to an operational pork processing plant at roughly $1,200 per square foot, built around live production without interrupting the line. Phasing, temporary partitions, off-hour work, and tight equipment and utility tie-ins, with food safety controls maintained throughout.</p>
+      </div>
+    </div>
+    <div class="logos">
+      <span>Owners and operators who have trusted us</span>
+      <p>Seaboard Triumph Foods &middot; Triumph Foods &middot; Prestage Foods &middot; Amigos Meat &middot; Ventura Foods &middot; Mistica Foods &middot; Martin Produce &middot; Alfa Laval &middot; Interlake Mecalux &middot; Eaton &middot; Silver Birch &middot; Vermilion Development</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FIT ============ -->
+<section class="section-soft">
+  <div class="wrap">
+    <p class="eyebrow">Fit</p>
+    <h2 class="section-title">We're not right for every project, and we'll say so.</h2>
+    <div class="fit">
+      <div class="fit-col">
+        <h3 style="color:#0a8a4a">This is built for you if&hellip;</h3>
+        <ul class="fit-yes">
+          <li>You're a food processor or industrial owner in Chicagoland, Northern Indiana, or Southern Wisconsin</li>
+          <li>The project runs $1M to $35M</li>
+          <li>You can name a target production date, or you know you need one</li>
+          <li>You're converting existing industrial stock to USDA or food-grade production</li>
+          <li>The plant has to keep running while the work happens</li>
+          <li>You'd rather have one accountable partner than five vendors pointing at each other</li>
+        </ul>
+      </div>
+      <div class="fit-col">
+        <h3 style="color:var(--red)">We're the wrong firm if&hellip;</h3>
+        <ul class="fit-no">
+          <li>The project is under $1M</li>
+          <li>You want a hard bid to three GCs with no preconstruction</li>
+          <li>Lowest fee percentage is your primary decision criterion</li>
+          <li>You can't name a target production date and don't want to work one out</li>
+          <li>You need a national firm's balance sheet more than you need the owner's attention</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT STARTS ============ -->
+<section id="start">
+  <div class="wrap">
+    <p class="eyebrow">How it starts</p>
+    <h2 class="section-title">Five steps. You can stop after any of them.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <h3>Facility Risk Audit</h3>
+        <p>Ninety minutes on site. You get a written six-page brief on utilities, drainage, permit path, inspection sequence, and what would actually have to happen.</p>
+        <div class="price">Free &middot; 4 per month</div>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <h3>Feasibility Study</h3>
+        <p>Zoning check, concept test-fit, ROM budget with the assumptions exposed, milestone schedule, long-lead flags, and a risk register.</p>
+        <div class="price">Fixed fee &middot; credited back</div>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <h3>LOI &amp; Retainer</h3>
+        <p>A letter of intent and a retainer put the team to work. Design starts, long-lead pricing opens, and your slot on the calendar is held.</p>
+        <div class="price">Retainer credited to the project</div>
+      </div>
+      <div class="step">
+        <div class="n">4</div>
+        <h3>Design, Buyout &amp; Budget Lock</h3>
+        <p>Architects and engineers managed to your targets, trades and schedule bought out, then the number and your Production-Ready Date are locked.</p>
+        <div class="price">Your date is set here</div>
+      </div>
+      <div class="step">
+        <div class="n">5</div>
+        <h3>Build</h3>
+        <p>Full design-build CM with all four guarantee layers, the owner dashboard, and every included service below.</p>
+        <div class="price">Owner-led, start to finish</div>
+      </div>
+    </div>
+    <p class="note">The feasibility fee credits back in full against your CM fee if you proceed within 12 months. And if the study tells you not to do the project, that is a good outcome too, cheaper to find out now than after you've signed a lease and bought equipment.</p>
+
+    <table class="tbl">
+      <thead><tr><th>Included at no charge</th><th>What it is</th><th>If bought separately</th></tr></thead>
+      <tbody>
+        <tr><td>Utility &amp; AHJ Readiness Brief</td><td>Address-specific service capacity, utility lead times, likely permit path, health department and fire marshal involvement</td><td>$4,500</td></tr>
+        <tr><td>Long-Lead Equipment Clock</td><td>Procurement calendar built backward from your production date, with must-order-by dates per package</td><td>$2,500</td></tr>
+        <tr><td>USDA Conversion Readiness Kit</td><td>Checklist plus sanitary detail library: floors, drains, assemblies, penetrations, RTE separation, condensation control</td><td>$3,500</td></tr>
+        <tr><td>Active-Plant Playbook</td><td>Phasing, partitions, negative air, dust control, sanitation windows, off-hour tie-ins, traffic and access</td><td>$3,000</td></tr>
+        <tr><td>Owner Visibility Dashboard</td><td>Live cost, schedule, procurement, and open-decision status. No waiting for a vague weekly update.</td><td>$6,000/yr</td></tr>
+        <tr><td>Cost Segregation Coordination</td><td>Partner-delivered study; typically accelerates 5 to 9 percent of building cost into year-one depreciation</td><td>$12,000+</td></tr>
+        <tr><td>12-Month Warranty Concierge</td><td>One number, one accountable person, for the first year of operation</td><td>$4,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ OBJECTIONS ============ -->
+<section class="section-soft">
+  <div class="wrap">
+    <p class="eyebrow">Straight answers</p>
+    <h2 class="section-title">The questions owners actually ask.</h2>
+    <div class="faq">
+      <details open>
+        <summary>We're not ready yet.</summary>
+        <p>That is normally the right time. The decisions that set your cost and your date are the ones being made right now: which building, what layout, what the utilities have to carry. By the time there is a drawing set, most of the cost is already locked in. The Risk Audit is free and takes ninety minutes. If it says you're not ready, you've lost ninety minutes.</p>
+      </details>
+      <details>
+        <summary>We already have a contractor.</summary>
+        <p>Good, you should. Two questions: has anyone confirmed your electrical service and sewer capacity can carry the new load, and has anyone given you a written permit path for your specific AHJ? If yes, you're in good shape and we'll get out of your way. If not, that is what the free audit covers, and you're welcome to hand the brief straight to your contractor.</p>
+      </details>
+      <details>
+        <summary>We need to get design done first.</summary>
+        <p>That is the sequence that hurts owners most. Design without a cost partner produces a set you can't afford, and then you pay to redesign it. Your P&amp;L feels that twice. We manage the architect against your budget from the start, so the design fits your capital reality instead of the other way around.</p>
+      </details>
+      <details>
+        <summary>How do I know a firm your size can handle a project this size?</summary>
+        <p>Fair question. We've managed $820M of construction, including a 700,000 SF USDA plant for Seaboard Triumph. But what you're actually buying at your project size is the opposite of scale. At a national firm, a mid-size job gets a junior PM. Here you get the owner, on every project, because we only run three or four at a time.</p>
+      </details>
+      <details>
+        <summary>Construction can't create a food safety issue.</summary>
+        <p>Agreed, and that is scope, not a promise. Containment, negative air, dust control, traffic routing, and sanitation window coordination are in the phasing plan and they're priced. We also commit to zero unplanned shutdowns caused by our work, with a $2,500 per hour credit if we cause one.</p>
+      </details>
+      <details>
+        <summary>What if you go over budget?</summary>
+        <p>We do not collect any fee on change orders that come from our scope gaps, coordination misses, or buyout errors. If we missed it, we do not get paid to fix it. Owner-directed changes and genuinely unforeseen conditions are still yours, and we won't pretend otherwise. But our mistakes are ours.</p>
+      </details>
+      <details>
+        <summary>Why do you set the date at Budget Lock instead of at the LOI?</summary>
+        <p>Because a date set too early is not confidence, it is a guess. Guaranteeing a production date before design is defined and the trades are bought is not something anyone can stand behind. We set the date once the scope map, the buyout, and the long-lead plan are real. That is what makes it a commitment rather than a marketing number.</p>
+      </details>
+      <details>
+        <summary>We have to bid this to three firms.</summary>
+        <p>Then you should, and we'll bid it. We'd only ask that you compare guarantees alongside fees, because that is where the difference actually shows up. And if you want the bids to be comparable, the feasibility study is what gives all three the same scope to price. Otherwise you're comparing three different projects.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL ============ -->
+<section class="final">
+  <div class="wrap">
+    <div class="capacity"><span class="dot"></span> Owner-led delivery. We cap starts at 3 to 4 active projects.</div>
+    <h2>Start with ninety minutes and a written brief.</h2>
+    <p>No cost, no commitment, and no obligation to use us for anything that follows. If your building won't work for food production, we'd rather tell you now than after you've signed the lease.</p>
+    <div class="final-cta">
+      <a class="btn btn-primary" href="mailto:jwright@wrightcm.co?subject=Facility%20Risk%20Audit%20Request">Request Your Free Facility Risk Audit</a>
+      <a class="btn btn-outline-white" href="tel:7174227148">Call 717-422-7148</a>
+    </div>
+    <p class="finemark">Jeremy Wright &middot; Wright Construction Management &middot; jwright@wrightcm.co &middot; Chicagoland, Northern Indiana &amp; Southern Wisconsin</p>
+  </div>
+</section>`;
 ---
 <Base title={title} description={description}>
-  <section class="page-banner"><div class="wrap">
-    <div class="breadcrumb"><a href="/">Home</a> / <a href="/services">Services</a> / Food Processing &amp; USDA</div>
-    <span class="eyebrow" style="color:#ff8c87">Industrial Speed-to-Commission&trade;</span>
-    <h1>Expand Your Food Processing Facility Without Shutting Down Production.</h1>
-    <p>Owner-led design-build construction management for food processors, ground-up USDA facilities and conversions of existing industrial stock, built around the operational realities of food plants.</p>
-  </div></section>
+  <div class="ilp" set:html={bodyHtml}></div>
+  <script is:inline>
+(function(){
+  var ids = ['rev','marg','cap','rate','sf','fte'];
+  var HOURS = 173.3, WAGE = 27, LABOR_FACTOR = 0.48, PSF = 4.40;
 
-  <section><div class="wrap"><div class="two-col" style="align-items:start">
-    <div>
-      <span class="eyebrow">What we do</span>
-      <h2 class="section-title">Two things we know cold, plus the CM rigor every owner needs.</h2>
-      <p class="lead" style="margin-top:16px">We plan around washdown, drainage, refrigeration, and utility loads from day one, the things a general contractor discovers mid-build.</p>
-    </div>
-    <div>
-      <div class="qa" style="margin-bottom:20px"><h4 style="color:var(--red);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px">Who it's for</h4><p style="color:var(--muted)">Industrial owners and developers building ground-up facilities, converting industrial stock into USDA-grade production, or taking on sites and buildings other contractors won't touch.</p></div>
-      <div class="qa" style="margin-bottom:20px"><h4 style="color:var(--red);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px">The problem it solves</h4><p style="color:var(--muted)">Expansions and conversions get delayed, contaminated, or blown over budget when sanitation, refrigeration, utility, and inspection realities surface late, and when production can't stop while you build.</p></div>
-      <div class="qa" style="margin-bottom:20px"><h4 style="color:var(--red);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px">What Wright CM does</h4><p style="color:var(--muted)">Concept-to-budget-lock scope maps and milestone schedules, design management aligned to cost and speed, trade and schedule buyout, equipment-vendor coordination across utilities and installation, and build execution with weekly cost-to-complete through commissioning.</p></div>
-      <div class="qa"><h4 style="color:var(--red);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px">Why it matters</h4><p style="color:var(--muted)">We expose the utility, sanitation, inspection, phasing, and budget risks before they delay production, so you don't pay a contractor to learn food processing on your job. Historic average: roughly two months ahead of schedule, on budget, with under 1% change orders.</p></div>
-    </div>
-  </div></div></section>
+  function money(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
+  function num(id){
+    var v = parseFloat(document.getElementById(id).value);
+    return isNaN(v) ? 0 : v;
+  }
+  function calc(){
+    var margin  = num('rev') * (num('marg')/100);
+    var carry   = num('cap') * (num('rate')/100) / 12;
+    var idle    = num('sf') * PSF / 12;
+    var labor   = num('fte') * WAGE * HOURS * LABOR_FACTOR;
+    var total   = margin + carry + idle + labor;
 
-  <section class="section-soft"><div class="wrap">
-    <span class="eyebrow">Built for food plants</span>
-    <h2 class="section-title">What's included.</h2>
-    <div class="cap-grid">
-      <div class="cap"><h4>Sanitary Construction</h4><p>Washdown, cleanable surfaces, drainage, and allergen separation.</p></div>
-      <div class="cap"><h4>Refrigeration &amp; Utilities</h4><p>Ammonia, cold storage, power, gas, water, and wastewater loads.</p></div>
-      <div class="cap"><h4>Equipment Coordination</h4><p>Design, utilities, delivery, and install with your vendors.</p></div>
-      <div class="cap"><h4>Inspection Readiness</h4><p>USDA, AHJ, and code sequencing to protect startup.</p></div>
-      <div class="cap"><h4>Active-Plant Phasing</h4><p>Partitions, off-hour work, and dust and contamination control.</p></div>
-      <div class="cap"><h4>Preconstruction &amp; Budget</h4><p>Feasibility, ROM budgets, and risk discovery before you commit.</p></div>
-      <div class="cap"><h4>Schedule Buyout</h4><p>We buy out the schedule as hard as we buy out cost.</p></div>
-      <div class="cap"><h4>Closeout</h4><p>Punch velocity, commissioning, warranties, and O&amp;M.</p></div>
-    </div>
-  </div></div></section>
-
-  <FinalCta heading="Planning a food facility expansion or conversion?" sub="Book a 15-minute feasibility call and we'll surface the biggest utility, inspection, phasing, and budget risks before you commit." label="Book a Feasibility Call" />
+    document.getElementById('o1').textContent = money(margin);
+    document.getElementById('o2').textContent = money(carry);
+    document.getElementById('o3').textContent = money(idle);
+    document.getElementById('o4').textContent = money(labor);
+    document.getElementById('total').textContent = money(total);
+    document.getElementById('late').textContent  = money(total * 2);
+    document.getElementById('swing').textContent = money(total * 4);
+  }
+  ids.forEach(function(id){
+    document.getElementById(id).addEventListener('input', calc);
+  });
+  calc();
+})();
+  </script>
+  <style is:global>
+:root{
+  --navy:#13375c; --navy-2:#1d5081; --red:#e1241f;
+  --ink:#1a2230; --muted:#5b6675; --line:#e3e8ef;
+  --bg:#ffffff; --bg-soft:#f5f8fc; --bg-tint:#eef3f9;
+  --mx-navy:#12314a; --mx-blue:#17477a; --mx-amber:#f0b429; --mx-tint:#eff4f8;
+  --radius:14px; --maxw:1200px;
+  --shadow:0 18px 50px -22px rgba(19,55,92,.35);
+  --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --cond:'Barlow Condensed',var(--font);
+}
+.ilp *{box-sizing:border-box;margin:0;padding:0}
+.ilp html{scroll-behavior:smooth}
+.ilp body{font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+.ilp img{max-width:100%;display:block}
+.ilp a{color:inherit;text-decoration:none}
+.ilp .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.ilp .eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.ilp h1, .ilp h2, .ilp h3{line-height:1.12;letter-spacing:-.02em;color:var(--navy)}
+.ilp h2.section-title{font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:800;margin:.5rem 0 0}
+.ilp .lead{font-size:1.12rem;color:var(--muted);max-width:64ch;margin-top:1rem}
+.ilp .btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;font-size:.98rem;padding:.9rem 1.6rem;border-radius:10px;transition:.18s;cursor:pointer;border:2px solid transparent;font-family:inherit}
+.ilp .btn-primary{background:var(--red);color:#fff}
+.ilp .btn-primary:hover{background:#c01b17;transform:translateY(-2px)}
+.ilp .btn-outline-white{border-color:rgba(255,255,255,.6);color:#fff}
+.ilp .btn-outline-white:hover{background:#fff;color:var(--navy)}
+.ilp section{padding:80px 0;scroll-margin-top:112px}
+.ilp .section-soft{background:var(--bg-soft)}
+.ilp .section-navy{background:var(--navy);color:#fff}
+.ilp .section-navy h2, .ilp .section-navy h3{color:#fff}
+.ilp header.site{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--line)}
+.ilp .nav{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px}
+.ilp .brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.5rem;letter-spacing:-.04em}
+.ilp .brand .w{color:var(--navy)}
+.ilp .brand .cm{color:var(--red)}
+.ilp .brand small{display:block;font-size:.58rem;font-weight:700;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;line-height:1}
+.ilp .nav-right{display:flex;align-items:center;gap:18px}
+.ilp .nav-phone{font-weight:700;color:var(--navy);font-size:.95rem}
+.ilp .hero{position:relative;color:#fff;overflow:hidden;background:var(--navy)}
+.ilp .hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(1100px 500px at 78% 12%,rgba(29,80,129,.85),transparent 62%),
+  linear-gradient(105deg,#0b2138 0%,#0d375c 48%,#164a79 100%)}
+.ilp .hero::after{content:"";position:absolute;inset:0;opacity:.09;
+  background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);
+  background-size:46px 46px}
+.ilp .hero-inner{position:relative;z-index:2;padding:92px 0 76px}
+.ilp .hero h1{color:#fff;font-size:clamp(2.1rem,5vw,3.7rem);font-weight:900;max-width:19ch}
+.ilp .hero h1 em{font-style:normal;color:#ff6b60}
+.ilp .hero p.sub{font-size:1.16rem;color:#dbe6f2;max-width:62ch;margin:1.4rem 0 2rem}
+.ilp .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.ilp .hero-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px;border-top:1px solid rgba(255,255,255,.18);padding-top:26px}
+.ilp .hero-meta span{display:block;font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;color:#9db6cf;margin-bottom:5px}
+.ilp .hero-meta strong{font-size:1.32rem;color:#fff;font-weight:800;letter-spacing:-.02em}
+.ilp .hero-meta .zero strong{color:#ff6b60}
+.ilp /* positioning band */
+.stmt{background:#fff;padding:76px 0;text-align:center}
+.ilp .stmt .rule{width:52px;height:4px;background:var(--red);margin:0 auto 26px;border-radius:2px}
+.ilp .stmt h2{font-size:clamp(1.75rem,3.7vw,2.75rem);font-weight:800;max-width:20ch;margin:0 auto;letter-spacing:-.025em}
+.ilp .stmt p{font-size:1.13rem;color:var(--muted);max-width:64ch;margin:1.3rem auto 0;line-height:1.62}
+@media(max-width:900px){
+.ilp .stmt{padding:52px 0}
+.ilp .stmt h2{max-width:none}
+}
+.ilp /* ---------- comparison matrices ---------- */
+.mx{background:#fff;border:1px solid #d5dade;padding:32px 34px 26px;margin-top:38px}
+.ilp .mx + .mx{margin-top:34px}
+.ilp .mx-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;border-bottom:3px solid var(--mx-blue);padding-bottom:14px}
+.ilp .mx-eyebrow{display:block;font-family:var(--cond);font-size:.8rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:4px}
+.ilp .mx-title{font-family:var(--cond);font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--mx-navy);line-height:1}
+.ilp .mx-tag{font-family:var(--cond);font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#7b868d;white-space:nowrap;padding-bottom:3px}
+.ilp .mx-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.ilp .mx-tbl{width:100%;border-collapse:collapse;table-layout:fixed}
+.ilp .mx-tbl.cols-3 th:not(.mx-corner):not([scope]){width:172px}
+.ilp .mx-tbl.cols-2 th:not(.mx-corner):not([scope]){width:200px}
+.ilp .mx-tbl thead th{vertical-align:top;text-align:left;padding:18px 14px 14px;border-bottom:2px solid var(--mx-navy);border-top:4px solid #c9d1d6;background:#fff}
+.ilp .mx-tbl thead th.mx-corner{border-top:none;padding:0}
+.ilp .mx-tbl thead th.col-us{border-top-color:var(--red);background:var(--mx-tint)}
+.ilp .mx-tbl thead .cn-full, .ilp .mx-tbl thead .cn-short{display:block;font-family:var(--cond);font-size:1.22rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--mx-navy);line-height:1.05}
+.ilp .mx-tbl thead .cn-short{display:none}
+.ilp .cn-blurb{display:block;margin-top:6px;font-size:.72rem;line-height:1.4;color:#5d6a72;font-weight:400;letter-spacing:0;text-transform:none}
+.ilp .mx-tbl tbody th[scope]{text-align:left;font-family:var(--cond);font-size:1.06rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#4a5a64;line-height:1.15;padding:10px 14px 10px 2px}
+.ilp .mx-tbl tbody th[scope] .cn-short{display:none}
+.ilp .mx-tbl tbody tr{border-bottom:1px solid #e6eaec;background:#fff}
+.ilp .mx-tbl tbody tr:nth-child(odd){background:#fbfcfc}
+.ilp .mx-tbl tbody tr.hi{background:#f6f8f9;border-bottom:1px solid var(--mx-navy)}
+.ilp .mx-tbl tbody tr.hi th[scope]{font-weight:700;color:var(--mx-navy)}
+.ilp .mx-tbl tbody td{text-align:center;padding:7px 8px}
+.ilp .mx-tbl tbody td.us{background:var(--mx-tint)}
+.ilp .mk{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;font-weight:700;line-height:1}
+.ilp .mk-y{background:var(--mx-blue);color:#fff;font-size:.94rem}
+.ilp .mk-n{background:#fff;border:1.5px solid #cfd6da;color:#a9b2b8;font-size:.8rem}
+.ilp .mk-m{background:var(--mx-amber);color:#4a3708;font-size:1.05rem}
+.ilp .mx-legend{display:flex;align-items:center;gap:9px;margin-top:16px;font-size:.84rem;color:#4a5a64}
+.ilp .mx-legend .mk{width:22px;height:22px;font-size:.92rem}
+.ilp .mx-foot{margin-top:10px;font-size:.79rem;line-height:1.5;color:#7b868d;max-width:78ch}
+.ilp /* calculator */
+.calc{display:grid;grid-template-columns:.95fr 1.05fr;gap:44px;align-items:start;margin-top:40px}
+.ilp .calc-inputs{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.ilp .field{margin-bottom:16px}
+.ilp .field label{display:block;font-size:.82rem;font-weight:700;color:var(--navy);margin-bottom:6px}
+.ilp .field .hint{font-size:.74rem;color:var(--muted);font-weight:400;display:block;margin-top:3px}
+.ilp .field input{width:100%;padding:.65rem .8rem;border:1.5px solid var(--line);border-radius:8px;font-family:inherit;font-size:1rem;font-weight:600;color:var(--ink)}
+.ilp .field input:focus{outline:none;border-color:var(--navy-2)}
+.ilp .calc-out{background:var(--navy);color:#fff;border-radius:var(--radius);padding:30px;box-shadow:var(--shadow)}
+.ilp .calc-out h3{color:#fff;font-size:1.15rem;margin-bottom:18px}
+.ilp .calc-row{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:.94rem}
+.ilp .calc-row span{color:#bcd0e6}
+.ilp .calc-row b{font-weight:700;font-variant-numeric:tabular-nums}
+.ilp .calc-total{margin-top:20px;padding:20px;background:var(--red);border-radius:10px;text-align:center}
+.ilp .calc-total span{display:block;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:6px}
+.ilp .calc-total b{font-size:2.3rem;font-weight:900;letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1}
+.ilp .calc-swing{margin-top:16px;font-size:.95rem;color:#dbe6f2;text-align:center;line-height:1.5}
+.ilp .calc-swing b{color:#fff}
+.ilp .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:44px}
+.ilp .card{border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:#fff;transition:.2s;position:relative;overflow:hidden}
+.ilp .card:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+.ilp .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--red)}
+.ilp .card .num{font-size:.72rem;font-weight:800;letter-spacing:.12em;color:var(--red);text-transform:uppercase}
+.ilp .card h3{font-size:1.16rem;margin:.45rem 0 .6rem}
+.ilp .card p{color:var(--muted);font-size:.95rem}
+.ilp .card-plain::before{display:none}
+.ilp .card-plain{border-left:1px solid var(--line)}
+.ilp .g-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;position:relative}
+.ilp .g-card .badge{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--navy);padding:.3rem .6rem;border-radius:5px;margin-bottom:12px}
+.ilp .g-card.star{border:2px solid var(--red);box-shadow:var(--shadow)}
+.ilp .g-card.star .badge{background:var(--red)}
+.ilp .g-card h3{font-size:1.2rem;margin-bottom:.5rem}
+.ilp .g-card p{color:var(--muted);font-size:.95rem}
+.ilp .g-card .big{font-size:1.9rem;font-weight:900;color:var(--red);letter-spacing:-.03em;line-height:1;margin:.4rem 0 .6rem}
+.ilp .tbl{width:100%;border-collapse:collapse;margin-top:34px;font-size:.94rem;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.ilp .tbl th{background:var(--navy);color:#fff;text-align:left;padding:14px 18px;font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;font-weight:700}
+.ilp .tbl td{padding:15px 18px;border-bottom:1px solid var(--line);vertical-align:top}
+.ilp .tbl tr:last-child td{border-bottom:none}
+.ilp .tbl tbody tr:nth-child(even){background:var(--bg-soft)}
+.ilp .tbl td:first-child{font-weight:700;color:var(--navy);white-space:nowrap}
+.ilp .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:46px}
+.ilp .step{padding:0 18px;position:relative}
+.ilp .step:first-child{padding-left:0}
+.ilp .step:not(:last-child)::after{content:"";position:absolute;right:0;top:26px;bottom:10px;width:1px;background:var(--line)}
+.ilp .step .n{width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;margin-bottom:14px}
+.ilp .step h3{font-size:.99rem;margin-bottom:.4rem}
+.ilp .step p{color:var(--muted);font-size:.86rem}
+.ilp .step .price{margin-top:10px;font-weight:800;color:var(--red);font-size:.86rem}
+.ilp .fit{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:40px}
+.ilp .fit-col{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+.ilp .fit-col h3{font-size:1.15rem;margin-bottom:16px}
+.ilp .fit-col ul{list-style:none}
+.ilp .fit-col li{padding:9px 0 9px 28px;position:relative;color:var(--muted);font-size:.95rem;border-bottom:1px solid var(--line)}
+.ilp .fit-col li:last-child{border-bottom:none}
+.ilp .fit-col li::before{position:absolute;left:0;top:9px;font-weight:900;font-size:1rem}
+.ilp .fit-yes li::before{content:"\2713";color:#0a8a4a}
+.ilp .fit-no li::before{content:"\2715";color:var(--red)}
+.ilp .proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:44px}
+.ilp .proof{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:var(--radius);padding:28px}
+.ilp .proof .tag{font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#ff8b82}
+.ilp .proof h3{font-size:1.2rem;margin:.4rem 0 .6rem}
+.ilp .proof p{color:#bcd0e6;font-size:.95rem}
+.ilp .logos{margin-top:40px;padding-top:30px;border-top:1px solid rgba(255,255,255,.16)}
+.ilp .logos span{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#9db6cf;margin-bottom:16px}
+.ilp .logos p{color:#dbe6f2;font-size:1.02rem;font-weight:600;line-height:1.9}
+.ilp .faq{margin-top:40px;max-width:900px}
+.ilp details{border:1px solid var(--line);border-radius:10px;margin-bottom:12px;background:#fff}
+.ilp details[open]{box-shadow:var(--shadow)}
+.ilp summary{padding:18px 22px;font-weight:700;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:1rem}
+.ilp summary::-webkit-details-marker{display:none}
+.ilp summary::after{content:"+";font-size:1.5rem;font-weight:400;color:var(--red);flex-shrink:0;line-height:1}
+.ilp details[open] summary::after{content:"\2013"}
+.ilp details p{padding:0 22px 20px;color:var(--muted);font-size:.96rem}
+.ilp .final{background:linear-gradient(105deg,#0b2138,#164a79);color:#fff;text-align:center}
+.ilp .final h2{color:#fff;font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:800}
+.ilp .final p{color:#dbe6f2;font-size:1.1rem;max-width:60ch;margin:1.2rem auto 2rem}
+.ilp .capacity{display:inline-flex;align-items:center;gap:10px;background:rgba(225,36,31,.16);border:1px solid rgba(225,36,31,.5);color:#ffb3ad;padding:.55rem 1.1rem;border-radius:99px;font-size:.86rem;font-weight:700;margin-bottom:26px}
+.ilp .dot{width:8px;height:8px;border-radius:50%;background:var(--red);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.ilp .final-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.ilp .finemark{margin-top:26px;font-size:.82rem;color:#9db6cf}
+.ilp footer.site{background:#0b2138;color:#9db6cf;padding:34px 0;font-size:.88rem}
+.ilp .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.ilp .note{font-size:.84rem;color:var(--muted);margin-top:18px;font-style:italic}
+@media(max-width:1000px){
+.ilp .steps{grid-template-columns:repeat(2,1fr);gap:26px}
+.ilp .step{padding:0}
+.ilp .step:not(:last-child)::after{display:none}
+}
+@media(max-width:820px){
+.ilp .mx{padding:22px 20px 18px}
+.ilp .mx-tag{display:none}
+.ilp .mx-head{padding-bottom:10px}
+.ilp .mx-scroll{overflow-x:visible}
+.ilp .mx-tbl{table-layout:auto}
+.ilp .mx-tbl.cols-3 th:not(.mx-corner):not([scope]), .ilp .mx-tbl.cols-2 th:not(.mx-corner):not([scope]){width:74px}
+.ilp .mx-tbl thead th{padding:10px 4px 9px;text-align:center}
+.ilp .mx-tbl thead .cn-full{display:none}
+.ilp .mx-tbl thead .cn-short{display:block;font-size:.86rem;letter-spacing:.05em}
+.ilp .cn-blurb{display:none}
+.ilp .mx-tbl tbody th[scope]{font-size:.86rem;padding:8px 8px 8px 2px}
+.ilp .mx-tbl tbody th[scope] .cn-full{display:none}
+.ilp .mx-tbl tbody th[scope] .cn-short{display:block}
+.ilp .mx-tbl tbody td{padding:5px 3px}
+.ilp .mk{width:21px;height:21px}
+.ilp .mk-y{font-size:.76rem}
+.ilp .mk-n{font-size:.68rem}
+.ilp .mk-m{font-size:.88rem}
+}
+@media(max-width:900px){
+.ilp .grid-2, .ilp .fit, .ilp .proof-grid, .ilp .calc{grid-template-columns:1fr}
+.ilp .hero-meta{grid-template-columns:repeat(2,1fr)}
+.ilp .nav-phone{display:none}
+.ilp section{padding:56px 0}
+.ilp .tbl{font-size:.86rem}
+.ilp .tbl th, .ilp .tbl td{padding:11px 12px}
+.ilp .steps{grid-template-columns:1fr}
+}
+  </style>
 </Base>
