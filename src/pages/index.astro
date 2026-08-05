@@ -15,8 +15,8 @@ const description = "Wright Construction Management helps food processors and se
     <div class="hero-bg"><img src="/assets/img/hero-processing.jpg" alt="Food processing facility built by Wright Construction Management" /></div>
     <div class="wrap hero-inner">
       <span class="eyebrow" style="color:#ff8c87">Chicagoland · Indiana · Wisconsin</span>
-      <h1>Build Better, Build Faster, No Surprises.</h1>
-      <p class="sub">Owner-led design-build construction management for food processors and senior living developers. We expose the utility, permitting, inspection, and budget risks early, so your project stays on schedule, on budget, and on track.</p>
+      <h1>Build Better. Build Faster.</h1>
+      <p class="sub">Owner-led design-build construction management for food processors and senior living developers. We build around your operation, not through it, and find the utility, permitting, inspection, and budget problems while they're still cheap to fix, so your schedule and budget hold.</p>
       <div class="hero-cta">
         <a href="/contact" class="btn btn-primary">Schedule a Call</a>
         <a href="/projects" class="btn btn-outline-white">View Projects</a>
@@ -32,13 +32,14 @@ const description = "Wright Construction Management helps food processors and se
   <section id="why">
     <div class="wrap core">
       <div>
-        <span class="eyebrow">Why projects really fail</span>
-        <blockquote>Food facility expansions don't fail because someone forgot how to build walls. They fail because the hidden risks weren't forced into the open early enough.</blockquote>
+        <span class="eyebrow">Why food plant projects run late</span>
+        <blockquote>Food plant expansions run late because the hard problems surface after the money's committed: a utility tie-in nobody priced, a permit that sat for months, an inspection that fails once the slab is down.</blockquote>
       </div>
       <div class="body">
         <p>Utility service isn't ready. The AHJ takes longer than expected. Designers overrun the budget. Inspectors find late-stage issues. Production can't be interrupted. Food safety controls aren't protected. Equipment needs weren't coordinated. Existing conditions were underestimated.</p>
-        <p><strong>Wright Construction Management is your single accountable partner</strong> who exposes the risks that delay, inflate, or disrupt your project, before they become expensive field problems. We understand washdown environments, sanitation, refrigeration, utility loads, process flow, and inspection-driven construction, because generic contractors miss the operational realities of food plants.</p>
-        <p>One owner-led team. Design through closeout. Fewer handoffs, fewer surprises, fewer change orders.</p>
+        <p><strong>One team runs your job from design through closeout</strong> and flags the risks that blow schedule and budget while they're still on paper. We know washdown, sanitation, refrigeration, and utility loads cold. A general commercial contractor learns them on your job.</p>
+        <p>One owner-led team from design through closeout, which means fewer handoffs and fewer change orders.</p>
+        <p>We're a Midwest firm built for Midwest food and industrial operators, and we understand what it takes to protect what you've built.</p>
       </div>
     </div>
   </section>
@@ -72,7 +73,7 @@ const description = "Wright Construction Management helps food processors and se
     <div class="wrap">
       <span class="eyebrow">Our process</span>
       <h2 class="section-title">A risk-first process that protects schedule, cost, and uptime.</h2>
-      <p class="lead" style="margin-top:14px">We force the expensive problems into the open early, then drive speed and cost discipline all the way to closeout.</p>
+      <p class="lead" style="margin-top:14px">We find the expensive problems early, then hold speed and cost discipline through closeout.</p>
       <div class="proc-grid">
         {data.process.map((p) => (
           <div class="proc"><div class="step">{p.step}</div><h3>{p.title}</h3><p>{p.body}</p></div>
@@ -95,7 +96,7 @@ const description = "Wright Construction Management helps food processors and se
   <section id="projects">
     <div class="wrap">
       <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:14px">
-        <div><span class="eyebrow">Featured projects</span><h2 class="section-title">Complex builds. Tight constraints. Delivered.</h2></div>
+        <div><span class="eyebrow">Featured projects</span><h2 class="section-title">Tight sites and live plants, delivered on schedule.</h2></div>
         <a href="/projects" class="btn btn-ghost">View All Projects</a>
       </div>
       <div class="proj-grid">{featured.map((p) => (<ProjectCard p={p} />))}</div>
@@ -123,7 +124,7 @@ const description = "Wright Construction Management helps food processors and se
   <section id="insights" class="section-soft">
     <div class="wrap">
       <span class="eyebrow">Insights &amp; resources</span>
-      <h2 class="section-title">Guides that help owners de-risk a project before breaking ground.</h2>
+      <h2 class="section-title">Guides to help you spot the costly problems before you break ground.</h2>
       <div class="ins-grid">
         {data.insights.map((i) => (
           <div class="ins"><span class="cat">{i.cat}</span><h3>{i.title}<span class="badge-soon">Coming soon</span></h3><p>{i.body}</p><a href="/whitepapers" class="dl">Download guide →</a></div>
@@ -136,7 +137,7 @@ const description = "Wright Construction Management helps food processors and se
     <div class="wrap">
       <span class="eyebrow" style="color:#ff8c87">Let's talk</span>
       <h2>Planning a project and want fewer surprises?</h2>
-      <p>Let's talk before scope, cost, or schedule get away from you. Book a 15-minute feasibility call and we'll identify the biggest cost, schedule, and operational risks before you commit.</p>
+      <p>Book a 15-minute call. We'll name the biggest risks on your project before you spend real money.</p>
       <a href="/contact" class="btn btn-primary">Schedule a Call</a>
     </div>
   </section>
