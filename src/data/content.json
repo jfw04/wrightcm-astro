@@ -3,7 +3,7 @@
   "stats": [
     { "prefix": "$", "value": 820, "suffix": "M+", "label": "Construction Managed" },
     { "prefix": "<", "value": 1, "suffix": "%", "label": "Change Orders (historic avg)" },
-    { "prefix": "~", "value": 2, "suffix": " mo", "label": "Ahead of Schedule (avg)" },
+    { "prefix": "~", "value": 1, "suffix": " mo", "label": "Ahead of Schedule (avg)" },
     { "prefix": "", "value": 0, "suffix": "", "label": "Projects Delivered Behind Schedule", "zero": true }
   ],
   "services": [

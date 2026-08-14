@@ -15,7 +15,7 @@ const bodyHtml = `<!-- ============ HERO ============ -->
     <div class="hero-meta">
       <div><span>Construction managed</span><strong>$820M+</strong></div>
       <div><span>Change orders (avg)</span><strong>&lt;1%</strong></div>
-      <div><span>Ahead of schedule (avg)</span><strong>~2 months</strong></div>
+      <div><span>Ahead of schedule (avg)</span><strong>~1 month</strong></div>
       <div class="zero"><span>Delivered behind schedule</span><strong>0</strong></div>
     </div>
   </div>
@@ -276,6 +276,11 @@ const bodyHtml = `<!-- ============ HERO ============ -->
     <p class="eyebrow" style="color:#ff8b82">Proof</p>
     <h2 class="section-title">Plants we've built.</h2>
     <div class="proof-grid">
+      <div class="proof feature">
+        <div class="tag">Our largest project &middot; Design-Build Renovation &amp; Expansion &middot; Franklin Park, IL</div>
+        <h3>Mistica Foods, Runge Street</h3>
+        <p>A $22.3M design-build renovation and expansion of a 123,000 SF food processing facility, and the largest single project we have delivered. Structural concrete, refrigeration, insulated metal panel walls and ceilings, and a new electrical service, coordinated start to finish by one accountable person.</p>
+      </div>
       <div class="proof">
         <div class="tag">Food Processing / USDA &middot; Sioux City, IA</div>
         <h3>Seaboard Triumph Foods</h3>
@@ -399,7 +404,8 @@ const bodyHtml = `<!-- ============ HERO ============ -->
       </details>
       <details>
         <summary>How do I know a firm your size can handle a project this size?</summary>
-        <p>Fair question. We've managed $820M of construction, including a 700,000 SF USDA plant for Seaboard Triumph. But what you're actually buying at your project size is the opposite of scale. At a national firm, a mid-size job gets a junior PM. Here you get the owner, on every project, because we only run three or four at a time.</p>
+        <p>Our largest single project is Mistica Foods on Runge Street in Franklin Park: a $22.3M design-build renovation and expansion of a 123,000 SF food processing facility. Structural concrete, refrigeration, insulated metal panel walls and ceilings, and a new electrical service, all inside an operating Chicagoland food plant. It was run start to finish by one person.</p>
+        <p>That answers the size question, and it answers the staffing question at the same time. At a national firm a mid-size job gets whichever project manager happens to be free. Here you get the person who has already delivered a project larger than yours, on every project, because we only take three or four at a time. Behind that: $820M of construction managed, including a 700,000 SF greenfield USDA plant for Seaboard Triumph.</p>
       </details>
       <details>
         <summary>Construction can't create a food safety issue.</summary>
@@ -622,6 +628,9 @@ const bodyHtml = `<!-- ============ HERO ============ -->
 .ilp .fit-no li::before{content:"\2715";color:var(--red)}
 .ilp .proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:44px}
 .ilp .proof{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:var(--radius);padding:28px}
+.ilp .proof.feature{grid-column:1 / -1;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28)}
+.ilp .proof.feature h3{font-size:1.42rem}
+.ilp .proof.feature p{font-size:1.02rem;max-width:88ch}
 .ilp .proof .tag{font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#ff8b82}
 .ilp .proof h3{font-size:1.2rem;margin:.4rem 0 .6rem}
 .ilp .proof p{color:#bcd0e6;font-size:.95rem}
