@@ -1,0 +1,471 @@
+---
+/* ============================================================
+   src/pages/brokers.astro  →  wrightcm.co/brokers
+   The WCM Broker Alliance: referral partner landing page.
+
+   DROP-IN NOTES
+   1. Save this file as  src/pages/brokers.astro
+   2. Uses Base.astro, so it inherits Header, Footer, global.css,
+      the Inter webfont, and the RB2B script automatically.
+   3. Page-specific CSS is scoped under .bap in the <style is:global>
+      block at the bottom, same pattern as services/food-processing-usda.astro.
+      It reuses global.css tokens (--navy, --red, --line, --bg-soft…) so
+      colors and fonts stay centrally managed. Nothing is hardcoded.
+   4. To add "Brokers" to the main nav, add this <li> to
+      src/components/Header.astro inside <ul class="nav-links">:
+
+         <li><a href="/brokers">Brokers</a></li>
+
+      (suggested position: after Projects, before About)
+   5. The form posts via mailto: by default. Swap the action in
+      submitBrokerForm() for your form endpoint when one exists.
+   ============================================================ */
+import Base from '../layouts/Base.astro';
+
+const title = "Broker Referral Program | The WCM Broker Alliance | Wright Construction Management";
+const description = "Industrial brokers: get a written go/no-go on any building in 48 hours, free, and earn up to 15% of our fee when your client builds. Chicagoland, Indiana, Wisconsin.";
+
+const bodyHtml = `
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-bg"><img src="/assets/img/hero-processing.jpg" alt="Food processing facility built by Wright Construction Management" /></div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow" style="color:#ff8c87">Referral Partner Program &middot; Industrial &middot; Food Processing &middot; Cold Storage</span>
+    <h1>Your client's building question, answered in 48 hours.</h1>
+    <p class="sub">Send us an address and what your client wants to do in it. You get a written <strong style="color:#fff">go / no-go / conditional</strong> back in two business days, free, unlimited, no obligation. And when they build, you earn up to <strong style="color:#fff">15% of our fee</strong>.</p>
+    <div class="hero-cta">
+      <a href="#enroll" class="btn btn-primary">Register a Building (Free)</a>
+      <a href="#money" class="btn btn-outline-white">See What It Pays</a>
+    </div>
+    <div class="hero-meta">
+      <div><span>Construction managed</span><strong>$820M+</strong></div>
+      <div><span>Change orders (avg)</span><strong>&lt;1%</strong></div>
+      <div><span>Ahead of schedule (avg)</span><strong>~1 month</strong></div>
+      <div><span>Delivered behind schedule</span><strong>0</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY ============ -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Why we built this</span>
+    <h2 class="section-title">You lose deals to questions you were never supposed to have to answer.</h2>
+    <div class="bap-2col" style="margin-top:30px">
+      <div>
+        <p class="lead" style="margin-top:0">Your client walks a 90,000 SF building and loves it. Then the questions start. Can the slab take washdown? Is there enough power for the refrigeration package? Will the AHJ allow it? What does the conversion actually cost?</p>
+        <p class="lead">Nobody has answers. The client stalls, diligence burns, and ninety days later the deal dies over a $400K unknown that could have been priced in a week, or worse, it closes and the surprise shows up after you're already the person who recommended the building.</p>
+      </div>
+      <div class="bap-pull">We're not asking you to sell construction. We're asking you to hand your client a fast, credible answer, and we'll pay you when they build.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MONEY ============ -->
+<section class="section-soft" id="money">
+  <div class="wrap">
+    <span class="eyebrow">What you earn</span>
+    <h2 class="section-title">A share of our fee. Not a split of your commission.</h2>
+    <p class="lead">Your fee sits on top of anything you earn on the lease, sale or renewal, and it isn't contingent on the real estate transaction closing.</p>
+
+    <div class="bap-2col bap-money" style="margin-top:36px">
+      <div class="bap-calc">
+        <label for="bapCv">Construction contract value</label>
+        <div class="bap-inputrow"><span>$</span><input type="text" id="bapCv" value="5,000,000" inputmode="numeric" autocomplete="off" aria-label="Construction contract value"></div>
+        <input type="range" id="bapSl" min="250000" max="35000000" step="250000" value="5000000" aria-label="Contract value slider">
+        <div class="bap-out">
+          <div class="bap-o"><div class="t">Tier 1 &middot; Registered</div><div class="v" id="bapT1">$35,000</div><div class="d">10% of our fee</div></div>
+          <div class="bap-o"><div class="t">Tier 2 &middot; Alliance</div><div class="v" id="bapT2">$43,750</div><div class="d">12.5% of our fee</div></div>
+          <div class="bap-o hot"><div class="t">Tier 3 &middot; Cornerstone</div><div class="v" id="bapT3">$52,500</div><div class="d">15% of our fee</div></div>
+        </div>
+        <p class="bap-note">Illustrative only. Assumes a representative construction management fee; your actual payout is calculated from the fee in the executed contract. $2,500 minimum per closed referral, no cap.</p>
+      </div>
+
+      <div>
+        <h3 class="bap-h3">Three tiers. You move up, the rate moves up, permanently.</h3>
+        <div class="bap-tablewrap">
+          <table class="bap-tbl">
+            <tr><th>Tier</th><th>How you get there</th><th class="n">Share of our fee</th></tr>
+            <tr><td><strong>1 &middot; Registered</strong></td><td>Register one deal. That's the whole requirement.</td><td class="n">10%</td></tr>
+            <tr><td><strong>2 &middot; Alliance</strong></td><td>A second closed referral within 24 months.</td><td class="n">12.5%</td></tr>
+            <tr class="hot"><td><strong>3 &middot; Cornerstone</strong></td><td>Three closed referrals, or $15M referred contract value, in 24 months.</td><td class="n">15%</td></tr>
+          </table>
+        </div>
+
+        <div class="bap-split">
+          <div class="bap-splitcard"><span class="bap-pct">25%</span><div><strong>At contract execution</strong><p>Within 30 days of WCM signing with your client.</p></div></div>
+          <div class="bap-splitcard"><span class="bap-pct">75%</span><div><strong>As we bill the project</strong><p>Paid pro rata across the build, with a statement every time.</p></div></div>
+        </div>
+
+        <div class="bap-card bap-navy">
+          <span class="eyebrow" style="color:#ff8c87">Why a share of our fee, and not a percentage of the job</span>
+          <p style="margin-top:10px">Because paying you on total contract value would mean <strong style="color:#fff">we both make more money every time your client's project gets more expensive.</strong> Neither of us should have that incentive in the room while your client decides what to build.</p>
+          <p style="margin-top:10px">Tying your fee to ours puts us on the same side of the table, and lets you explain exactly how you're compensated without flinching.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FREE TOOLS ============ -->
+<section id="free">
+  <div class="wrap">
+    <span class="eyebrow">What your client gets, free</span>
+    <h2 class="section-title">Tools that close your transaction, whether or not they ever build with us.</h2>
+    <p class="lead">No cost to you or your client on any registered deal. No obligation to hire WCM, no bid requirement, no strings. If the answer is that the building doesn't work, we say so in writing and help you take the next one.</p>
+
+    <div class="bap-grid3" style="margin-top:36px">
+      <div class="bap-card"><div class="bap-num">01</div><h3>48-Hour Building Screen</h3><p>Address plus intended use in; a written go / no-go / conditional out in two business days. Slab and drainage, clear height, structural capacity, power and gas, water and sewer, refrigeration feasibility, docks, zoning and AHJ posture, with the two or three things that would kill it and roughly what each costs to fix. One page. Forwardable. Unlimited.</p></div>
+      <div class="bap-card"><div class="bap-num">02</div><h3>Feasibility Walk in 5 Days</h3><p>We meet you and your client at the building, introduced by you, as your technical advisor. NDA on request. We can walk landlord-side or seller-side buildings without disclosing your client's identity if the deal calls for it.</p></div>
+      <div class="bap-card"><div class="bap-num">03</div><h3>ROM Budget + Risk Register</h3><p>In ten business days: an order-of-magnitude conversion budget your client can underwrite the building with, plus a written risk register covering utility lead times, permitting exposure, inspection sequence, phasing and long-lead equipment.</p></div>
+      <div class="bap-card"><div class="bap-num">04</div><h3>Work Letter &amp; LOI Support</h3><p>We draft the construction assumptions, landlord work-letter scope and TI allowance math behind your LOI, so you negotiate the allowance from a real number instead of a guess.</p></div>
+      <div class="bap-card"><div class="bap-num">05</div><h3>Co-Branded Field Guide</h3><p><em>12 Things That Kill a Food Plant Deal After the LOI</em>, produced with your name, photo and logo. Send it to a prospect and you look like the broker who knows buildings, not just rents.</p></div>
+      <div class="bap-card"><div class="bap-num">06</div><h3>You Stay in the Room</h3><p>You're copied on every written deliverable before it reaches your client. If we find something ugly, you hear it first and we agree together on how it gets framed. Nothing goes over your head.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NOT AN INSPECTION ============ -->
+<section class="section-soft" id="inspection">
+  <div class="wrap">
+    <span class="eyebrow">What makes this different</span>
+    <h2 class="section-title">This is not a building inspection.</h2>
+    <p class="lead">Your client can hire an inspector for a few thousand dollars, and probably should. But an inspection answers a different question than the one holding up your deal.</p>
+
+    <div class="bap-tablewrap" style="margin-top:28px">
+      <table class="bap-tbl bap-cmp">
+        <tr><th style="width:16%"></th><th style="width:38%">A building inspection</th><th>A WCM building screen</th></tr>
+        <tr><td><strong>Asks</strong></td><td>What is wrong with this building today?</td><td>What will it cost to make this building do what my client needs?</td></tr>
+        <tr><td><strong>Looks at</strong></td><td>Current condition: roof, envelope, HVAC, code violations, deferred maintenance.</td><td>Future state: structural capacity for process loads, utility headroom, drainage, sanitation, phasing, AHJ path.</td></tr>
+        <tr><td><strong>Delivers</strong></td><td>A condition report.</td><td>A decision and a number, with the two or three things that could stop the deal.</td></tr>
+        <tr class="hot"><td><strong>Useful</strong></td><td>After the LOI, to price repairs.</td><td>Before the LOI, to decide whether to write one.</td></tr>
+      </table>
+    </div>
+
+    <div class="bap-card bap-navy" style="margin-top:24px">
+      <h3 style="color:#fff">Why a structural engineering background matters</h3>
+      <p style="margin-top:10px;max-width:88ch">Jeremy Wright's degree is in structural engineering, and that matters here because the expensive misses are almost never cosmetic. They're the slab that won't take the equipment load, the roof that won't carry the refrigeration units, the column line sitting exactly where the production line has to go, the service that won't support the process. <strong style="color:#fff">An inspector flags a crack. We tell you whether the building will hold what your client is planning to put in it, and what it costs if it won't.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPEED PROMISE ============ -->
+<section id="speed">
+  <div class="wrap">
+    <span class="eyebrow">The Speed Promise</span>
+    <h2 class="section-title">Deadlines with money behind them.</h2>
+    <p class="lead">Anyone can promise to be responsive. These are the three dates that decide whether construction input helps your deal or kills it, so we put a penalty on each one.</p>
+    <div style="margin-top:30px">
+      <div class="bap-promise"><div><strong>Building Screen:</strong> written answer within <strong>2 business days</strong> of your request.</div><div class="pen">Late? We pay you $500</div></div>
+      <div class="bap-promise"><div><strong>Feasibility Walk:</strong> on site within <strong>5 business days</strong> of site access being granted.</div><div class="pen">Late? We pay you $500</div></div>
+      <div class="bap-promise"><div><strong>ROM Budget + Risk Register:</strong> delivered within <strong>10 business days</strong> of the walk.</div><div class="pen">Late? We pay you $500</div></div>
+    </div>
+    <p class="bap-fine">Clocks run on business days and start once we have the address, the intended use and site access. If a landlord or seller blocks access the clock pauses and we tell you the same day.</p>
+  </div>
+</section>
+
+<!-- ============ PROTECTION ============ -->
+<section class="section-soft" id="protect">
+  <div class="wrap">
+    <span class="eyebrow">How you're protected</span>
+    <h2 class="section-title">Your client stays your client. In writing.</h2>
+    <div class="bap-2col" style="margin-top:30px">
+      <div class="bap-card bap-tint"><h3>24-month deal registration</h3><p>Register a named client and building; we confirm in writing within one business day and that registration holds for 24 months. If the client goes quiet and resurfaces next spring, the fee is still yours. First to register wins, and we tell you immediately if a client is already registered rather than let you work a dead lead.</p></div>
+      <div class="bap-card bap-tint"><h3>Non-circumvention, both directions</h3><p>We will not represent your client in any real estate capacity, will not refer them to another broker, and will not pursue their other locations without looping you in. If they call us directly about a new building during your window, we tell you the same day and treat it as your deal.</p></div>
+      <div class="bap-card bap-tint"><h3>Paid the way your firm requires</h3><p>To you, to your brokerage, split per policy, or to a charity you name. W-9 on file, 1099 issued. This is a construction referral fee rather than a real estate commission, confirm with your broker of record, and we'll send your compliance team the terms directly.</p></div>
+      <div class="bap-card bap-tint"><h3>Your client comes first</h3><p>We don't pay for steering. Our agreement says so in plain language: you make whatever disclosure your client is owed, you must independently believe the referral serves their interests, and nothing obligates you to recommend us or to discourage anyone from hiring someone else.</p></div>
+    </div>
+
+    <div class="bap-card bap-navy" style="margin-top:22px">
+      <span class="eyebrow" style="color:#ff8c87">Cornerstone Partners</span>
+      <h3 style="color:#fff;margin-top:10px">We send deals back.</h3>
+      <p style="margin-top:10px;max-width:88ch">We spend our days with food processors, cold storage operators and senior living developers who need more building than they have. Cornerstone Partners get <strong style="color:#fff">first look at those requirements</strong> (named user, size, geography, timing) before we take them anywhere else. Referral money is nice. But a happy client and a qualified 120,000 SF requirement with a real timeline is better.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">How it works</span>
+    <h2 class="section-title">Four steps. Ten minutes of your time.</h2>
+    <div class="bap-2col" style="margin-top:34px">
+      <div>
+        <div class="bap-step"><div class="n">1</div><div><h3>Enroll</h3><p>Two-minute form below, or reply to any email from us. No fee, no exclusivity, no term. You're a Registered Partner the same day.</p></div></div>
+        <div class="bap-step"><div class="n">2</div><div><h3>Register the deal</h3><p>Client name, building address, intended use. Written confirmation back within one business day with your registration number and expiration date.</p></div></div>
+      </div>
+      <div>
+        <div class="bap-step"><div class="n">3</div><div><h3>We go to work, free</h3><p>Screen in 48 hours. Walk in 5 days. ROM and risk register in 10. You stay in front of your client the whole way and get the credit for bringing answers.</p></div></div>
+        <div class="bap-step"><div class="n">4</div><div><h3>Your client builds. You get paid.</h3><p>25% of your fee within 30 days of contract execution, and the balance paid pro rata as we bill the project.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CREDENTIALS ============ -->
+<section class="section-soft">
+  <div class="wrap">
+    <span class="eyebrow">Who you're sending them to</span>
+    <h2 class="section-title">Why your client is safe with us.</h2>
+    <p class="lead">Your name goes on this recommendation. Here's what stands behind it.</p>
+    <div class="bap-2col" style="margin-top:30px">
+      <div class="bap-card"><h3>Owner-led. No junior PM handoff.</h3><p>The person who prices your client's building is the person who runs it. Design through closeout, one accountable partner, which is why the change order number is what it is.</p></div>
+      <div class="bap-card"><h3>Food and cold storage is the specialty, not a sideline.</h3><p>Washdown, sanitation, refrigeration loads, process flow, USDA inspection-driven construction. A generic GC prices the shell and finds the operational realities in the field. We price the realities first.</p></div>
+      <div class="bap-card"><h3>We build around live production, not through it.</h3><p>Phasing, temporary partitions, sanitation windows, off-hour work, dust and contamination control. Your client's line keeps running while capacity gets added.</p></div>
+      <div class="bap-card"><h3>Risk-first preconstruction.</h3><p>Utility service, AHJ posture, inspection sequencing, existing conditions and long-lead equipment get forced into the open before anyone commits capital, the same discipline your client gets free during diligence.</p></div>
+    </div>
+
+    <h3 class="bap-h3" style="margin-top:40px">Complex builds. Tight constraints. Delivered.</h3>
+    <div class="bap-tablewrap">
+      <table class="bap-tbl">
+        <tr><th style="width:24%">Project</th><th style="width:26%">Scope</th><th>Result</th></tr>
+        <tr><td><strong>Mistica Foods</strong><br><span class="bap-sm">3601 Runge St<br>Franklin Park, IL &middot; $22.3M</span></td><td>123,000 SF renovation and expansion of an operating food processing plant</td><td>Full interior rebuild, IMP walls and ceilings, underground plumbing and floor drains, new boiler and thermo-fluid heating, refrigeration upgrades, structural concrete, new primary electrical service, with 10+ trades coordinated and production continuity maintained through construction.</td></tr>
+        <tr><td><strong>Seaboard Triumph Foods</strong><br><span class="bap-sm">Sioux City, IA &middot; $300M+</span></td><td>700,000 SF greenfield USDA pork processing plant</td><td>Commissioned to USDA standards on schedule, with utilities, refrigeration and process equipment coordinated for full-rate production at startup.</td></tr>
+        <tr><td><strong>Maple Leaf Foods</strong><br><span class="bap-sm">Brandon, MB &middot; ~$1,200/SF</span></td><td>Addition to an operational pork processing plant</td><td>Capacity added with the line running the entire time and food safety controls maintained throughout construction.</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap bap-narrow">
+    <span class="eyebrow">The questions brokers actually ask</span>
+    <h2 class="section-title" style="margin-bottom:30px">Straight answers.</h2>
+    <details open><summary>Is this going to slow my deal down?</summary><p>No. The program runs on your clock, not ours, 48 hours to a written screen, five days to a site walk. If we can't hit a date we tell you the same day and pay the penalty.</p></details>
+    <details><summary>Are you going to scare my client out of the building?</summary><p>We deliver a decision, not a list of fears: go, no-go or conditional, with a number and a path. A "no" from us in week one beats a "no" from a lender in week twelve, and you get credit for catching it.</p></details>
+    <details><summary>Isn't this just a building inspection?</summary><p>No. An inspection tells your client what's wrong with the building today. We tell them what it costs to make the building do what they actually need, and which of those costs could stop the deal. Jeremy's degree is in structural engineering, and the misses that cost real money are structural and utility, not cosmetic.</p></details>
+    <details><summary>My client isn't ready for a contractor yet.</summary><p>Then don't introduce us as one. Introduce us as the feasibility resource you use on industrial buildings. Most of what we do happens before anyone would normally call a GC, which is the whole point.</p></details>
+    <details><summary>I already have GCs I call for pricing.</summary><p>Keep them. This isn't a bid. Nothing obligates your client to hire WCM, and the screens, walks and ROM budgets stay free even if they hire someone else. Use us for the food, cold storage and USDA questions general contractors guess at.</p></details>
+    <details><summary>Why pay me on your fee instead of the contract value?</summary><p>Because paying on contract value would mean we both make more money every time your client's project gets more expensive. Tying your fee to ours removes that incentive from the room and lets you explain your compensation to your client without flinching.</p></details>
+    <details><summary>What if my client never builds?</summary><p>Then you got a free written answer that moved your transaction, and it cost you nothing. We'd rather be the firm you call for the next one than the firm that billed you for this one.</p></details>
+    <details><summary>Will you go around me?</summary><p>No, and it's in writing, both directions, for 24 months. Cutting out the person who brings us deals would be the dumbest thing we could do with this program.</p></details>
+    <details><summary>Can I even accept this? My brokerage has rules.</summary><p>Usually yes, this is a construction referral fee, not a real estate commission. But that call belongs to your broker of record. Our agreement requires you to comply with your firm's policies, to make any disclosure your client is owed, and states plainly that we do not pay for a referral made in breach of a duty you owe your client. Tell us at registration whether to pay you, your firm, both, or a charity you name. We'll send your compliance team the terms directly if that helps.</p></details>
+    <details><summary>Does this cost me anything or lock me into anything?</summary><p>No fee, no exclusivity, no term, no minimum. Register one deal or twenty. Stop any time.</p></details>
+  </div>
+</section>
+
+<!-- ============ ENROLL ============ -->
+<section class="bap-final" id="enroll">
+  <div class="wrap bap-ctagrid">
+    <div>
+      <span class="eyebrow" style="color:#ff8c87">Start here</span>
+      <h2>Register one building. Judge us on what comes back.</h2>
+      <p>You don't have to believe any of this. Pick the building on your desk right now that has a question mark on it, send us the address and what your client wants to do in it, and see what shows up in two business days.</p>
+      <ul class="bap-check">
+        <li>Written registration confirmation: 1 business day</li>
+        <li>One-page building screen: 2 business days</li>
+        <li>Site walk: within 5 business days of access</li>
+        <li>ROM budget + risk register: 10 business days</li>
+        <li>An invoice for none of it</li>
+      </ul>
+      <div class="bap-contact">
+        <strong>Jeremy Wright</strong> &middot; Principal, Wright Construction Management<br>
+        <strong>jwright@wrightcm.co</strong> &middot; <strong>(717) 422-7148</strong><br>
+        1 E Erie St, Suite 525, Chicago, IL 60611<br>
+        Chicagoland &middot; Northern Illinois &middot; Northwest Indiana &middot; Southern Wisconsin
+      </div>
+    </div>
+
+    <form class="bap-form" id="bapForm">
+      <div class="row">
+        <div><label for="bf_name">Your name</label><input id="bf_name" required placeholder="Jane Broker"></div>
+        <div><label for="bf_firm">Brokerage</label><input id="bf_firm" placeholder="Firm name"></div>
+      </div>
+      <div class="row">
+        <div><label for="bf_email">Email</label><input id="bf_email" type="email" required placeholder="you@firm.com"></div>
+        <div><label for="bf_phone">Mobile</label><input id="bf_phone" placeholder="(312) 555-0100"></div>
+      </div>
+      <label for="bf_addr">Building address</label>
+      <input id="bf_addr" placeholder="1234 W Industrial Dr, Bedford Park, IL">
+      <div class="row">
+        <div><label for="bf_client">Client / end user</label><input id="bf_client" placeholder="So we can register it to you"></div>
+        <div><label for="bf_sf">Approx. SF</label><input id="bf_sf" placeholder="90,000"></div>
+      </div>
+      <label for="bf_use">Intended use</label>
+      <textarea id="bf_use" placeholder="Product, process, temperature, USDA or not, target occupancy date, and anything you already know is ugly."></textarea>
+      <button class="btn btn-primary" type="submit">Register This Building</button>
+      <p class="bap-formnote">No fee, no exclusivity, no obligation. We'll confirm your registration in writing within one business day.</p>
+    </form>
+  </div>
+
+  <div class="wrap bap-legal">
+    This page summarizes the WCM Broker Alliance and is not a contract; participation is governed by the Referral Partner Agreement. Referral fees are earned on construction contracts executed between Wright Construction Management and the referred party, are calculated as a percentage of WCM's construction management fee under that contract, and are not conditioned on any real estate transaction. Calculator output is illustrative and is not a quotation. Partners are responsible for complying with their brokerage's policies and applicable licensing law and for making any disclosure their client is owed; WCM does not compensate any referral made in breach of a fiduciary, agency or statutory duty owed to that client. Consult your broker of record before enrolling. Performance figures reflect the historic project portfolio of WCM leadership.
+  </div>
+</section>
+`;
+---
+
+<Base title={title} description={description}>
+  <div class="bap" set:html={bodyHtml}></div>
+
+  <script is:inline>
+    (function () {
+      var cv = document.getElementById('bapCv'), sl = document.getElementById('bapSl');
+      var t1 = document.getElementById('bapT1'), t2 = document.getElementById('bapT2'), t3 = document.getElementById('bapT3');
+      if (!cv || !sl) return;
+
+      /* Representative CM fee used for the illustration. Change this one number
+         to change every figure the calculator shows. */
+      var FEE_RATE = 0.07;
+      var MIN_FEE = 2500;
+
+      function money(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+      function parse(s) { var n = parseInt(String(s).replace(/[^0-9]/g, ''), 10); return isNaN(n) ? 0 : n; }
+      function render(v) {
+        var fee = v * FEE_RATE;
+        t1.textContent = money(Math.max(fee * 0.10, MIN_FEE));
+        t2.textContent = money(Math.max(fee * 0.125, MIN_FEE));
+        t3.textContent = money(Math.max(fee * 0.15, MIN_FEE));
+      }
+      cv.addEventListener('input', function () {
+        var v = parse(cv.value);
+        cv.value = v ? v.toLocaleString('en-US') : '';
+        if (v >= 250000 && v <= 35000000) sl.value = Math.round(v / 250000) * 250000;
+        render(v);
+      });
+      sl.addEventListener('input', function () {
+        var v = parseInt(sl.value, 10);
+        cv.value = v.toLocaleString('en-US');
+        render(v);
+      });
+      render(5000000);
+
+      var form = document.getElementById('bapForm');
+      if (form) form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var g = function (id) { var el = document.getElementById(id); return el ? (el.value || '').trim() : ''; };
+        var body =
+          'Broker: ' + g('bf_name') + '\n' +
+          'Brokerage: ' + g('bf_firm') + '\n' +
+          'Email: ' + g('bf_email') + '\n' +
+          'Mobile: ' + g('bf_phone') + '\n\n' +
+          'Building address: ' + g('bf_addr') + '\n' +
+          'Client / end user: ' + g('bf_client') + '\n' +
+          'Approx. SF: ' + g('bf_sf') + '\n\n' +
+          'Intended use / notes:\n' + g('bf_use') + '\n\n' +
+          'Submitted from wrightcm.co/brokers';
+        window.location.href = 'mailto:jwright@wrightcm.co'
+          + '?subject=' + encodeURIComponent('Broker Alliance deal registration: ' + (g('bf_addr') || g('bf_name')))
+          + '&body=' + encodeURIComponent(body);
+      });
+    })();
+  </script>
+
+  <style is:global>
+/* ============================================================
+   Broker Alliance page, scoped under .bap
+   Inherits every color, font and spacing token from global.css.
+   No hardcoded brand values: change global.css, this follows.
+   ============================================================ */
+.bap .bap-2col{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+.bap .bap-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.bap .bap-narrow{max-width:900px}
+
+.bap .bap-pull{border-left:4px solid var(--red);padding:6px 0 6px 22px;font-size:clamp(1.2rem,2.3vw,1.65rem);font-weight:700;color:var(--navy);line-height:1.3;letter-spacing:-.02em}
+
+.bap .bap-card{border:1px solid var(--line);border-radius:var(--radius);padding:26px;background:#fff}
+.bap .bap-card.bap-tint{background:var(--bg-soft);border-color:#dbe5f0}
+.bap .bap-card.bap-navy{background:var(--navy);border-color:var(--navy);color:#fff}
+.bap .bap-card.bap-navy p{color:#cfe0f0}
+.bap .bap-card h3{font-size:1.12rem;font-weight:800;margin-bottom:8px;color:var(--navy)}
+.bap .bap-card p{color:var(--muted);font-size:.96rem}
+.bap .bap-num{width:30px;height:30px;border-radius:8px;background:var(--red);color:#fff;font-weight:900;font-size:.8rem;display:grid;place-items:center;margin-bottom:12px}
+.bap .bap-h3{font-size:1.18rem;font-weight:800;color:var(--navy);letter-spacing:-.02em;margin-bottom:6px}
+.bap .bap-sm{font-size:.8rem;color:var(--muted)}
+.bap .bap-fine{font-size:.78rem;color:var(--muted);line-height:1.6;margin-top:22px}
+
+/* calculator */
+.bap .bap-calc{background:var(--navy);border-radius:18px;padding:34px;color:#fff;box-shadow:var(--shadow)}
+.bap .bap-calc label{display:block;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#9db6cf;margin-bottom:9px}
+.bap .bap-inputrow{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);border-radius:11px;padding:12px 16px}
+.bap .bap-inputrow span{font-size:1.5rem;font-weight:800;color:#9db6cf}
+.bap .bap-calc input[type=text]{flex:1;background:none;border:none;outline:none;color:#fff;font-family:var(--font);font-size:1.6rem;font-weight:800;letter-spacing:-.02em;width:100%}
+.bap .bap-calc input[type=range]{width:100%;margin-top:16px;accent-color:var(--red)}
+.bap .bap-out{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.bap .bap-o{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:16px}
+.bap .bap-o.hot{background:rgba(225,36,31,.16);border-color:rgba(225,36,31,.5)}
+.bap .bap-o .t{font-size:.64rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#9db6cf}
+.bap .bap-o .v{font-size:1.7rem;font-weight:900;letter-spacing:-.035em;margin-top:6px;line-height:1}
+.bap .bap-o.hot .v{color:#ff8c87}
+.bap .bap-o .d{font-size:.7rem;color:#9db6cf;margin-top:5px}
+.bap .bap-note{font-size:.76rem;color:#9db6cf;margin-top:16px;line-height:1.5}
+
+/* payment split */
+.bap .bap-split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0}
+.bap .bap-splitcard{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);background:var(--bg-soft);border-radius:12px;padding:16px}
+.bap .bap-pct{flex:0 0 auto;background:var(--red);color:#fff;font-weight:900;font-size:.78rem;padding:5px 9px;border-radius:20px;line-height:1}
+.bap .bap-splitcard strong{color:var(--navy);font-size:.95rem}
+.bap .bap-splitcard p{color:var(--muted);font-size:.86rem;margin-top:3px}
+
+/* tables */
+.bap .bap-tablewrap{overflow-x:auto}
+.bap .bap-tbl{width:100%;border-collapse:collapse;font-size:.95rem;margin-top:18px}
+.bap .bap-tbl th{background:var(--navy);color:#fff;text-align:left;padding:13px 16px;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800}
+.bap .bap-tbl td{padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink)}
+.bap .bap-tbl tr:nth-child(even) td{background:var(--bg-soft)}
+.bap .bap-tbl td.n,.bap .bap-tbl th.n{text-align:right}
+.bap .bap-tbl td.n{font-weight:800;color:var(--navy)}
+.bap .bap-tbl tr.hot td{background:#fdf0ef}
+.bap .bap-tbl tr.hot td.n{color:var(--red)}
+
+/* speed promise */
+.bap .bap-promise{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:17px 22px;border:1px solid #f3cdcb;background:#fdf6f5;border-radius:12px;margin-bottom:12px;color:var(--ink)}
+.bap .bap-promise strong{color:var(--navy)}
+.bap .bap-promise .pen{flex:0 0 auto;font-weight:800;color:var(--red);font-size:.86rem;text-align:right}
+
+/* steps */
+.bap .bap-step{display:flex;gap:18px;margin-bottom:24px}
+.bap .bap-step .n{flex:0 0 42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;font-weight:900;display:grid;place-items:center;font-size:1.05rem}
+.bap .bap-step h3{font-size:1.06rem;font-weight:800;color:var(--navy);margin-bottom:3px}
+.bap .bap-step p{color:var(--muted);font-size:.95rem}
+
+/* faq */
+.bap details{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;background:#fff;overflow:hidden}
+.bap details summary{cursor:pointer;padding:16px 20px;font-weight:700;color:var(--navy);font-size:1rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.bap details summary::-webkit-details-marker{display:none}
+.bap details summary:after{content:"+";font-size:1.4rem;font-weight:700;color:var(--red);line-height:1}
+.bap details[open] summary:after{content:"\2013"}
+.bap details p{padding:0 20px 18px;color:var(--muted);font-size:.95rem}
+
+/* final cta */
+.bap .bap-final{background:#0b2138;position:relative;overflow:hidden;color:#fff}
+.bap .bap-final:before{content:"";position:absolute;inset:0;background:radial-gradient(900px 600px at 20% 0%,rgba(29,80,129,.85),transparent 62%)}
+.bap .bap-final .wrap{position:relative;z-index:2}
+.bap .bap-final h2{color:#fff;font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:900;letter-spacing:-.03em;margin-top:10px}
+.bap .bap-final p{color:#cfe0f0;max-width:56ch;margin-top:14px}
+.bap .bap-ctagrid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:start}
+.bap .bap-check{list-style:none;margin-top:22px}
+.bap .bap-check li{position:relative;padding-left:24px;margin-bottom:11px;font-size:.97rem;color:#cfe0f0}
+.bap .bap-check li:before{content:"";position:absolute;left:0;top:.5em;width:10px;height:10px;border-radius:3px;background:#ff6b64}
+.bap .bap-contact{margin-top:26px;font-size:.94rem;color:#cfe0f0;line-height:1.9}
+.bap .bap-contact strong{color:#fff}
+
+/* form */
+.bap .bap-form{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:26px}
+.bap .bap-form label{display:block;font-size:.68rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#9db6cf;margin:0 0 6px}
+.bap .bap-form input,.bap .bap-form textarea{width:100%;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.2);border-radius:9px;padding:11px 13px;color:#fff;font-family:var(--font);font-size:.94rem;margin-bottom:15px;outline:none}
+.bap .bap-form input::placeholder,.bap .bap-form textarea::placeholder{color:#7d99b6}
+.bap .bap-form input:focus,.bap .bap-form textarea:focus{border-color:#ff8c87}
+.bap .bap-form textarea{min-height:74px;resize:vertical}
+.bap .bap-form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.bap .bap-form .btn{width:100%;justify-content:center}
+.bap .bap-formnote{font-size:.74rem;color:#9db6cf;margin-top:12px;line-height:1.5}
+.bap .bap-legal{margin-top:34px;font-size:.72rem;line-height:1.6;color:#6f8aa6;display:block;max-width:var(--maxw)}
+
+@media(max-width:980px){
+  .bap .bap-grid3{grid-template-columns:1fr 1fr}
+}
+@media(max-width:880px){
+  .bap .bap-2col,.bap .bap-grid3,.bap .bap-ctagrid,.bap .bap-split{grid-template-columns:1fr}
+  .bap .bap-ctagrid{gap:30px}
+}
+@media(max-width:640px){
+  .bap .bap-out{grid-template-columns:1fr}
+  .bap .bap-calc{padding:24px}
+  .bap .bap-promise{flex-direction:column;align-items:flex-start;gap:8px}
+  .bap .bap-promise .pen{text-align:left}
+  .bap .bap-form .row{grid-template-columns:1fr}
+}
+  </style>
+</Base>
