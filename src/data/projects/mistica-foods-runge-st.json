@@ -1,0 +1,211 @@
+{
+  "_README": "One file per website-approved project. Source of truth: Airtable > WCM Marketing > Completed Projects. Narrative text is restructured from the record's 'Website Copy' field only — do not add facts that are not in Airtable. Images must come from that project's Pictures\\Marketing folder. To add a project: copy this file, change the slug/filename, and drop optimized images in public/assets/img/projects/<slug>/.",
+  "slug": "mistica-foods-runge-st",
+  "airtableRecordId": "recHbbrIgGOUnNYet",
+  "projectNumber": "22-0041",
+  "name": "Mistica Foods — Runge Street",
+  "eyebrow": "Food Processing / Cold Storage",
+  "sector": "Food Processing",
+  "location": "Franklin Park, IL",
+  "imageDir": "assets/img/projects/mistica-foods-runge-st",
+  "heroStats": [
+    {
+      "label": "Size",
+      "value": "123,000 SF"
+    },
+    {
+      "label": "Construction Value",
+      "value": "$22.3M"
+    },
+    {
+      "label": "Delivery",
+      "value": "Design-Build"
+    },
+    {
+      "label": "Trade Contractors",
+      "value": "10+"
+    }
+  ],
+  "facts": [
+    {
+      "label": "Client",
+      "value": "Mistica Foods"
+    },
+    {
+      "label": "Location",
+      "value": "3601 Runge St, Franklin Park, IL"
+    },
+    {
+      "label": "Market",
+      "value": "Industrial / Cold Storage"
+    },
+    {
+      "label": "Size",
+      "value": "123,000 SF"
+    },
+    {
+      "label": "Construction Value",
+      "value": "$22.3M"
+    },
+    {
+      "label": "Cost per SF",
+      "value": "$122 / SF"
+    },
+    {
+      "label": "WCM Role",
+      "value": "Design-Build Construction Manager"
+    },
+    {
+      "label": "Delivery Method",
+      "value": "Design-Build"
+    },
+    {
+      "label": "Trade Contractors",
+      "value": "10+"
+    }
+  ],
+  "hero": {
+    "key": "hero",
+    "alt": "Renovated production room at Mistica Foods with insulated metal panel walls and ceiling, ceiling-mounted refrigeration units, and insulated high-speed roll-up doors",
+    "w": 2048,
+    "h": 1536
+  },
+  "overview": [
+    "Wright Construction Management served as design-build construction manager for the comprehensive renovation and expansion of Mistica Foods' 123,000 square-foot food processing facility in Franklin Park, Illinois, with a final construction cost of $22.3 million.",
+    "The project transformed the facility's production and cold storage environments, supporting Mistica Foods' operational growth in the highly regulated food and beverage sector."
+  ],
+  "blocks": [
+    {
+      "type": "section",
+      "heading": "Scope of Work",
+      "paragraphs": [
+        "The scope covered a full interior renovation. New insulated metal panel (IMP) wall and ceiling systems were installed throughout, along with extensive underground plumbing including trench and floor drain systems.",
+        "Mechanical and electrical work included a new boiler and thermo-fluid heating system and significant refrigeration system upgrades. Structural concrete work encompassed both new floor slabs and exterior improvements, and a new primary electrical service was installed to support expanded operations."
+      ]
+    },
+    {
+      "type": "figure",
+      "key": "demolition",
+      "alt": "Interior of the plant stripped to subgrade during demolition, with the existing structural steel columns and roof deck exposed",
+      "caption": "Interior demolition opened the floor to subgrade for new underground plumbing, trench drains, and floor slabs.",
+      "w": 2048,
+      "h": 1536
+    },
+    {
+      "type": "pair",
+      "items": [
+        {
+          "key": "imp-install",
+          "alt": "Insulated metal panel wall and ceiling installation underway, with scissor lifts and stacked panels staged across the production floor",
+          "w": 2048,
+          "h": 1536
+        },
+        {
+          "key": "boiler",
+          "alt": "New boiler and thermo-fluid heating equipment installed inside the Mistica Foods facility",
+          "w": 2048,
+          "h": 1536
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "heading": "Working Around Live Production",
+      "paragraphs": [
+        "WCM coordinated more than ten specialized trade contractors while the plant maintained partial operations — a complex logistical challenge in an active food processing environment.",
+        "Sequencing the work so production could continue drove how the interior was staged, how trades were released, and how each area was turned back over to the owner."
+      ]
+    },
+    {
+      "type": "figure",
+      "key": "production-line",
+      "alt": "Production floor in operation with conveyor lines, packing stations, and product crates in a renovated area of the plant",
+      "caption": "Portions of the plant stayed in production while adjacent areas were under construction.",
+      "w": 2048,
+      "h": 1536
+    },
+    {
+      "type": "pair",
+      "items": [
+        {
+          "key": "electrical",
+          "alt": "New primary electrical service equipment installed along an interior wall of the facility",
+          "w": 1536,
+          "h": 2048
+        },
+        {
+          "key": "rooftop",
+          "alt": "Rooftop mechanical units and piping runs installed on the roof of the Mistica Foods facility",
+          "w": 2048,
+          "h": 1536
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "heading": "Phasing and Permitting",
+      "paragraphs": [
+        "Cold storage construction and food processing facility construction both carry demands that a general renovation does not. WCM managed the phased work and the rigorous permitting process with the Village of Franklin Park."
+      ]
+    },
+    {
+      "type": "figure",
+      "key": "cold-storage",
+      "alt": "Pallet racking installed in the renovated cold storage area, with insulated metal panel walls and an evaporator at the far end",
+      "caption": "Renovated cold storage, racked and ready for turnover.",
+      "w": 2048,
+      "h": 1536
+    },
+    {
+      "type": "section",
+      "heading": "What Made It Demanding",
+      "paragraphs": [
+        "Technical complexity, occupied-facility constraints, and the integration of advanced building systems defined this project. It reflects WCM's capacity to deliver large-scale, technically demanding industrial work while minimizing operational disruption for food and beverage clients."
+      ]
+    }
+  ],
+  "gallery": [
+    {
+      "key": "process-equipment",
+      "alt": "Stainless steel processing equipment set against new insulated metal panel walls, with overhead utility drops",
+      "w": 2048,
+      "h": 1536
+    },
+    {
+      "key": "finished-room",
+      "alt": "Completed production room with new floor slab, insulated metal panel finishes, and ceiling-mounted refrigeration units",
+      "w": 2048,
+      "h": 1536
+    },
+    {
+      "key": "exterior",
+      "alt": "Exterior of the Mistica Foods facility at 3601 Runge Street in Franklin Park, Illinois",
+      "w": 2048,
+      "h": 1536
+    }
+  ],
+  "related": [],
+  "cta": {
+    "heading": "Expanding an active food plant?",
+    "sub": "Book a 15-minute feasibility call and we'll surface the biggest cost, schedule, and operational risks before design locks in."
+  },
+  "seo": {
+    "title": "Mistica Foods — Runge Street | Wright Construction Management",
+    "description": "Wright Construction Management served as design-build construction manager for the $22.3M renovation and expansion of Mistica Foods' 123,000 SF food processing facility in Franklin Park, Illinois.",
+    "ogImage": "assets/img/projects/mistica-foods-runge-st/og.jpg"
+  },
+  "sourceImageFolder": "C:\\Users\\jfw04\\OneDrive\\CM Firm\\Projects\\Arhived Projects\\22- 0041 - Mistica Foods - Runge St\\Pictures\\Marketing",
+  "sourceImages": {
+    "hero": "IMG_9501.JPEG",
+    "exterior": "IMG_4059.JPEG",
+    "demolition": "IMG_3985.JPEG",
+    "imp-install": "IMG_6792.JPEG",
+    "boiler": "IMG_5105.JPEG",
+    "electrical": "IMG_5108.JPEG",
+    "rooftop": "IMG_8116.JPEG",
+    "process-equipment": "IMG_3493.JPEG",
+    "cold-storage": "IMG_8095.JPEG",
+    "production-line": "IMG_4068.JPEG",
+    "finished-room": "IMG_3483.JPEG"
+  }
+}

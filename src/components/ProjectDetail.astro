@@ -1,0 +1,170 @@
+---
+/**
+ * Shared editorial project-detail template.
+ * Driven entirely by a JSON record in src/data/projects/.
+ * Adding a project = add one JSON file + its optimized images. No template edits.
+ */
+import FinalCta from './FinalCta.astro';
+import ProjectFigure from './ProjectFigure.astro';
+
+const { p, related = [] } = Astro.props;
+const dir = p.imageDir;
+---
+<article class="pdx">
+  <!-- HERO -->
+  <section class="pdx-hero">
+    <picture class="pdx-hero-bg">
+      <source
+        type="image/webp"
+        srcset={`/${dir}/${p.hero.key}-1024.webp 1024w, /${dir}/${p.hero.key}-1600.webp 1600w`}
+        sizes="100vw"
+      />
+      <img
+        src={`/${dir}/${p.hero.key}-1600.jpg`}
+        srcset={`/${dir}/${p.hero.key}-1024.jpg 1024w, /${dir}/${p.hero.key}-1600.jpg 1600w`}
+        sizes="100vw"
+        alt={p.hero.alt}
+        width={p.hero.w}
+        height={p.hero.h}
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </picture>
+    <div class="wrap pdx-hero-inner">
+      <div class="breadcrumb">
+        <a href="/">Home</a> / <a href="/projects">Projects</a> / {p.name}
+      </div>
+      <div class="pdx-eyebrow">{p.eyebrow}</div>
+      <h1>{p.name}</h1>
+      <div class="pdx-loc">{p.location}</div>
+      {p.heroStats?.length > 0 && (
+        <div class="pdx-hero-stats">
+          {p.heroStats.map((s) => (
+            <div><span>{s.label}</span><strong>{s.value}</strong></div>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- BODY -->
+  <section class="pdx-main">
+    <div class="wrap">
+      <div class="pdx-layout">
+        <div class="pdx-body">
+          {p.overview?.map((t, i) => (
+            <p class={i === 0 ? 'pdx-lead' : undefined}>{t}</p>
+          ))}
+
+          {p.blocks?.map((b) => {
+            if (b.type === 'section') {
+              return (
+                <div class="pdx-section">
+                  {b.heading && <h2>{b.heading}</h2>}
+                  {b.paragraphs?.map((t) => <p>{t}</p>)}
+                </div>
+              );
+            }
+            if (b.type === 'figure') {
+              return (
+                <ProjectFigure
+                  dir={dir}
+                  imgKey={b.key}
+                  w={b.w}
+                  h={b.h}
+                  alt={b.alt}
+                  caption={b.caption}
+                  className="pdx-fig-wide"
+                  sizes="(max-width: 980px) 100vw, 780px"
+                />
+              );
+            }
+            if (b.type === 'pair') {
+              // Column widths proportional to each image's aspect ratio, so a
+              // portrait and a landscape shot render at the same height.
+              const cols = b.items
+                .map((it) => `${(it.w && it.h ? it.w / it.h : 4 / 3).toFixed(4)}fr`)
+                .join(' ');
+              return (
+                <div class="pdx-pair" style={`grid-template-columns:${cols}`}>
+                  {b.items.map((it) => (
+                    <ProjectFigure
+                      dir={dir}
+                      imgKey={it.key}
+                      w={it.w}
+                      h={it.h}
+                      alt={it.alt}
+                      caption={it.caption}
+                      sizes="(max-width: 700px) 100vw, 380px"
+                      widths={[640, 1024]}
+                    />
+                  ))}
+                </div>
+              );
+            }
+            return null;
+          })}
+        </div>
+
+        <aside class="pdx-facts">
+          <h2>Project Details</h2>
+          <dl>
+            {p.facts?.map((f) => (
+              <div class="row"><dt>{f.label}</dt><dd>{f.value}</dd></div>
+            ))}
+          </dl>
+          <a href="/contact" class="btn btn-primary">Schedule a Call</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  {p.gallery?.length > 0 && (
+    <section class="section-soft pdx-gallery-sec">
+      <div class="wrap">
+        <span class="eyebrow">Project Gallery</span>
+        <h2 class="section-title">More from {p.name}</h2>
+        <div class="pdx-gallery">
+          {p.gallery.map((g) => (
+            <ProjectFigure
+              dir={dir}
+              imgKey={g.key}
+              w={g.w}
+              h={g.h}
+              alt={g.alt}
+              caption={g.caption}
+              sizes="(max-width: 700px) 100vw, (max-width: 980px) 50vw, 380px"
+              widths={[640, 1024]}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {related.length > 0 && (
+    <section class="pdx-related-sec">
+      <div class="wrap">
+        <span class="eyebrow">Related Work</span>
+        <h2 class="section-title">Similar Projects</h2>
+        <div class="pdx-related">
+          {related.map((r) => (
+            <a class="pdx-rel" href={`/projects/${r.slug}`}>
+              <div class="ph">
+                <img src={`/${r.imageDir}/card-900.jpg`} alt={r.name} loading="lazy" width="900" height="600" />
+              </div>
+              <div class="body">
+                <span class="type">{r.eyebrow}</span>
+                <h3>{r.name}</h3>
+                <div class="loc">{r.location}</div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <FinalCta heading={p.cta.heading} sub={p.cta.sub} />
+</article>

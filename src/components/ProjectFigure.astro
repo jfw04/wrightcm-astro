@@ -1,0 +1,42 @@
+---
+/**
+ * Responsive project photograph.
+ * Expects pre-generated derivatives in /<dir>/<key>-{640,1024,1600}.{webp,jpg}
+ * produced by the project image pipeline. Width/height are set so the
+ * Intrinsic width/height come from the data record so the browser reserves
+ * the right box and the page does not shift as images load.
+ */
+const {
+  dir,
+  imgKey,
+  alt = '',
+  caption = '',
+  sizes = '(max-width: 980px) 100vw, 1200px',
+  widths = [640, 1024, 1600],
+  w,
+  h,
+  eager = false,
+  className = '',
+} = Astro.props;
+
+const base = `/${dir}/${imgKey}`;
+const set = (ext: string) => widths.map((w) => `${base}-${w}.${ext} ${w}w`).join(', ');
+const fallbackW = widths[widths.length - 1];
+---
+<figure class={`pdx-fig ${className}`.trim()}>
+  <picture>
+    <source type="image/webp" srcset={set('webp')} sizes={sizes} />
+    <img
+      src={`${base}-${fallbackW}.jpg`}
+      srcset={set('jpg')}
+      sizes={sizes}
+      alt={alt}
+      width={w}
+      height={h}
+      loading={eager ? 'eager' : 'lazy'}
+      decoding={eager ? 'sync' : 'async'}
+      fetchpriority={eager ? 'high' : 'auto'}
+    />
+  </picture>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
