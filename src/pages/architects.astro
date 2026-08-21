@@ -1,0 +1,473 @@
+---
+/* ============================================================
+   src/pages/architects.astro  →  wrightcm.co/architects
+   The WCM Architect Alliance: design partner landing page.
+
+   DROP-IN NOTES
+   1. Save this file as  src/pages/architects.astro
+   2. Uses Base.astro, so it inherits Header, Footer, global.css,
+      the Inter webfont, and the RB2B script automatically.
+   3. Page-specific CSS is scoped under .aap in the <style is:global>
+      block at the bottom, same pattern as brokers.astro. It reuses
+      global.css tokens (--navy, --red, --line, --bg-soft…) so colors
+      and fonts stay centrally managed. Nothing is hardcoded.
+   4. To add "Architects" to the main nav, add this <li> to
+      src/components/Header.astro inside <ul class="nav-links">:
+
+         <li><a href="/architects">Architects</a></li>
+
+      (suggested position: next to /brokers)
+   5. The form posts via mailto: by default. Swap the action in the
+      inline script for your form endpoint when one exists.
+   6. There is no compensation content anywhere in this page and there
+      must not be. WCM pays architects nothing under this program. The
+      only paid item is the Capacity Walk, whose fee is never published
+      here: it is quoted per engagement.
+   ============================================================ */
+import Base from '../layouts/Base.astro';
+
+const title = "Design Partner Program for Architects | The WCM Architect Alliance | Wright Construction Management";
+const description = "Architects: a quarterly Trade Sheet and Market Note for your building type built from our own completed projects, priced options on the approaches you are weighing, and a seat on the design-build panel where we hire the architect. Chicagoland, Indiana, Wisconsin.";
+
+const bodyHtml = `
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-bg"><img src="/assets/img/hero-processing.jpg" alt="Food processing facility built by Wright Construction Management" /></div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow" style="color:#ff8c87">Design Partner Program &middot; Industrial &middot; Food Processing &middot; Cold Storage &middot; Senior Living</span>
+    <h1>You ask. We price it. Nothing goes to your client without you.</h1>
+    <p class="sub">Real construction cost from the firm that builds them, at the phase where it still changes the building. Start with a standing <strong style="color:#fff">Trade Sheet and Market Note</strong> for your building type, built from our own completed projects. Then ask us what you want priced: a private read on whether the Owner's budget is real, a parametric range, or <strong style="color:#fff">the approaches you are weighing, costed</strong>. It comes back in days, to you, with the basis attached and the band printed on it.</p>
+    <div class="hero-cta">
+      <a href="#enroll" class="btn btn-primary">Get the Trade Sheet (Free)</a>
+      <a href="#free" class="btn btn-outline-white">See What You Get</a>
+    </div>
+    <div class="hero-meta">
+      <div><span>Construction managed</span><strong>$820M+</strong></div>
+      <div><span>Change orders (avg)</span><strong>&lt;1%</strong></div>
+      <div><span>Ahead of schedule (avg)</span><strong>~1 month</strong></div>
+      <div><span>Delivered behind schedule</span><strong>0</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY ============ -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Why we built this</span>
+    <h2 class="section-title">The number shows up too late, and you are the one who pays for it.</h2>
+    <div class="aap-2col" style="margin-top:30px">
+      <div>
+        <p class="lead" style="margin-top:0">Your client hands you a program and a budget. Nine months later the bids come back well over it. Nobody in the room has been carrying a cost model alongside the design, so the correction happens the only way it can at that point: after CDs, under time pressure, by subtraction.</p>
+        <p class="lead">The Owner is unhappy. The scope you fought hardest for goes first. And the redesign is on your firm's time. Meanwhile the decisions that actually set the number were made months earlier: structural bay and slab, envelope assembly, how the process utilities get distributed, whether the building phases around production or shuts it down.</p>
+      </div>
+      <div class="aap-pull">We are not asking you to sell construction. We are asking you to put a number next to your decisions while they are still decisions.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TWO RELATIONSHIPS ============ -->
+<section class="section-soft" id="relationship">
+  <div class="wrap">
+    <span class="eyebrow">How we end up on the same project</span>
+    <h2 class="section-title">Sometimes we hire you. Sometimes you recommend us.</h2>
+    <p class="lead">Design-build and design-bid-build put us on opposite ends of the same project. Here is what changes between them.</p>
+
+    <div class="aap-2col" style="margin-top:32px">
+      <div class="aap-card aap-tint">
+        <span class="aap-kick">Design-Build</span>
+        <h3>We are your client.</h3>
+        <p>WCM holds the contract with the Owner and engages the architect. No proposal chase, no interview, no fee bid against four other firms, and a client who understands why a coordinated set is cheaper than a fast one.</p>
+        <p>These pursuits go to the <strong>WCM Design Partner Panel</strong>, and you get on it by working with us once: one Capacity Walk, or one design-build project delivered together. Panel firms hear about a pursuit in their building types before we have committed to a design team.</p>
+        <p>We pay design fees on time and we do not ask you to carry risk that belongs to the Contractor.</p>
+      </div>
+      <div class="aap-card">
+        <span class="aap-kick aap-kick-m">Design-Bid-Build &middot; CM at Risk</span>
+        <h3>You are upstream of us.</h3>
+        <p>The Owner engages you first. We arrive later, either because you introduced us during design or through a bid off your documents. This is where the work above earns its keep: a read on the Owner's number before you commit to it, and priced options while the design can still absorb them.</p>
+        <p><strong>Everything we produce is addressed to you</strong>, at every phase, whether or not we ever build the project. What your Owner sees, and when, is a decision you make rather than one we make for you.</p>
+        <p>If the Owner runs a competitive selection, run it. By the time it happens you will have seen how we think and whether our numbers hold, which beats a proposal and an interview.</p>
+      </div>
+    </div>
+
+    <div class="aap-card aap-navy" style="margin-top:22px">
+      <span class="eyebrow" style="color:#ff8c87">What sits behind either version</span>
+      <p style="margin-top:10px;max-width:92ch">Fifteen years of food processing, cold storage and industrial work, from a 20,000 SF conversion to a 700,000 SF greenfield USDA plant, and <strong style="color:#fff">$820M of construction managed with change orders under 1% and nothing delivered late.</strong></p>
+      <p style="margin-top:10px;max-width:92ch">That is the cost history the Trade Sheet is built from, and it is why a two-day answer from us is worth more than a two-week answer from a firm that has priced two of these.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FREE TOOLS ============ -->
+<section class="section-soft" id="free">
+  <div class="wrap">
+    <span class="eyebrow">Preconstruction, at no charge</span>
+    <h2 class="section-title">Four things, on any project, as often as they are useful.</h2>
+    <p class="lead">The first needs no project and no drawings. The rest need an hour of your time and come back in days. All four are addressed to you, and all four are included for any firm on the list.</p>
+
+    <div class="aap-grid3" style="margin-top:36px">
+      <div class="aap-card"><div class="aap-num">01</div><h3>The Trade Sheet and the Market Note</h3><p>Two standing one-pagers for your building type, refreshed every quarter and built from our own completed projects rather than a national index. <strong>The Trade Sheet</strong> is current unit costs and swap values: what a dock position costs, what a foot of clear height costs, the delta between two envelope assemblies, what a floor drain costs installed, what sanitary wall and ceiling finishes run per square foot. <strong>The Market Note</strong> is what we are seeing in the trade market right now: which packages are drawing bidders and which are coming back thin, where labor is tight, what is escalating. Take them into an Owner meeting and answer in the room.</p></div>
+      <div class="aap-card"><div class="aap-num">02</div><h3>The Number Check, 3 business days</h3><p>Send us the program, the square footage and the Owner's budget before you commit your firm to it. You get back a private read on whether that number is real for this building type in this market, and if it is not, what it would have to be. We have priced this work at every scale from a 20,000 SF conversion to a 700,000 SF greenfield plant, so most of the time this is recall as much as calculation.</p></div>
+      <div class="aap-card"><div class="aap-num">03</div><h3>Rapid Range, 2 business days</h3><p>Building type, square footage and program in. A parametric cost range out, stated at plus or minus 25%, with the basis printed on it. No drawings required and none wanted: this is the number for the conversation you are having this week, not the one you will eventually bid. Ask for it as often as it is useful.</p></div>
+      <div class="aap-card"><div class="aap-num">04</div><h3>Design Option Pricing, 5 business days</h3><p>You are weighing two or three ways to do something. Send them over and we price each one, with the basis and the assumptions written down. Want our read on what the market is doing to any of them, ask and you will get it. It comes back to you, and what happens to it next is your call.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE WALK ============ -->
+<section id="walk">
+  <div class="wrap">
+    <span class="eyebrow">The next step</span>
+    <h2 class="section-title">Existing Conditions and Capacity Walk.</h2>
+    <p class="lead">Everything above happens from our desk. This is the one that puts us in the building with you.</p>
+    <p class="lead">We walk it together and you get a written read on whether the shell can take the program: structural capacity for process and equipment loads, slab and drainage, clear height, service capacity, roof framing, dock configuration and AHJ posture. Anything that does not work comes back with an order-of-magnitude cost to fix it. On site within five business days of access, written read back within five more.</p>
+    <div class="aap-card aap-navy" style="margin-top:26px">
+      <p style="max-width:92ch">Flat fee, quoted in one line before we go, and <strong style="color:#fff">credited back in full when the Owner engages us for the project.</strong> It is also what puts your firm on the Design Partner Panel.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TURNAROUND & CONFIDENCE ============ -->
+<section class="section-soft" id="confidence">
+  <div class="wrap">
+    <span class="eyebrow">Turnaround and confidence</span>
+    <h2 class="section-title">Know what a number is worth before you use it.</h2>
+    <p class="lead">Every number we hand you says what it was built from and how wrong it is allowed to be. We do not do 48-hour estimates, because nobody can, and a figure without a band on it is a figure you cannot defend to your Owner.</p>
+
+    <div class="aap-tablewrap" style="margin-top:28px">
+      <table class="aap-tbl">
+        <tr><th style="width:19%">Deliverable</th><th style="width:25%">Built from</th><th style="width:17%">Turnaround</th><th>Stated confidence</th></tr>
+        <tr><td><strong>Trade Sheet and Market Note</strong></td><td>Our own completed projects and current trade feedback, by building type</td><td><strong>Standing, refreshed quarterly</strong></td><td>Current-quarter conditions. Not project specific</td></tr>
+        <tr><td><strong>The Number Check</strong></td><td>Program, square footage and the Owner's stated budget</td><td><strong>3 business days</strong></td><td>A yes, a no, or the number it would have to be</td></tr>
+        <tr><td><strong>Rapid Range</strong></td><td>Building type, square footage and program. No drawings</td><td><strong>2 business days</strong></td><td>Parametric. Plus or minus 25%, basis stated</td></tr>
+        <tr><td><strong>Design Option Pricing</strong></td><td>The two or three approaches you are weighing</td><td><strong>5 business days</strong></td><td>Comparative. The deltas are firmer than the absolutes</td></tr>
+        <tr><td><strong>Capacity Walk</strong></td><td>Site access and your program</td><td><strong>On site in 5 business days</strong></td><td>Qualitative, with order-of-magnitude cost on anything that fails</td></tr>
+      </table>
+    </div>
+    <p class="aap-fine">Turnarounds are business days and start once we have what the middle column asks for. If access or information is unavailable we tell you the same day.</p>
+
+    <h3 class="aap-h3" style="margin-top:36px">What you can count on</h3>
+    <div class="aap-2col" style="margin-top:16px">
+      <div class="aap-card aap-tint"><p><strong>Every number states its basis.</strong> Nothing arrives as a bare figure. You get what it was built from and the assumptions behind it, so you can correct one and ask again.</p></div>
+      <div class="aap-card aap-tint"><p><strong>The band is printed on it.</strong> If the honest answer at your phase is plus or minus 25%, that is what it says.</p></div>
+      <div class="aap-card aap-tint"><p><strong>Everything is addressed to you.</strong> Not your Owner. What they see, and when, is yours to decide.</p></div>
+      <div class="aap-card aap-tint"><p><strong>You set the agenda.</strong> We answer the question you asked. We do not review your set and come back with a list of what we would have done.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NOT VE ============ -->
+<section id="not-ve">
+  <div class="wrap">
+    <span class="eyebrow">Who starts it is the whole difference</span>
+    <h2 class="section-title">This is not value engineering. You ask, we answer.</h2>
+    <p class="lead">Every architect has been through the version where the bids come back high and a contractor arrives with a list. That is not what this is, and the difference is not our manners. It is the mechanism.</p>
+
+    <div class="aap-tablewrap" style="margin-top:28px">
+      <table class="aap-tbl aap-cmp">
+        <tr><th style="width:17%"></th><th style="width:39%">Value engineering, the way it usually arrives</th><th>Asking us to price something</th></tr>
+        <tr><td><strong>Who starts it</strong></td><td>The contractor, after the bids come back high.</td><td>You. At any phase, as often as you want, on the questions you choose.</td></tr>
+        <tr><td><strong>When it happens</strong></td><td>After CDs, when the only lever left is subtraction.</td><td>During SD and DD, while the number is still attached to a decision.</td></tr>
+        <tr><td><strong>What it contains</strong></td><td>A list of things to remove from a building that is already drawn.</td><td>The approaches you asked about, each priced, with the assumptions behind it.</td></tr>
+        <tr><td><strong>Who it is addressed to</strong></td><td>Frequently the Owner, with you in the room.</td><td>You. Nothing reaches your Owner unless you send it.</td></tr>
+        <tr class="hot"><td><strong>Where it leaves you</strong></td><td>Explaining a design you already defended once.</td><td>Holding the numbers when your Owner asks the question.</td></tr>
+      </table>
+    </div>
+
+    <h3 class="aap-h3" style="margin-top:36px">What a priced option set actually contains</h3>
+    <p class="lead" style="margin-top:6px">Same blocks every time, which is what makes five business days honest.</p>
+    <div class="aap-tablewrap">
+      <table class="aap-tbl">
+        <tr><th style="width:24%"></th><th>What it says</th></tr>
+        <tr><td><strong>Your option, in your words</strong></td><td>Restated exactly as you sent it, so you can see we priced the thing you actually asked about.</td></tr>
+        <tr><td><strong>The number</strong></td><td>A cost for that option and its delta against the others, with the basis and the unit rates it was built from.</td></tr>
+        <tr><td><strong>What moves with it</strong></td><td>Schedule effect, procurement consequences, and any bid coverage risk that comes attached to the choice.</td></tr>
+        <tr><td><strong>What we assumed</strong></td><td>Every assumption, listed, so you can correct one and ask again free.</td></tr>
+        <tr class="hot"><td><strong>Our read, if you asked for it</strong></td><td>What we are seeing in the market on each approach. Left out entirely if you did not ask.</td></tr>
+      </table>
+    </div>
+
+    <div class="aap-card aap-navy" style="margin-top:24px">
+      <h3 style="color:#fff">Why a structural engineer is the one reading it</h3>
+      <p style="margin-top:10px;max-width:88ch">What blows a budget on this building type is never finishes. It is the slab that will not take the equipment load as drawn, the roof framing that will not carry the equipment above it, the service that has to be upsized before anything else can be sized, and the column line sitting exactly where the production line has to run. <strong style="color:#fff">Those move the number by six figures in a single decision, so those are the questions worth asking us first.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROTECTION ============ -->
+<section class="section-soft" id="protect">
+  <div class="wrap">
+    <span class="eyebrow">What we put in writing</span>
+    <h2 class="section-title">Your client stays your client. Your design stays yours.</h2>
+    <div class="aap-2col" style="margin-top:30px">
+      <div class="aap-card aap-tint"><h3>Non-circumvention, both directions</h3><p>On a project you bring us we will not propose another architect to that Owner, will not offer to carry the design ourselves, and will not pursue that Owner's other projects without looping you in. If they contact us directly, we tell you within one business day.</p></div>
+      <div class="aap-card aap-tint"><h3>Nothing reaches your Owner without you</h3><p>Every deliverable is addressed to you. We do not copy your Owner, we do not send cost opinions behind you, and we do not communicate a view on the design to your client without you in the room. What you do with any of it is entirely your call.</p></div>
+      <div class="aap-card aap-tint"><h3>We do not perform or direct design</h3><p>We provide cost, constructability and market input. We do not issue drawings, do not direct design, and do not assume responsibility for your instruments of service. You remain the design professional of record, and nothing we provide substitutes for design, engineering or code review by a licensed professional.</p></div>
+      <div class="aap-card aap-tint"><h3>Your drawings stay yours, and stay private</h3><p>Anything you send us is used solely to produce what you asked for, is never shown to a landlord, seller or third party without your consent, and is returned or destroyed on request. We will sign your Owner's NDA or ours, whichever you prefer.</p></div>
+    </div>
+
+    <div class="aap-card aap-navy" style="margin-top:22px">
+      <span class="eyebrow" style="color:#ff8c87">The Design Partner Panel</span>
+      <h3 style="color:#fff;margin-top:10px">We send work back.</h3>
+      <p style="margin-top:10px;max-width:92ch">Every design-build project we deliver needs an architect, and we would rather hand that to a firm that already knows how we build than run a selection. <strong style="color:#fff">Panel firms hear about a pursuit in their building types before we have committed to a design team</strong>, along with the Owner requirements we pick up from processors, cold storage operators and senior living developers who need more building than they have.</p>
+      <p style="margin-top:10px;max-width:92ch"><strong style="color:#fff">How you get on it: one Capacity Walk, or one design-build project delivered together.</strong> That is the whole requirement. No submission, no SOQ, no interview. The point is that we have actually worked together once before we put your name in front of an Owner.</p>
+      <div class="aap-panel3">
+      <div><strong>What we send you</strong><p>The pursuit, the Owner, the program and the schedule, before we have committed to a design team. Pass on any of it with no effect on your standing.</p></div>
+      <div><strong>What it is worth</strong><p>A negotiated design commission you did not compete for, on a project where the Contractor already understands what the drawings are going to cost.</p></div>
+      <div><strong>What it is not</strong><p>Exclusivity in either direction, or a promise of volume. It is a standing shortlist and a phone call that arrives before the RFP does.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Four steps</span>
+    <h2 class="section-title">The first one takes two minutes.</h2>
+    <div class="aap-2col" style="margin-top:34px">
+      <div>
+        <div class="aap-step"><div class="n">1</div><div><h3>Tell us your building types</h3><p>Two minutes on the form below, or reply to any email from us. The Trade Sheet and Market Note arrive that week and again every quarter, built from the projects we have actually delivered.</p></div></div>
+        <div class="aap-step"><div class="n">2</div><div><h3>Ask us for exactly what you want</h3><p>A Number Check, a Rapid Range, priced options. You choose which and when, and you can ask as often as it is useful. Everything comes to you first.</p></div></div>
+      </div>
+      <div>
+        <div class="aap-step"><div class="n">3</div><div><h3>Walk the building</h3><p>For adaptive reuse, conversions and additions, and the point at which we are standing in it with you. This is also what puts your firm on the Design Partner Panel.</p></div></div>
+        <div class="aap-step"><div class="n">4</div><div><h3>Watch the numbers hold</h3><p>By the time your Owner needs a Contractor you will have seen how we think about cost, how fast we move, and whether the number we gave you in March survived contact with the bid. Introduce us when the work has earned it.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CREDENTIALS ============ -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Who you are recommending</span>
+    <h2 class="section-title">Why your reputation is safe with us.</h2>
+    <p class="lead">An architect's recommendation carries more weight with an Owner than anyone else's on the project, and it costs more if it goes wrong. Here is what stands behind ours.</p>
+    <div class="aap-2col" style="margin-top:30px">
+      <div class="aap-card"><h3>Owner-led. No junior PM handoff.</h3><p>The person who prices your building is the person who runs it, from design through closeout. That is why our change orders come in under 1%.</p></div>
+      <div class="aap-card"><h3>We do not do design, and we do not want to.</h3><p>WCM has no design studio. Every design-build project we deliver is delivered with an architect we hired, which is why a program aimed at architects exists at all.</p></div>
+      <div class="aap-card"><h3>Food, cold storage and sanitary construction is the specialty.</h3><p>Washdown, sanitation, refrigeration loads, process flow, USDA inspection-driven construction. A generic GC prices the shell and meets the washdown, drainage and refrigeration problems in the field. We price those first, which is what makes a two-day range worth anything.</p></div>
+      <div class="aap-card"><h3>We build around live production, not through it.</h3><p>Phasing, temporary partitions, sanitation windows, off-hour work, dust and contamination control. Your client's line keeps running while capacity gets added, and your phasing notes get costed rather than ignored.</p></div>
+    </div>
+
+    <h3 class="aap-h3" style="margin-top:40px">What we have built, and what it took.</h3>
+    <div class="aap-tablewrap">
+      <table class="aap-tbl">
+        <tr><th style="width:24%">Project</th><th style="width:26%">Scope</th><th>Result</th></tr>
+        <tr><td><strong>Mistica Foods</strong><br><span class="aap-sm">3601 Runge St<br>Franklin Park, IL &middot; $22.3M</span></td><td>123,000 SF renovation and expansion of an operating food processing plant</td><td>Full interior rebuild, IMP walls and ceilings, underground plumbing and floor drains, new boiler and thermo-fluid heating, refrigeration upgrades, structural concrete, new primary electrical service, with 10+ trades coordinated and production continuity maintained through construction.</td></tr>
+        <tr><td><strong>Seaboard Triumph Foods</strong><br><span class="aap-sm">Sioux City, IA &middot; $300M+</span></td><td>700,000 SF greenfield USDA pork processing plant</td><td>Commissioned to USDA standards on schedule, with utilities, refrigeration and process equipment coordinated for full-rate production at startup.</td></tr>
+        <tr><td><strong>Maple Leaf Foods</strong><br><span class="aap-sm">Brandon, MB &middot; ~$1,200/SF</span></td><td>Addition to an operational pork processing plant</td><td>Capacity added with the line running the entire time and food safety controls maintained throughout construction.</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section-soft" id="faq">
+  <div class="wrap aap-narrow">
+    <span class="eyebrow">The questions architects actually ask</span>
+    <h2 class="section-title" style="margin-bottom:30px">Straight answers.</h2>
+    <details open><summary>Why would you give this away?</summary><p>Because we would rather be in the conversation while a building is still being decided than show up with four other bidders at the end. And on design-build we are the ones hiring the architect, so this is how we find the firms we want on our teams. We have managed $820M of this work. A large share of what we look at never gets built, and plenty of the rest goes to somebody else. We are set up for that.</p></details>
+    <details><summary>Can you really price my project in two days?</summary><p>We can give you a defensible range in two days. We cannot give you an estimate, and neither can anybody else. The Rapid Range is parametric off building type, square footage and program, it is stated at plus or minus 25%, and it says so on the page. That is the number for the conversation you are having this week. The number you bid comes out of real preconstruction, and that is a different exercise with a different timeline.</p></details>
+    <details><summary>Is this just free value engineering? I do not want my design second-guessed.</summary><p>It is the opposite, and the difference is who starts it. We do not review your set and come back with findings. You send us the approaches you are weighing and we price those. If you want our read on any of them you will get it, and if you do not ask, you will not hear it. What we say about your design unprompted is nothing.</p></details>
+    <details><summary>What does my Owner see?</summary><p>Whatever you decide to show them. Every deliverable is addressed to you. We do not copy your client, and we do not put a cost opinion in front of them behind your back. That is a term of the program rather than a courtesy.</p></details>
+    <details><summary>How do I get on the Design Partner Panel?</summary><p>One Capacity Walk, or one design-build project delivered together. Nothing else. There is no submission and no interview, because the walk already told us what we needed to know about working with you. Once you are on it, you hear about design-build pursuits in your building types before we have committed to a design team.</p></details>
+    <details><summary>Are you going to take the design in-house?</summary><p>We have no design studio and no intention of building one. On every design-build project we deliver we hire an architect, which is the reason this program exists. On a project you bring us, we will not propose another architect to that Owner and we will not offer to carry the design ourselves.</p></details>
+    <details><summary>I already have CMs I call for budget numbers.</summary><p>Keep them. Use us for the questions a general contractor guesses at: refrigeration and process loads, sanitary construction, USDA-driven detailing, service capacity, and building around production that cannot stop. It is all we build, and we have done it at 700,000 SF.</p></details>
+    <details><summary>My client selects their own contractor, and it goes to bid.</summary><p>So do some of ours. Run the selection. By the time it happens you will have seen how we think about cost, how fast we move and whether our numbers hold, which is a better basis for a decision than a proposal and an interview.</p></details>
+    <details><summary>What if the project never gets built?</summary><p>Then you got real cost intelligence during design and we got a look at how your firm works. That is a normal outcome here, not a disappointing one.</p></details>
+  </div>
+</section>
+
+<!-- ============ ENROLL ============ -->
+<section class="aap-final" id="enroll">
+  <div class="wrap aap-ctagrid">
+    <div>
+      <span class="eyebrow" style="color:#ff8c87">Start here</span>
+      <h2>Start with the sheet. Then give us something harder.</h2>
+      <p>Send your building types and the current Trade Sheet and Market Note come back the same week. After that, the fastest way to find out whether any of this is worth your time is to hand us the project you are least sure about.</p>
+      <ul class="aap-check">
+        <li>Trade Sheet and Market Note: the week you ask</li>
+        <li>Number Check: 3 business days</li>
+        <li>Rapid Range: 2 business days, at plus or minus 25% with the basis stated</li>
+        <li>Priced options: 5 business days</li>
+        <li>A Design Partner Panel seat once we have walked a building together</li>
+      </ul>
+      <div class="aap-contact">
+        <strong>Jeremy Wright</strong> &middot; Principal, Wright Construction Management<br>
+        <strong>jwright@wrightcm.co</strong> &middot; <strong>(717) 422-7148</strong><br>
+        1 E Erie St, Suite 525, Chicago, IL 60611<br>
+        Chicagoland &middot; Northern Illinois &middot; Northwest Indiana &middot; Southern Wisconsin
+      </div>
+    </div>
+
+    <form class="aap-form" id="aapForm">
+      <div class="row">
+        <div><label for="af_name">Your name</label><input id="af_name" required placeholder="Jane Architect, AIA"></div>
+        <div><label for="af_firm">Firm</label><input id="af_firm" placeholder="Firm name"></div>
+      </div>
+      <div class="row">
+        <div><label for="af_email">Email</label><input id="af_email" type="email" required placeholder="you@firm.com"></div>
+        <div><label for="af_phone">Mobile</label><input id="af_phone" placeholder="(312) 555-0100"></div>
+      </div>
+      <div class="row">
+        <div><label for="af_types">Your building types</label><input id="af_types" placeholder="Cold storage, food processing, senior living"></div>
+        <div><label for="af_owner">Owner / end user</label><input id="af_owner" placeholder="So we can register it to you"></div>
+      </div>
+      <div class="row">
+        <div><label for="af_sf">Approx. SF</label><input id="af_sf" placeholder="90,000"></div>
+        <div><label for="af_phase">Design phase</label><input id="af_phase" placeholder="SD / DD / CD"></div>
+      </div>
+      <label for="af_use">What do you want, and what should we know?</label>
+      <textarea id="af_use" placeholder="Just the Trade Sheet is a perfectly good answer. Otherwise: the process and temperature, USDA or not, the Owner's budget if there is one, target occupancy, and the options you want priced."></textarea>
+      <button class="btn btn-primary" type="submit">Send It Over</button>
+      <p class="aap-formnote">Everything we produce is addressed to you, not to your client.</p>
+    </form>
+  </div>
+
+  <div class="wrap aap-legal">
+    This page summarizes the WCM Architect Alliance and is not a contract; participation is governed by the Design Partner Terms. All services described are provided at no charge except the Existing Conditions and Capacity Walk, which carries a flat fee quoted in writing before the visit and credited in full against WCM's fee if the Owner engages WCM for the project within twelve months of the walk. Preconstruction deliverables are preliminary, order-of-magnitude and advisory, state the confidence band and assumptions under which they were produced, are not a bid, a guaranteed price or a certification, and do not substitute for design, engineering, cost estimating or code review by a licensed professional. A Rapid Range is a parametric range and is not an estimate. Deliverables are provided to the Partner and not to any Owner. Design Partner Panel participation confers eligibility for consideration on design-build pursuits and is not a guarantee of engagement or of any volume of work. Turnaround targets run on business days and depend on WCM receiving the required information and access. Performance figures reflect the historic project portfolio of WCM leadership.
+  </div>
+</section>
+`;
+---
+
+<Base title={title} description={description}>
+  <div class="aap" set:html={bodyHtml}></div>
+
+  <script is:inline>
+    (function () {
+      var form = document.getElementById('aapForm');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var g = function (id) { var el = document.getElementById(id); return el ? (el.value || '').trim() : ''; };
+        var body =
+          'Architect: ' + g('af_name') + '\n' +
+          'Firm: ' + g('af_firm') + '\n' +
+          'Email: ' + g('af_email') + '\n' +
+          'Mobile: ' + g('af_phone') + '\n\n' +
+          'Building types: ' + g('af_types') + '\n' +
+          'Owner / end user: ' + g('af_owner') + '\n' +
+          'Approx. SF: ' + g('af_sf') + '\n' +
+          'Design phase: ' + g('af_phase') + '\n\n' +
+          'Program / notes:\n' + g('af_use') + '\n\n' +
+          'Submitted from wrightcm.co/architects';
+        window.location.href = 'mailto:jwright@wrightcm.co'
+          + '?subject=' + encodeURIComponent('Architect Alliance: ' + (g('af_firm') || g('af_name')))
+          + '&body=' + encodeURIComponent(body);
+      });
+    })();
+  </script>
+
+  <style is:global>
+/* ============================================================
+   Architect Alliance page, scoped under .aap
+   Inherits every color, font and spacing token from global.css.
+   No hardcoded brand values: change global.css, this follows.
+   Mirrors brokers.astro so the two programs stay visually identical.
+   ============================================================ */
+
+/* global.css sets .hero-inner{padding:104px 0 96px}, which lands after
+   .wrap{padding:0 24px} at equal specificity and zeroes the hero's side
+   padding. Above 1200px the max-width hides it; on a phone the hero text
+   sits flush against the screen edge. Restored here for this page only.
+   The same thing happens on the homepage and /brokers; fixing it in
+   global.css would correct all three at once. */
+.aap .hero-inner{padding-left:24px;padding-right:24px}
+
+.aap .aap-2col{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+.aap .aap-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.aap .aap-narrow{max-width:900px}
+
+.aap .aap-pull{border-left:4px solid var(--red);padding:6px 0 6px 22px;font-size:clamp(1.2rem,2.3vw,1.65rem);font-weight:700;color:var(--navy);line-height:1.3;letter-spacing:-.02em}
+
+.aap .aap-card{border:1px solid var(--line);border-radius:var(--radius);padding:26px;background:#fff}
+.aap .aap-card.aap-tint{background:var(--bg-soft);border-color:#dbe5f0}
+.aap .aap-card.aap-navy{background:var(--navy);border-color:var(--navy);color:#fff}
+.aap .aap-card.aap-navy p{color:#cfe0f0}
+.aap .aap-card h3{font-size:1.12rem;font-weight:800;margin-bottom:8px;color:var(--navy)}
+.aap .aap-card p{color:var(--muted);font-size:.96rem}
+.aap .aap-card p + p{margin-top:10px}
+.aap .aap-num{width:30px;height:30px;border-radius:8px;background:var(--red);color:#fff;font-weight:900;font-size:.8rem;display:grid;place-items:center;margin-bottom:12px}
+.aap .aap-h3{font-size:1.18rem;font-weight:800;color:var(--navy);letter-spacing:-.02em;margin-bottom:6px}
+.aap .aap-sm{font-size:.8rem;color:var(--muted)}
+.aap .aap-fine{font-size:.78rem;color:var(--muted);line-height:1.6;margin-top:22px}
+.aap .aap-kick{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.aap .aap-kick.aap-kick-m{color:var(--muted)}
+
+/* design partner panel strip inside the navy card */
+.aap .aap-panel3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.18)}
+.aap .aap-panel3 strong{color:#fff;font-size:.92rem;display:block;margin-bottom:4px}
+.aap .aap-panel3 p{color:#9db6cf;font-size:.85rem;margin:0}
+
+/* tables */
+.aap .aap-tablewrap{overflow-x:auto}
+.aap .aap-tbl{width:100%;border-collapse:collapse;font-size:.95rem;margin-top:18px}
+.aap .aap-tbl th{background:var(--navy);color:#fff;text-align:left;padding:13px 16px;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800}
+.aap .aap-tbl td{padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink)}
+.aap .aap-tbl tr:nth-child(even) td{background:var(--bg-soft)}
+.aap .aap-tbl td.n,.aap .aap-tbl th.n{text-align:right}
+.aap .aap-tbl td.n{font-weight:800;color:var(--navy)}
+.aap .aap-tbl tr.hot td{background:#fdf0ef}
+.aap .aap-tbl tr.hot td.n{color:var(--red)}
+
+/* callout rows */
+.aap .aap-promise{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:17px 22px;border:1px solid #f3cdcb;background:#fdf6f5;border-radius:12px;margin-bottom:12px;color:var(--ink)}
+.aap .aap-promise strong{color:var(--navy)}
+.aap .aap-promise .pen{flex:0 0 auto;font-weight:800;color:var(--red);font-size:.86rem;text-align:right}
+
+/* steps */
+.aap .aap-step{display:flex;gap:18px;margin-bottom:24px}
+.aap .aap-step .n{flex:0 0 42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;font-weight:900;display:grid;place-items:center;font-size:1.05rem}
+.aap .aap-step h3{font-size:1.06rem;font-weight:800;color:var(--navy);margin-bottom:3px}
+.aap .aap-step p{color:var(--muted);font-size:.95rem}
+
+/* faq */
+.aap details{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;background:#fff;overflow:hidden}
+.aap details summary{cursor:pointer;padding:16px 20px;font-weight:700;color:var(--navy);font-size:1rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.aap details summary::-webkit-details-marker{display:none}
+.aap details summary:after{content:"+";font-size:1.4rem;font-weight:700;color:var(--red);line-height:1}
+.aap details[open] summary:after{content:"\2013"}
+.aap details p{padding:0 20px 18px;color:var(--muted);font-size:.95rem}
+
+/* final cta */
+.aap .aap-final{background:#0b2138;position:relative;overflow:hidden;color:#fff}
+.aap .aap-final:before{content:"";position:absolute;inset:0;background:radial-gradient(900px 600px at 20% 0%,rgba(29,80,129,.85),transparent 62%)}
+.aap .aap-final .wrap{position:relative;z-index:2}
+.aap .aap-final h2{color:#fff;font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:900;letter-spacing:-.03em;margin-top:10px}
+.aap .aap-final p{color:#cfe0f0;max-width:56ch;margin-top:14px}
+.aap .aap-ctagrid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:start}
+.aap .aap-check{list-style:none;margin-top:22px}
+.aap .aap-check li{position:relative;padding-left:24px;margin-bottom:11px;font-size:.97rem;color:#cfe0f0}
+.aap .aap-check li:before{content:"";position:absolute;left:0;top:.5em;width:10px;height:10px;border-radius:3px;background:#ff6b64}
+.aap .aap-contact{margin-top:26px;font-size:.94rem;color:#cfe0f0;line-height:1.9}
+.aap .aap-contact strong{color:#fff}
+
+/* form */
+.aap .aap-form{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:26px}
+.aap .aap-form label{display:block;font-size:.68rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#9db6cf;margin:0 0 6px}
+.aap .aap-form input,.aap .aap-form textarea{width:100%;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.2);border-radius:9px;padding:11px 13px;color:#fff;font-family:var(--font);font-size:.94rem;margin-bottom:15px;outline:none}
+.aap .aap-form input::placeholder,.aap .aap-form textarea::placeholder{color:#7d99b6}
+.aap .aap-form input:focus,.aap .aap-form textarea:focus{border-color:#ff8c87}
+.aap .aap-form textarea{min-height:74px;resize:vertical}
+.aap .aap-form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.aap .aap-form .btn{width:100%;justify-content:center}
+.aap .aap-formnote{font-size:.74rem;color:#9db6cf;margin-top:12px;line-height:1.5}
+.aap .aap-legal{margin-top:34px;font-size:.72rem;line-height:1.6;color:#6f8aa6;display:block;max-width:var(--maxw)}
+
+@media(max-width:980px){
+  .aap .aap-grid3{grid-template-columns:1fr 1fr}
+  .aap .aap-panel3{grid-template-columns:1fr}
+}
+@media(max-width:880px){
+  .aap .aap-2col,.aap .aap-grid3,.aap .aap-ctagrid{grid-template-columns:1fr}
+  .aap .aap-ctagrid{gap:30px}
+}
+@media(max-width:640px){
+  .aap .aap-promise{flex-direction:column;align-items:flex-start;gap:8px}
+  .aap .aap-promise .pen{text-align:left}
+  .aap .aap-form .row{grid-template-columns:1fr}
+}
+  </style>
+</Base>
