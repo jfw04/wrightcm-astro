@@ -1,10 +1,14 @@
 ---
 /**
  * Responsive project photograph.
- * Expects pre-generated derivatives in /<dir>/<key>-{640,1024,1600}.{webp,jpg}
- * produced by the project image pipeline. Width/height are set so the
- * Intrinsic width/height come from the data record so the browser reserves
- * the right box and the page does not shift as images load.
+ * Expects pre-generated derivatives in /<dir>/<imgKey>-{640,1024,1600}.{webp,jpg}
+ * produced by the project image pipeline. Intrinsic width/height come from the
+ * data record so the browser reserves the right box and the page does not shift
+ * as images load.
+ *
+ * zoomable={true} wraps the image in a button and tags the figure for the
+ * lightbox in ProjectDetail.astro. The full-size source it opens is the largest
+ * derivative that actually exists for this photo.
  */
 const {
   dir,
@@ -16,27 +20,58 @@ const {
   w,
   h,
   eager = false,
+  zoomable = false,
   className = '',
 } = Astro.props;
 
 const base = `/${dir}/${imgKey}`;
-const set = (ext: string) => widths.map((w) => `${base}-${w}.${ext} ${w}w`).join(', ');
+const set = (ext: string) => widths.map((n) => `${base}-${n}.${ext} ${n}w`).join(', ');
 const fallbackW = widths[widths.length - 1];
+// Largest derivative we actually generated for this photo.
+const fullW = Math.min(1600, w || 1600);
 ---
-<figure class={`pdx-fig ${className}`.trim()}>
-  <picture>
-    <source type="image/webp" srcset={set('webp')} sizes={sizes} />
-    <img
-      src={`${base}-${fallbackW}.jpg`}
-      srcset={set('jpg')}
-      sizes={sizes}
-      alt={alt}
-      width={w}
-      height={h}
-      loading={eager ? 'eager' : 'lazy'}
-      decoding={eager ? 'sync' : 'async'}
-      fetchpriority={eager ? 'high' : 'auto'}
-    />
-  </picture>
+<figure
+  class={`pdx-fig ${className}`.trim()}
+  data-zoom={zoomable ? '' : undefined}
+  data-full={zoomable ? `${base}-${fullW}.jpg` : undefined}
+  data-full-webp={zoomable ? `${base}-${fullW}.webp` : undefined}
+>
+  {zoomable ? (
+    <button type="button" class="pdx-zoom" aria-label={`Enlarge photo: ${alt}`}>
+      <picture>
+        <source type="image/webp" srcset={set('webp')} sizes={sizes} />
+        <img
+          src={`${base}-${fallbackW}.jpg`}
+          srcset={set('jpg')}
+          sizes={sizes}
+          alt={alt}
+          width={w}
+          height={h}
+          loading={eager ? 'eager' : 'lazy'}
+          decoding={eager ? 'sync' : 'async'}
+        />
+      </picture>
+      <span class="pdx-zoom-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <circle cx="11" cy="11" r="7" /><path d="M20 20l-3.5-3.5M11 8v6M8 11h6" />
+        </svg>
+      </span>
+    </button>
+  ) : (
+    <picture>
+      <source type="image/webp" srcset={set('webp')} sizes={sizes} />
+      <img
+        src={`${base}-${fallbackW}.jpg`}
+        srcset={set('jpg')}
+        sizes={sizes}
+        alt={alt}
+        width={w}
+        height={h}
+        loading={eager ? 'eager' : 'lazy'}
+        decoding={eager ? 'sync' : 'async'}
+        fetchpriority={eager ? 'high' : 'auto'}
+      />
+    </picture>
+  )}
   {caption && <figcaption>{caption}</figcaption>}
 </figure>

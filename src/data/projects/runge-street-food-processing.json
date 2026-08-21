@@ -46,15 +46,11 @@
     },
     {
       "label": "Role",
-      "value": "Design-Build Construction Manager"
+      "value": "Design-Build Design & Construction Manager"
     },
     {
       "label": "Delivery Method",
       "value": "Design-Build"
-    },
-    {
-      "label": "Trade Contractors",
-      "value": "10+"
     }
   ],
   "hero": {

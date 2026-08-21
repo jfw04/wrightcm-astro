@@ -143,6 +143,7 @@ const dir = p.imageDir;
               caption={g.caption}
               sizes="(max-width: 700px) 100vw, (max-width: 980px) 50vw, 380px"
               widths={[640, 1024]}
+              zoomable={true}
             />
           ))}
         </div>
@@ -174,4 +175,93 @@ const dir = p.imageDir;
   )}
 
   <FinalCta heading={p.cta.heading} sub={p.cta.sub} />
+
+  <!-- Click-to-enlarge lightbox for the project gallery -->
+  <div class="pdx-lb" id="pdxLb" hidden role="dialog" aria-modal="true" aria-label="Project photo viewer">
+    <button type="button" class="pdx-lb-close" data-lb="close" aria-label="Close photo viewer">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <button type="button" class="pdx-lb-nav prev" data-lb="prev" aria-label="Previous photo">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <figure class="pdx-lb-stage">
+      <img id="pdxLbImg" src="" alt="" />
+      <figcaption><span id="pdxLbCap"></span><span class="pdx-lb-count" id="pdxLbCount"></span></figcaption>
+    </figure>
+    <button type="button" class="pdx-lb-nav next" data-lb="next" aria-label="Next photo">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var lb = document.getElementById('pdxLb');
+      if (!lb) return;
+      var figs = [].slice.call(document.querySelectorAll('.pdx-fig[data-zoom]'));
+      if (!figs.length) return;
+
+      var img = document.getElementById('pdxLbImg');
+      var cap = document.getElementById('pdxLbCap');
+      var count = document.getElementById('pdxLbCount');
+      var i = 0, opener = null;
+      var multi = figs.length > 1;
+      lb.querySelectorAll('.pdx-lb-nav').forEach(function (b) { b.hidden = !multi; });
+
+      function show(n) {
+        i = (n + figs.length) % figs.length;
+        var f = figs[i];
+        var src = f.getAttribute('data-full');
+        var thumb = f.querySelector('img');
+        img.src = src;
+        img.alt = thumb ? thumb.alt : '';
+        cap.textContent = thumb ? thumb.alt : '';
+        count.textContent = multi ? (i + 1) + ' / ' + figs.length : '';
+      }
+      function open(n, from) {
+        opener = from || null;
+        show(n);
+        lb.hidden = false;
+        document.body.style.overflow = 'hidden';
+        lb.querySelector('.pdx-lb-close').focus();
+      }
+      function close() {
+        lb.hidden = true;
+        img.src = '';
+        document.body.style.overflow = '';
+        if (opener) opener.focus();
+      }
+
+      figs.forEach(function (f, n) {
+        var btn = f.querySelector('.pdx-zoom');
+        if (btn) btn.addEventListener('click', function () { open(n, btn); });
+      });
+
+      lb.addEventListener('click', function (e) {
+        var act = e.target.closest ? e.target.closest('[data-lb]') : null;
+        if (act) {
+          var a = act.getAttribute('data-lb');
+          if (a === 'close') close();
+          if (a === 'prev') show(i - 1);
+          if (a === 'next') show(i + 1);
+          return;
+        }
+        // click the backdrop (not the photo) to dismiss
+        if (!e.target.closest('.pdx-lb-stage')) close();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (lb.hidden) return;
+        if (e.key === 'Escape') close();
+        else if (multi && e.key === 'ArrowLeft') show(i - 1);
+        else if (multi && e.key === 'ArrowRight') show(i + 1);
+        else if (e.key === 'Tab') {
+          // keep focus inside the dialog while it is open
+          var f = lb.querySelectorAll('button:not([hidden])');
+          var first = f[0], last = f[f.length - 1];
+          if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+      });
+    })();
+  </script>
 </article>
