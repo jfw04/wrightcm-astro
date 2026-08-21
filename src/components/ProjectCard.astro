@@ -1,7 +1,10 @@
 ---
 const { p } = Astro.props;
+// Categories a card can be filtered by. Falls back to the legacy single `sector`
+// so existing content.json entries keep working untouched.
+const tags = p.tags && p.tags.length ? p.tags : [p.sector];
 ---
-<a class="proj" href={`/projects/${p.slug}`} data-sector={p.sector}>
+<a class="proj" href={`/projects/${p.slug}`} data-tags={tags.join('|')}>
   <div class="ph"><img src={`/${p.cover}`} alt={p.name} loading="lazy" /></div>
   <div class="body">
     <span class="type">{p.type}</span>

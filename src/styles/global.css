@@ -384,3 +384,9 @@ footer.site a:hover{color:#fff}
   .pdx-fig{margin-top:28px}
   .pdx-section{margin-top:34px}
 }
+
+/* Market tag chips on project detail pages; link into /projects?filter=<tag> */
+.pdx-tags{display:flex;flex-wrap:wrap;gap:8px;margin:-4px 0 20px}
+.pdx-tag{display:inline-block;font-size:.76rem;font-weight:700;letter-spacing:.04em;padding:5px 11px;border-radius:999px;background:var(--bg-tint);color:var(--navy-2);border:1px solid var(--line);transition:.16s}
+.pdx-tag:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.filter-empty{margin-top:36px;color:var(--muted);font-size:1rem}

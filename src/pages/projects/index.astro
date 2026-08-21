@@ -3,15 +3,32 @@ import Base from '../../layouts/Base.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
 import data from '../../data/content.json';
 const projects = data.projects;
-const sectors = [...new Set(projects.map((p) => p.sector))];
+
+// Master category list, in display order. A category only appears in the filter
+// bar if at least one project carries it, so adding a tag to a project is all
+// it takes to surface a new category here.
+const CATEGORY_ORDER = [
+  'Food Processing',
+  'Cold Storage',
+  'Industrial',
+  'Senior Living',
+  'Commercial',
+];
+const used = new Set(
+  projects.flatMap((p) => (p.tags && p.tags.length ? p.tags : [p.sector]))
+);
+const known = CATEGORY_ORDER.filter((c) => used.has(c));
+const extra = [...used].filter((c) => c && !CATEGORY_ORDER.includes(c)).sort();
+const sectors = [...known, ...extra];
+
 const title = "Projects | Wright Construction Management";
-const description = "Food processing, USDA, senior living, and commercial construction projects delivered by Wright Construction Management across the Midwest.";
+const description = "Food processing, cold storage, USDA, senior living, and commercial construction projects delivered by Wright Construction Management across the Midwest.";
 ---
 <Base title={title} description={description}>
   <section class="page-banner"><div class="wrap">
     <div class="breadcrumb"><a href="/">Home</a> / Projects</div>
     <h1>Projects</h1>
-    <p>Complex builds, tight constraints, and active-plant work, delivered on budget and on schedule. Filter by sector below.</p>
+    <p>Complex builds, tight constraints, and active-plant work, delivered on budget and on schedule. Filter by market below.</p>
   </div></section>
   <section><div class="wrap">
     <div class="filterbar" id="filterbar">
@@ -19,17 +36,39 @@ const description = "Food processing, USDA, senior living, and commercial constr
       {sectors.map((s) => (<button data-f={s}>{s}</button>))}
     </div>
     <div class="proj-grid" id="projGrid">{projects.map((p) => (<ProjectCard p={p} />))}</div>
+    <p class="filter-empty" id="filterEmpty" hidden>No projects in this market yet.</p>
   </div></section>
   <script is:inline>
-    var bar = document.getElementById('filterbar');
-    bar.addEventListener('click', function (e) {
-      if (e.target.tagName !== 'BUTTON') return;
-      bar.querySelectorAll('button').forEach(function (b) { b.classList.remove('active'); });
-      e.target.classList.add('active');
-      var f = e.target.getAttribute('data-f');
-      document.querySelectorAll('#projGrid .proj').forEach(function (c) {
-        c.style.display = (f === 'all' || c.getAttribute('data-sector') === f) ? '' : 'none';
+    (function () {
+      var bar = document.getElementById('filterbar');
+      var empty = document.getElementById('filterEmpty');
+
+      function apply(f) {
+        var shown = 0;
+        document.querySelectorAll('#projGrid .proj').forEach(function (c) {
+          var tags = (c.getAttribute('data-tags') || '').split('|');
+          var hit = f === 'all' || tags.indexOf(f) !== -1;
+          c.style.display = hit ? '' : 'none';
+          if (hit) shown++;
+        });
+        if (empty) empty.hidden = shown !== 0;
+        bar.querySelectorAll('button').forEach(function (b) {
+          b.classList.toggle('active', b.getAttribute('data-f') === f);
+        });
+      }
+
+      bar.addEventListener('click', function (e) {
+        if (e.target.tagName !== 'BUTTON') return;
+        var f = e.target.getAttribute('data-f');
+        apply(f);
+        var url = f === 'all' ? location.pathname : location.pathname + '?filter=' + encodeURIComponent(f);
+        history.replaceState(null, '', url);
       });
-    });
+
+      // Deep link: /projects?filter=Cold%20Storage — used by the tag chips on
+      // each project detail page.
+      var want = new URLSearchParams(location.search).get('filter');
+      if (want && bar.querySelector('[data-f="' + window.CSS.escape(want) + '"]')) apply(want);
+    })();
   </script>
 </Base>

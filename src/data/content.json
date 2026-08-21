@@ -330,18 +330,18 @@
   },
   "projects": [
     {
-      "slug": "mistica-foods-runge-st",
+      "slug": "runge-street-food-processing",
       "featured": true,
-      "name": "Mistica Foods — Runge Street",
+      "name": "Runge Street Food Processing Facility",
       "type": "Food Processing / Cold Storage",
       "sector": "Food Processing",
       "location": "Franklin Park, IL",
-      "client": "Mistica Foods",
+      "client": "",
       "value": "$22.3M",
       "size": "123,000 SF",
       "completion": "",
       "schedule": "",
-      "cover": "assets/img/projects/mistica-foods-runge-st/card-900.jpg",
+      "cover": "assets/img/projects/runge-street-food-processing/card-900.jpg",
       "highlights": [
         [
           "Size",
@@ -352,11 +352,16 @@
           "$22.3M"
         ]
       ],
-      "summary": "Design-build renovation and expansion of a 123,000 SF food processing facility in Franklin Park, Illinois, delivered while the plant stayed in partial operation.",
+      "summary": "Design-build renovation and expansion of a 123,000 SF food processing and cold storage facility in Franklin Park, Illinois, delivered while the plant stayed in partial operation.",
       "challenges": "",
       "role": "",
       "outcome": "",
-      "gallery": []
+      "gallery": [],
+      "tags": [
+        "Industrial",
+        "Cold Storage",
+        "Food Processing"
+      ]
     },
     {
       "slug": "seaboard-triumph-foods",
@@ -388,6 +393,9 @@
       "gallery": [
         "assets/img/projects/seaboard.jpg",
         "assets/img/hero-processing.jpg"
+      ],
+      "tags": [
+        "Food Processing"
       ]
     },
     {
@@ -419,6 +427,9 @@
       "outcome": "Opened on schedule as a fully operational assisted living community, with a clean closeout package, warranties, and training logs handed over to the operator.",
       "gallery": [
         "assets/img/projects/silverbirch-kokomo.jpg"
+      ],
+      "tags": [
+        "Senior Living"
       ]
     },
     {
@@ -450,6 +461,9 @@
       "outcome": "Capacity added with production continuity protected throughout, and food safety controls maintained during construction.",
       "gallery": [
         "assets/img/projects/maple-leaf.jpg"
+      ],
+      "tags": [
+        "Food Processing"
       ]
     },
     {
@@ -481,6 +495,9 @@
       "outcome": "Delivered on schedule and opened as a fully operational assisted living community.",
       "gallery": [
         "assets/img/projects/silverbirch-terrehaute.jpg"
+      ],
+      "tags": [
+        "Senior Living"
       ]
     },
     {
@@ -512,6 +529,9 @@
       "outcome": "[Add outcome / results.]",
       "gallery": [
         "assets/img/projects/placeholder.jpg"
+      ],
+      "tags": [
+        "Commercial"
       ]
     },
     {
@@ -543,6 +563,9 @@
       "outcome": "[Add outcome / results.]",
       "gallery": [
         "assets/img/projects/placeholder.jpg"
+      ],
+      "tags": [
+        "Industrial"
       ]
     }
   ]

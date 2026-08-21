@@ -109,6 +109,13 @@ const dir = p.imageDir;
 
         <aside class="pdx-facts">
           <h2>Project Details</h2>
+          {p.tags?.length > 0 && (
+            <div class="pdx-tags">
+              {p.tags.map((t) => (
+                <a class="pdx-tag" href={`/projects?filter=${encodeURIComponent(t)}`}>{t}</a>
+              ))}
+            </div>
+          )}
           <dl>
             {p.facts?.map((f) => (
               <div class="row"><dt>{f.label}</dt><dd>{f.value}</dd></div>
@@ -124,7 +131,7 @@ const dir = p.imageDir;
     <section class="section-soft pdx-gallery-sec">
       <div class="wrap">
         <span class="eyebrow">Project Gallery</span>
-        <h2 class="section-title">More from {p.name}</h2>
+        <h2 class="section-title">{p.galleryHeading || `More from ${p.name}`}</h2>
         <div class="pdx-gallery">
           {p.gallery.map((g) => (
             <ProjectFigure
