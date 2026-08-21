@@ -185,7 +185,7 @@ const dir = p.imageDir;
       <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
     </button>
     <figure class="pdx-lb-stage">
-      <img id="pdxLbImg" src="" alt="" />
+      <img id="pdxLbImg" alt="" />
       <figcaption><span id="pdxLbCap"></span><span class="pdx-lb-count" id="pdxLbCount"></span></figcaption>
     </figure>
     <button type="button" class="pdx-lb-nav next" data-lb="next" aria-label="Next photo">
@@ -226,7 +226,7 @@ const dir = p.imageDir;
       }
       function close() {
         lb.hidden = true;
-        img.src = '';
+        img.removeAttribute('src');
         document.body.style.overflow = '';
         if (opener) opener.focus();
       }

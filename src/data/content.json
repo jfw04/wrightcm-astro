@@ -364,6 +364,40 @@
       ]
     },
     {
+      "slug": "chicago-metro-freezer-addition",
+      "featured": true,
+      "name": "Chicago Metro Freezer Addition",
+      "type": "Cold Storage / Food Processing",
+      "sector": "Food Processing",
+      "tags": [
+        "Industrial",
+        "Cold Storage",
+        "Food Processing"
+      ],
+      "location": "Chicago Metro Area",
+      "client": "",
+      "value": "$3.1M",
+      "size": "23,000 SF",
+      "completion": "",
+      "schedule": "",
+      "cover": "assets/img/projects/chicago-metro-freezer-addition/card-900.jpg",
+      "highlights": [
+        [
+          "Size",
+          "23,000 SF"
+        ],
+        [
+          "Value",
+          "$3.1M"
+        ]
+      ],
+      "summary": "A 23,000 SF freezer addition with industrial ammonia refrigeration and a rooftop refrigeration penthouse, built onto an operating USDA meat processing plant.",
+      "challenges": "",
+      "role": "",
+      "outcome": "",
+      "gallery": []
+    },
+    {
       "slug": "seaboard-triumph-foods",
       "featured": true,
       "name": "Seaboard Triumph Foods",

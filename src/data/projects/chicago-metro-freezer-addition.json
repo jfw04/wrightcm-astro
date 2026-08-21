@@ -1,0 +1,201 @@
+{
+  "_README": "One file per website-approved project. Source of truth: Airtable > WCM Marketing > Completed Projects. Narrative text is restructured from the record's 'Website Copy' field only — do not add facts that are not in Airtable. Images must come from that project's Pictures\\Marketing folder, where a NN_ filename prefix sets page order (00_ = hero). See tools/PHOTO-WORKFLOW.md.",
+  "slug": "chicago-metro-freezer-addition",
+  "airtableRecordId": "recdNAyWTPCIZBc5o",
+  "projectNumber": "19-002",
+  "name": "Chicago Metro Freezer Addition",
+  "eyebrow": "Cold Storage / Food Processing",
+  "tags": ["Industrial", "Cold Storage", "Food Processing"],
+  "location": "Chicago Metro Area",
+  "imageDir": "assets/img/projects/chicago-metro-freezer-addition",
+  "galleryHeading": "More from this project",
+
+  "heroStats": [
+    { "label": "Size", "value": "23,000 SF" },
+    { "label": "Construction Value", "value": "$3.1M" },
+    { "label": "Refrigeration", "value": "Industrial Ammonia" }
+  ],
+
+  "facts": [
+    { "label": "Location", "value": "Chicago Metro Area" },
+    { "label": "Size", "value": "23,000 SF" },
+    { "label": "Construction Value", "value": "$3.1M" },
+    { "label": "Cost per SF", "value": "$130 / SF" },
+    { "label": "Role", "value": "Construction Manager" },
+    { "label": "Facility Type", "value": "USDA Meat Processing" },
+    { "label": "Envelope", "value": "Insulated Metal Panel" }
+  ],
+
+  "hero": {
+    "key": "hero",
+    "alt": "Completed insulated metal panel freezer addition seen from the plant yard under an overcast sky",
+    "w": 4032,
+    "h": 3024
+  },
+
+  "overview": [
+    "Wright Construction Management served as construction manager for a 23,000-square-foot freezer addition to an active, USDA-regulated meat processing facility in the Chicago metro area.",
+    "The work expanded cold storage capacity while food production continued next door — the central constraint that shaped how the project was planned, sequenced, and turned over."
+  ],
+
+  "blocks": [
+    {
+      "type": "section",
+      "heading": "Foundations and Site Work",
+      "paragraphs": [
+        "The addition started below grade, with excavation, foundations, and a stone base built to carry the new freezer structure and its refrigerated floor.",
+        "WCM also oversaw environmental site assessment activities as part of the work."
+      ]
+    },
+    {
+      "type": "pair",
+      "items": [
+        {
+          "key": "foundations",
+          "alt": "Formed concrete foundation walls and excavation at the freezer addition, with an excavator working in the background",
+          "w": 3024,
+          "h": 4032
+        },
+        {
+          "key": "footings",
+          "alt": "Reinforcing steel set in a footing trench over the compacted stone base",
+          "w": 3024,
+          "h": 4032
+        }
+      ]
+    },
+    {
+      "type": "figure",
+      "key": "steel-imp",
+      "alt": "Structural steel frame and roof deck of the freezer addition partly clad in insulated metal panel, built directly against the existing plant",
+      "caption": "The addition went up against the wall of a plant that never stopped running.",
+      "w": 4032,
+      "h": 3024
+    },
+    {
+      "type": "section",
+      "heading": "The Refrigerated Floor",
+      "paragraphs": [
+        "A freezer slab has to be kept from freezing the ground beneath it. The floor was built as a glycol-heated slab over floor insulation, with the glycol tubing run and pressure-tested before the pour.",
+        "The custom industrial ammonia refrigeration system tied into that floor — compressors, evaporators, control valves, and ammonia detection all integrated to hold temperature across the new space."
+      ]
+    },
+    {
+      "type": "pair",
+      "items": [
+        {
+          "key": "glycol",
+          "alt": "Orange glycol tubing run in loops across the stone base inside the insulated metal panel shell, ahead of the heated slab pour",
+          "w": 1536,
+          "h": 2048
+        },
+        {
+          "key": "slab-finish",
+          "alt": "Two ride-on power trowels finishing the new concrete slab inside the freezer shell",
+          "w": 4032,
+          "h": 3024
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "heading": "Solving the Site Constraint",
+      "paragraphs": [
+        "The site had no room to spare. Rather than give up floor area to mechanical space, the design put the large evaporators in a refrigeration penthouse on the roof — preserving clear height and pallet positions inside the freezer.",
+        "That decision carried its own scope: a large external stair tower was built to give maintenance staff safe access up to the penthouse."
+      ]
+    },
+    {
+      "type": "pair",
+      "items": [
+        {
+          "key": "penthouse",
+          "alt": "Steel-framed refrigeration penthouse under construction on the roof of the freezer addition, with equipment set inside the frame",
+          "w": 3024,
+          "h": 4032
+        },
+        {
+          "key": "stair-tower",
+          "alt": "Galvanized external stair tower rising against the insulated metal panel wall beside an elevated condenser platform, with boom lifts working below",
+          "w": 3024,
+          "h": 4032
+        }
+      ]
+    },
+    {
+      "type": "figure",
+      "key": "roof-supports",
+      "alt": "Rows of steel equipment supports set on the new roof membrane at dusk, with the Chicago skyline on the horizon",
+      "caption": "Roof-mounted equipment supports, with the city on the horizon.",
+      "w": 4032,
+      "h": 3024
+    },
+    {
+      "type": "section",
+      "heading": "Building Inside an Operating USDA Plant",
+      "paragraphs": [
+        "Working in an occupied facility meant close coordination with plant operations, multi-trade scheduling, and strict adherence to food safety protocols throughout.",
+        "WCM coordinated every trade on the job — excavation, concrete, insulated metal panel, refrigeration, electrical, structural steel, plumbing, roofing, and fire protection — and managed integration of the IMP building envelope and the fire protection system into the finished structure."
+      ]
+    },
+    {
+      "type": "figure",
+      "key": "finished-interior",
+      "alt": "Completed freezer interior with insulated metal panel walls, exposed steel framing, and a freshly finished floor slab",
+      "caption": "The finished freezer, ready for racking.",
+      "w": 4032,
+      "h": 3024
+    }
+  ],
+
+  "gallery": [
+    {
+      "key": "racking",
+      "alt": "Pallet racking components staged on the finished freezer floor ahead of installation",
+      "w": 4032,
+      "h": 3024
+    },
+    {
+      "key": "interior-wide",
+      "alt": "Wide view of the completed freezer interior showing structural steel columns and the insulated panel end wall",
+      "w": 4032,
+      "h": 3024
+    },
+    {
+      "key": "exterior",
+      "alt": "Completed freezer addition from the yard, with the existing plant and process equipment alongside it",
+      "w": 4032,
+      "h": 3024
+    }
+  ],
+
+  "related": ["runge-street-food-processing"],
+
+  "cta": {
+    "heading": "Adding cold storage to a running plant?",
+    "sub": "Book a 15-minute feasibility call and we'll walk the refrigeration, phasing, and food-safety constraints before they turn into change orders."
+  },
+
+  "seo": {
+    "title": "Chicago Metro Freezer Addition | Wright Construction Management",
+    "description": "Wright Construction Management served as construction manager for a $3.1M, 23,000 SF freezer addition with industrial ammonia refrigeration, built onto an operating USDA meat processing facility in the Chicago metro area.",
+    "ogImage": "assets/img/projects/chicago-metro-freezer-addition/og.jpg"
+  },
+
+  "sourceImageFolder": "C:\\Users\\jfw04\\OneDrive\\CM Firm\\Projects\\Arhived Projects\\19- 002 - Amigos Meat Freezer Addition\\Pictures\\Marketing",
+  "sourceImages": {
+    "hero": "00_IMG_7775.jpg",
+    "foundations": "01_IMG_6021.jpg",
+    "footings": "02_IMG_6131.jpg",
+    "steel-imp": "03_IMG_6494.jpg",
+    "glycol": "04_IMG_6816.JPEG",
+    "slab-finish": "05_IMG_6933.jpg",
+    "penthouse": "06_IMG_6684.jpg",
+    "stair-tower": "07_IMG_8486.jpg",
+    "roof-supports": "08_IMG_6776.jpg",
+    "finished-interior": "09_IMG_7071.jpg",
+    "racking": "10_IMG_7254.jpg",
+    "interior-wide": "11_IMG_6980.jpg",
+    "exterior": "12_IMG_7774.jpg"
+  }
+}
