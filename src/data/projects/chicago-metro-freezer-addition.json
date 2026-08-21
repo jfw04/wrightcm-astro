@@ -5,39 +5,68 @@
   "projectNumber": "19-002",
   "name": "Chicago Metro Freezer Addition",
   "eyebrow": "Cold Storage / Food Processing",
-  "tags": ["Industrial", "Cold Storage", "Food Processing"],
+  "tags": [
+    "Industrial",
+    "Cold Storage",
+    "Food Processing"
+  ],
   "location": "Chicago Metro Area",
   "imageDir": "assets/img/projects/chicago-metro-freezer-addition",
   "galleryHeading": "More from this project",
-
   "heroStats": [
-    { "label": "Size", "value": "23,000 SF" },
-    { "label": "Construction Value", "value": "$3.1M" },
-    { "label": "Refrigeration", "value": "Industrial Ammonia" }
+    {
+      "label": "Size",
+      "value": "23,000 SF"
+    },
+    {
+      "label": "Construction Value",
+      "value": "$3.1M"
+    },
+    {
+      "label": "Refrigeration",
+      "value": "Industrial Ammonia"
+    }
   ],
-
   "facts": [
-    { "label": "Location", "value": "Chicago Metro Area" },
-    { "label": "Size", "value": "23,000 SF" },
-    { "label": "Construction Value", "value": "$3.1M" },
-    { "label": "Cost per SF", "value": "$130 / SF" },
-    { "label": "Role", "value": "Construction Manager" },
-    { "label": "Facility Type", "value": "USDA Meat Processing" },
-    { "label": "Envelope", "value": "Insulated Metal Panel" }
+    {
+      "label": "Location",
+      "value": "Chicago Metro Area"
+    },
+    {
+      "label": "Size",
+      "value": "23,000 SF"
+    },
+    {
+      "label": "Construction Value",
+      "value": "$3.1M"
+    },
+    {
+      "label": "Cost per SF",
+      "value": "$130 / SF"
+    },
+    {
+      "label": "Role",
+      "value": "Construction Manager"
+    },
+    {
+      "label": "Facility Type",
+      "value": "USDA Meat Processing"
+    },
+    {
+      "label": "Envelope",
+      "value": "Insulated Metal Panel"
+    }
   ],
-
   "hero": {
     "key": "hero",
     "alt": "Completed insulated metal panel freezer addition seen from the plant yard under an overcast sky",
     "w": 4032,
     "h": 3024
   },
-
   "overview": [
     "Wright Construction Management served as construction manager for a 23,000-square-foot freezer addition to an active, USDA-regulated meat processing facility in the Chicago metro area.",
     "The work expanded cold storage capacity while food production continued next door — the central constraint that shaped how the project was planned, sequenced, and turned over."
   ],
-
   "blocks": [
     {
       "type": "section",
@@ -147,7 +176,6 @@
       "h": 3024
     }
   ],
-
   "gallery": [
     {
       "key": "racking",
@@ -168,20 +196,19 @@
       "h": 3024
     }
   ],
-
-  "related": ["runge-street-food-processing"],
-
+  "related": [
+    "runge-street-food-processing",
+    "south-holland-food-distribution"
+  ],
   "cta": {
     "heading": "Adding cold storage to a running plant?",
     "sub": "Book a 15-minute feasibility call and we'll walk the refrigeration, phasing, and food-safety constraints before they turn into change orders."
   },
-
   "seo": {
     "title": "Chicago Metro Freezer Addition | Wright Construction Management",
     "description": "Wright Construction Management served as construction manager for a $3.1M, 23,000 SF freezer addition with industrial ammonia refrigeration, built onto an operating USDA meat processing facility in the Chicago metro area.",
     "ogImage": "assets/img/projects/chicago-metro-freezer-addition/og.jpg"
   },
-
   "sourceImageFolder": "C:\\Users\\jfw04\\OneDrive\\CM Firm\\Projects\\Arhived Projects\\19- 002 - Amigos Meat Freezer Addition\\Pictures\\Marketing",
   "sourceImages": {
     "hero": "00_IMG_7775.jpg",

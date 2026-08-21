@@ -398,6 +398,39 @@
       "gallery": []
     },
     {
+      "slug": "south-holland-food-distribution",
+      "featured": true,
+      "name": "South Holland Food Distribution Facility",
+      "type": "Cold Storage / Food Distribution",
+      "sector": "Food Processing",
+      "tags": [
+        "Industrial",
+        "Cold Storage"
+      ],
+      "location": "South Holland, IL",
+      "client": "",
+      "value": "$4.3M",
+      "size": "91,000 SF",
+      "completion": "",
+      "schedule": "",
+      "cover": "assets/img/projects/south-holland-food-distribution/card-900.jpg",
+      "highlights": [
+        [
+          "Size",
+          "91,000 SF"
+        ],
+        [
+          "Value",
+          "$4.3M"
+        ]
+      ],
+      "summary": "Phased renovation of a 91,000 SF food distribution and cold storage facility — new cooler, freezer, and dry storage bays plus office and employee-space upgrades, delivered without interrupting distribution.",
+      "challenges": "",
+      "role": "",
+      "outcome": "",
+      "gallery": []
+    },
+    {
       "slug": "seaboard-triumph-foods",
       "featured": true,
       "name": "Seaboard Triumph Foods",

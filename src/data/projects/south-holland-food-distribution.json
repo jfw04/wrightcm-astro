@@ -1,0 +1,206 @@
+{
+  "_README": "One file per website-approved project. Source of truth: Airtable > WCM Marketing > Completed Projects. Narrative text is restructured from the record's 'Website Copy' field only — do not add facts that are not in Airtable. Images must come from that project's Pictures\\Marketing folder, where a NN_ filename prefix sets page order (00_ = hero). See tools/PHOTO-WORKFLOW.md.",
+  "slug": "south-holland-food-distribution",
+  "airtableRecordId": "rec4XxwCKoKSl7P7z",
+  "projectNumber": "21-0031",
+  "name": "South Holland Food Distribution Facility",
+  "eyebrow": "Cold Storage / Food Distribution",
+  "tags": ["Industrial", "Cold Storage"],
+  "location": "South Holland, IL",
+  "imageDir": "assets/img/projects/south-holland-food-distribution",
+  "galleryHeading": "More from this project",
+
+  "heroStats": [
+    { "label": "Size", "value": "91,000 SF" },
+    { "label": "Construction Value", "value": "$4.3M" },
+    { "label": "Delivery", "value": "Phased, Occupied" }
+  ],
+
+  "facts": [
+    { "label": "Location", "value": "South Holland" },
+    { "label": "Size", "value": "91,000 SF" },
+    { "label": "Construction Value", "value": "$4.3M" },
+    { "label": "Cost per SF", "value": "$33 / SF" },
+    { "label": "Role", "value": "Construction Manager" },
+    { "label": "Facility Type", "value": "Food Distribution / Cold Storage" }
+  ],
+
+  "hero": {
+    "key": "hero",
+    "alt": "Completed distribution floor with a sealed, reflective slab and rows of yellow-guarded columns running the length of the building",
+    "w": 4032,
+    "h": 3024
+  },
+
+  "overview": [
+    "Wright Construction Management served as construction manager for the comprehensive renovation of a 91,000-square-foot food distribution and cold storage facility in South Holland, Illinois.",
+    "The $4.3 million project rebuilt the building's interior — new cooler, freezer, and dry storage bays, plus extensive upgrades to offices, the cafeteria, employee locker rooms, and bathrooms — while the facility kept distributing food the entire time."
+  ],
+
+  "blocks": [
+    {
+      "type": "section",
+      "heading": "Clearing the Building",
+      "paragraphs": [
+        "A full interior transformation meant taking the existing building apart first. Major demolition included removing the mezzanine office structures that sat in the middle of the warehouse floor.",
+        "Doing that inside a running distribution operation is what made the sequencing hard: every area opened up had to be given back in a usable state before the next one came down."
+      ]
+    },
+    {
+      "type": "pair",
+      "items": [
+        {
+          "key": "mezzanine",
+          "alt": "Two-story mezzanine office structure standing on the warehouse floor before demolition, with windowed offices on both levels",
+          "w": 4032,
+          "h": 3024
+        },
+        {
+          "key": "existing-bay",
+          "alt": "Existing warehouse bay before renovation, with an open stair, exposed roof structure, and a worn floor slab",
+          "w": 4032,
+          "h": 3024
+        }
+      ]
+    },
+    {
+      "type": "figure",
+      "key": "subgrade",
+      "alt": "Warehouse interior stripped back to a stone base across the full width of the bay, with columns left standing",
+      "caption": "Bays were taken back to the stone base before the new floor went in.",
+      "w": 4032,
+      "h": 3024
+    },
+    {
+      "type": "section",
+      "heading": "Rebuilding the Floor",
+      "paragraphs": [
+        "New slabs went in bay by bay. Reinforcing mesh and tubing were laid over the stone base and tied off ahead of each pour, then the finished floor was sealed for washdown and forklift traffic."
+      ]
+    },
+    {
+      "type": "pair",
+      "items": [
+        {
+          "key": "tubing-detail",
+          "alt": "Loops of tubing tied to reinforcing mesh over the stone base, ready for the slab pour",
+          "w": 3024,
+          "h": 4032
+        },
+        {
+          "key": "tubing-wide",
+          "alt": "Tubing and reinforcing mesh run across the full width of a bay, with two workers laying out the pattern against the existing walls",
+          "w": 2048,
+          "h": 1536
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "heading": "Cooler, Freezer, and Dry Storage Bays",
+      "paragraphs": [
+        "The rebuilt interior was divided into new cooler, freezer, and dry storage bays — the temperature-controlled environments the business runs on.",
+        "Keeping those environments intact while demolition and reconstruction went on around them was a constant condition of the work, not a one-time hurdle."
+      ]
+    },
+    {
+      "type": "figure",
+      "key": "racking",
+      "alt": "Long aisle of blue and orange pallet racking running the length of a completed storage bay",
+      "caption": "Racking set in a completed storage bay.",
+      "w": 2048,
+      "h": 1536
+    },
+    {
+      "type": "pair",
+      "items": [
+        {
+          "key": "cold-door",
+          "alt": "Blue insulated high-speed roll-up door set into the wall of a new temperature-controlled bay",
+          "w": 1536,
+          "h": 2048
+        },
+        {
+          "key": "cold-room",
+          "alt": "Completed temperature-controlled bay with insulated panel walls and ceiling-mounted evaporators",
+          "w": 2048,
+          "h": 1536
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "heading": "Offices, Cafeteria, and Employee Spaces",
+      "paragraphs": [
+        "Alongside the warehouse work, the project renovated the office areas, the cafeteria, and the employee locker rooms and bathrooms — the parts of the building the staff live in every shift."
+      ]
+    },
+    {
+      "type": "figure",
+      "key": "office",
+      "alt": "Renovated office area with new wood-look flooring, glazed partitions, and workstations along the corridor",
+      "caption": "Renovated office space off the warehouse floor.",
+      "w": 2048,
+      "h": 1536
+    },
+    {
+      "type": "section",
+      "heading": "Running the Job",
+      "paragraphs": [
+        "WCM coordinated more than 20 specialized subcontractors and managed procurement, contracts, and the schedule across the whole renovation.",
+        "The phasing and trade sequencing were what allowed a project of this size to be delivered inside a fully operational facility without interrupting distribution."
+      ]
+    }
+  ],
+
+  "gallery": [
+    {
+      "key": "fire-protection",
+      "alt": "Fire protection service assembly with backflow preventer and gate valves installed in the building's riser room",
+      "w": 2048,
+      "h": 1536
+    },
+    {
+      "key": "cafeteria",
+      "alt": "Renovated cafeteria area with new cabinetry, countertop, and sink",
+      "w": 2048,
+      "h": 1536
+    },
+    {
+      "key": "exterior-wall",
+      "alt": "Boom lift working the long exterior wall of the distribution building",
+      "w": 4032,
+      "h": 3024
+    }
+  ],
+
+  "related": ["chicago-metro-freezer-addition", "runge-street-food-processing"],
+
+  "cta": {
+    "heading": "Renovating a distribution center you can't shut down?",
+    "sub": "Book a 15-minute feasibility call and we'll map the phasing before it becomes a schedule problem."
+  },
+
+  "seo": {
+    "title": "South Holland Food Distribution Facility | Wright Construction Management",
+    "description": "Wright Construction Management served as construction manager for the $4.3M renovation of a 91,000 SF food distribution and cold storage facility in South Holland, Illinois, delivered in phases inside a fully operational building.",
+    "ogImage": "assets/img/projects/south-holland-food-distribution/og.jpg"
+  },
+
+  "sourceImageFolder": "C:\\Users\\jfw04\\OneDrive\\CM Firm\\Projects\\Arhived Projects\\21- 0027 - Martin Produce - Ph 1\\Pictures\\Marketing",
+  "sourceImages": {
+    "hero": "00_IMG_1155.jpg",
+    "mezzanine": "01_IMG_9243.jpg",
+    "existing-bay": "02_IMG_9892.jpg",
+    "subgrade": "03_IMG_1066.jpg",
+    "tubing-detail": "04_IMG_1172.jpg",
+    "tubing-wide": "05_IMG_1214.JPEG",
+    "racking": "06_IMG_4833.JPEG",
+    "cold-door": "07_IMG_4279.JPEG",
+    "cold-room": "08_IMG_4837.JPEG",
+    "office": "09_IMG_3526.JPEG",
+    "fire-protection": "10_IMG_2478.JPEG",
+    "cafeteria": "11_IMG_3524.JPEG",
+    "exterior-wall": "12_IMG_1156.jpg"
+  }
+}
